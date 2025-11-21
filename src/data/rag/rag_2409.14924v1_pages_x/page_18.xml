@@ -1,0 +1,53 @@
+<page><text>arXiv Template
+A PREPRINT
+Therefore, choosing an appropriate data injection strategy into the LLM requires a thorough understanding of one’s
+data sources and judicious decision-making based on this insight.
+Moreover, in practical scenarios, data augmented LLM applicationstypically involves a combination of diverse query
+types, necessitating developers to engineer a routing pipeline that integrates multiple methodologies to effectively tackle
+these multifaceted challenges.
+References
+[1] Yuqi Nie, Yaxuan Kong, Xiaowen Dong, John M Mulvey, H Vincent Poor, Qingsong Wen, and Stefan Zohren. A
+survey of large language models for financial applications: Progress, prospects and challenges. arXiv preprint
+arXiv:2406.11903, 2024.
+[2] Yining Huang, Keke Tang, and Meilian Chen. A comprehensive survey on evaluating large language model
+applications in the medical industry. arXiv preprint arXiv:2404.15777, 2024.
+[3] Xiaoxian Yang, Zhifeng Wang, Qi Wang, Ke Wei, Kaiqi Zhang, and Jiangang Shi. Large language models for
+automated q&amp;a involving legal documents: a survey on algorithms, frameworks and applications. International
+Journal of Web Information Systems, 2024.
+[4] Janice Ahn, Rishu Verma, Renze Lou, Di Liu, Rui Zhang, and Wenpeng Yin. Large language models for
+mathematical reasoning: Progresses and challenges. arXiv preprint arXiv:2402.00157, 2024.
+[5] Xinyi Wang, Wanrong Zhu, Michael Saxon, Mark Steyvers, and William Yang Wang. Large language models
+are latent variable models: Explaining and finding good demonstrations for in-context learning. Advances in
+Neural Information Processing Systems, 36, 2024.
+[6] Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, Meng Wang, and
+Haofen Wang. Retrieval-augmented generation for large language models: A survey, 2023.
+[7] Penghao Zhao, Hailin Zhang, Qinhan Yu, Zhengren Wang, Yunteng Geng, Fangcheng Fu, Ling Yang, Wentao
+Zhang, Jie Jiang, and Bin Cui. Retrieval-augmented generation for ai-generated content: A survey, 2024.
+[8] Yujuan Ding, Wenqi Fan, Liangbo Ning, Shijie Wang, Hengyun Li, Dawei Yin, Tat-Seng Chua, and Qing Li. A
+survey on rag meets llms: Towards retrieval-augmented large language models. arXiv preprint arXiv:2405.06211,
+2024.
+[9] Xiaoxi Li, Jiajie Jin, Yujia Zhou, Yuyao Zhang, Peitian Zhang, Yutao Zhu, and Zhicheng Dou. From matching to
+generation: A survey on generative information retrieval. arXiv preprint arXiv:2404.14851, 2024.
+[10] Penghao Zhao, Hailin Zhang, Qinhan Yu, Zhengren Wang, Yunteng Geng, Fangcheng Fu, Ling Yang, Wentao
+Zhang, and Bin Cui. Retrieval-augmented generation for ai-generated content: A survey. arXiv preprint
+arXiv:2402.19473, 2024.
+[11] Zeyu Han, Chao Gao, Jinyang Liu, Sai Qian Zhang, et al. Parameter-efficient fine-tuning for large models: A
+comprehensive survey. arXiv preprint arXiv:2403.14608, 2024.
+[12] Hongling Zheng, Li Shen, Anke Tang, Yong Luo, Han Hu, Bo Du, and Dacheng Tao. Learn from model beyond
+fine-tuning: A survey. arXiv preprint arXiv:2310.08184, 2023.
+[13] Shengyu Zhang, Linfeng Dong, Xiaoya Li, Sen Zhang, Xiaofei Sun, Shuhe Wang, Jiwei Li, Runyi Hu, Tianwei
+Zhang, Fei Wu, et al. Instruction tuning for large language models: A survey. arXiv preprint arXiv:2308.10792,
+2023.
+[14] J Gruettner, T Henzler, T Sueselbeck, C Fink, M Borggrefe, and T Walter. Clinical assessment of chest pain and
+guidelines for imaging. European Journal of Radiology, 81(12):3663–3668, 2012.
+[15] Tom Kwiatkowski, Jennimaria Palomaki, Olivia Redfield, Michael Collins, Ankur Parikh, Chris Alberti, Danielle
+Epstein, Illia Polosukhin, Jacob Devlin, Kenton Lee, et al. Natural questions: a benchmark for question answering
+research. Transactions of the Association for Computational Linguistics, 7:453–466, 2019.
+[16] Payal Bajaj, Daniel Campos, Nick Craswell, Li Deng, Jianfeng Gao, Xiaodong Liu, Rangan Majumder, Andrew
+McNamara, Bhaskar Mitra, Tri Nguyen, et al. Ms marco: A human generated machine reading comprehension
+dataset. arXiv preprint arXiv:1611.09268, 2016.
+[17] Mandar Joshi, Eunsol Choi, Daniel Weld, and Luke Zettlemoyer. triviaqa: A Large Scale Distantly Supervised
+Challenge Dataset for Reading Comprehension. arXiv e-prints, page arXiv:1705.03551, 2017.
+[18] Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. Squad: 100,000+ questions for machine
+comprehension of text. arXiv preprint arXiv:1606.05250, 2016.
+18</text></page>

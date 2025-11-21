@@ -1,0 +1,86 @@
+<page><text>Published as a conference paper at ICLR 2025
+we calculate the proportion of incorrect answers present in or absent from the documents using the
+equations below:
+Presence =
+1
+|Ne|
+X
+qi∈Ae
+|Ae
+R ∩AD|
+|Ae
+R|
+(18)
+Absence =
+1
+|Ne|
+X
+qi∈Ae
+|Ae
+R −(Ae
+R ∩AD)|
+|Ae
+R|
+(19)
+Where Ae denotes the set of answerable questions that answered by the model with one or more
+incorrect answers; AD, Ae
+R are facts present in the documents and erroneous facts generated in the
+response, respectively.
+The findings are presented in Table 11. Our analysis reveals that, with the exception of LLaMA-2
+7B which provides no responses, all other ICL-based models exhibit a higher tendency to pro-
+duce erroneous answers based on their parametric knowledge compared to our models. Notably,
+Claude-3.5 demonstrates a more frequent reliance on its parametric knowledge, which elucidates its
+significantly lower TRUST-SCORE score in Table 12.
+In summary, our investigation indicates that baseline models, including GPT-4 and GPT-3.5, are
+more susceptible to hallucinations stemming from their parametric knowledge.
+Table 11: The proportions of erroneous answers present in or absent from the documents.
+Model
+QAMPARI
+Presence (%)
+Absence (%)
+ICL-LLaMA-2 7B
+0.00
+0.00
+ICL-LLaMA-3 8B
+84.41
+15.59
+ICL-GPT-3.5
+85.04
+14.96
+ICL-GPT-4
+89.3
+10.7
+ICL-Claude-3.5
+72.18
+27.82
+TRUST-ALIGN (DPO-LLaMA-2-7B)
+93.26
+6.74
+TRUST-ALIGN (DPO-LLaMA-3-8B)
+95.63
+4.37
+F.4
+TRUST-ALIGN ENHANCES TRUSTWORTHINESS MORE ROBUSTLY THAN PROMPTING
+Aligning with TRUST-ALIGN leads to more significant improvements in TRUST-SCORE compared
+to using prompting alone. While adding a refusal prompt has inconsistent effects on TRUST-SCORE
+and its subcomponents, it tends to be more beneficial in more capable models, such as LLaMA-2-
+13b and LLaMA-3-8b.
+Relying solely on prompting to teach refusal is ineffective, as models’ responsiveness becomes
+overly sensitive to the prompt. Under the default prompt, models rarely refuse (AR% close to
+100), while adding a refusal prompt in ICL drastically reduces AR%, often to near zero, indicating
+indiscriminate refusal. This lack of nuanced refusal ability is also seen in post hoc methods. At
+both extremes, TRUST-SCORE scores suffer due to errors in correctly refusing questions and lower
+citation groundedness scores. In contrast, TRUST-ALIGN enables models to identify and correctly
+answer appropriate questions, resulting in AR% closer to the maximum answerable percentage and
+improvements in F1GR.
+It’s important to note that responsiveness should not be the primary metric for comparing RAG
+systems when the retrieved documents are the same. The TRUST score rewards accurate answers,
+appropriate refusals, and correct citations while penalizing failures. Systems with low responsive-
+ness will score poorly on TRUST, regardless of their overall response rate.
+As shown in Table 19, Table 20, and Table 21, for PostCite, PostAttr, and Self-RAG, adding a refusal
+prompt results in minimal changes in TRUST-SCORE (e.g., ASQA Self-RAG with LLaMA-2-13b:
+51.69% vs. 52.49%). Subcomponent analysis shows little difference in F1GR (42.74% vs. 39.15%),
+indicating that the refusal prompt does not effectively help models distinguish between answerable
+and unanswerable questions. These findings highlight the instability of relying on prompting to
+enhance trustworthiness and underscore the robustness of our system in achieving this goal.
+26</text></page>

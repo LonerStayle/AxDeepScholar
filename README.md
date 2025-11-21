@@ -17,7 +17,7 @@
 2. LangChain의 **Arxiv Tool**을 통해 논문을 수집하고,
    **직접 구현한 Custom RAG 엔진**으로 논문 내용을 임베딩·검색·요약합니다.
 
-3. 결과는 **PostgreSQL Memory**와 **VectorStore 기반 Memento CaseBank** 에 함께 저장되어,
+3. 결과는 **VectorStore 기반 Memento CaseBank** 에 함께 저장되어,
    세션이 반복될수록 “성공적 연구 패턴”을 재활용합니다.
 
 4. Reflect 단계에서 각 연구 결과를 평가(Faithfulness, Relevance)하고
@@ -30,10 +30,8 @@
 
 * Arxiv 논문 기반 **경험 축적형 RAG + 자기향상형 Memory 구조**
 * LangGraph 기반 **3-Agent Workflow (Supervisor / Researcher / Reporter)**
-* **Arxiv MCP(Function Calling)** 으로 실시간 논문 검색
 * **Custom RAG Retriever + Reflect Reward 기반 재가중 검색**
 * **VectorStore 기반 CaseBank (성공·실패 경험 유사도 검색)**
-* **PostgreSQL Persistent Memory + 벡터 백업 및 관리**
 
 > “시간이 지날수록 똑똑해지는 AI 연구자”
 
@@ -82,7 +80,6 @@
 | **LLM**                 | GPT-5 / GPT-5-mini                                    |
 | **Data Source**         | Arxiv API (논문 PDF + Metadata)                         |
 | **RAG Engine**          | Chroma / FAISS + BGE-M3 Embedding                     |
-| **MCP Tool**            | `arxiv_mcp` (논문 실시간 검색 Function-Calling)              |
 | **Memory Layer**        | PostgreSQL (메타데이터) + **VectorStore CaseBank**         |
 | **Experience Encoding** | BAAI/bge-m3 (semantic embedding of task/result/score) |
 | **Reflection**          | Faithfulness / Relevance 기반 Reward 평가                 |
@@ -223,6 +220,5 @@ casebank.add(vector, metadata={"score": score, "success": score > 0.75})
 * ✅ LangGraph 3-Agent Workflow (Supervisor / Researcher / Reporter)
 * ✅ VectorStore 기반 Memento Memory (성공·실패 경험 유사도 검색)
 * ✅ Reflect + Reward 기반 Self-Improvement Loop
-* ✅ PostgreSQL Persistent Layer + Embedding Memory Layer
 * ✅ 시간이 지날수록 연구 전략이 진화하는 LLM 에이전트
 

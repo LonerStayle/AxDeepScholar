@@ -1,0 +1,55 @@
+<page><text>Figure 3: A RAG-based GenAI worm propagates from u1 to u2 to u3.
+We note that the only challenging piece of text that the
+attacker needs to create an adversarial self-replicating prompt
+is the jailbreaking command (j) which ensures the GenAI
+model will follow the instructions provided for replication
+(r) and for conducting the malicious activity (m). Finding the
+text that will jailbreak a GenAI engine can be found over the
+Internet, as jailbreaking commands are extensively shared by
+users in personal blogs and forums (according to [10]).
+4.3
+Attack Steps
+Figure 3 presents the steps of unleashing a worm that tar-
+gets a GenAI ecosystem consisting of GenAI-powered email
+assistants which used to exfiltrate confidential user data.
+Initial Compromise. The attacker denoted as u1, initiates
+the worm by sending an email e1 containing an adversarial
+self-replicating prompt to a user denoted as u2. The user u2
+uses a GenAI-powered email client, c2 to receive the email.
+The attacker and u2 may exchange a few emails in response to
+the original email sent by the attacker (denoted as correspon-
+dence cr1). In the end, c2 stores cr1 (the new correspondence
+with u2) which contains e1 in the RAG’s database. Conse-
+quently, c2’s database is now contaminated with e1, a message
+containing the adversarial self-replicating prompt, marking
+the completion of the infection phase, transforming c2 into a
+new host of the worm.
+Propagation. We consider two ways that e1 could propa-
+gate from the database of c2 into a database of a new client: (1)
+Propagation via a generated draft for a new email. The user
+u2 uses its email client c2 (whose database is already con-
+taminated with e1) to generate a draft for a new email (a
+functionality which is based on a GenAI engine). u2 uses its
+email client c2 which instructs the GenAI engine to write an
+email from scratch in response to a subject or by instructing
+the GenAI engine to enrich the content of a given short draft.
+This functionality is supported in various GenAI email assis-
+tants including Copilot and Gemini for Google Workspace.
+The user u2 provides a subject for the email draft (e.g., Greet-
+ings for the Sales Department on New Account) or a short
+draft for the body of the email. Consequently, c2 utilizes the
+RAG to retrieve relevant correspondences from its database.
+The content of cr1 is found among the top-k most similar doc-
+uments to the subject/draft provided by user u2 and retrieved
+by the RAG (along with k −1 additional correspondences).
+c2 queries the GenAI engine to generate a draft for a new
+email based on the subject/draft that u2 provided and provides
+the relevant documents retrieved by the RAG. The adversar-
+ial self-replicating prompt in e1 causes the GenAI engine
+to perform a malicious activity according to the instruction
+provided by the attacker (e.g., to generate an email contain-
+ing confidential information about u2). The output from the
+GenAI engine with the adversarial self-replicating prompt is
+returned to c2 and used by u2 in the email he/she sends to u3.
+This contaminates c3 RAG’s database, transforming c3 into a
+8</text></page>

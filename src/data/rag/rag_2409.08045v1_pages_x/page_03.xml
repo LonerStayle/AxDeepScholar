@@ -1,0 +1,107 @@
+<page><text>capabilities of GenAI models by incorporating external knowl-
+edge sources in inference time as context for the generation
+process. This approach is motivated by the need to improve
+the accuracy and relevance of generated content, especially
+in complex or dynamic domains where the information may
+change frequently. The key components of a RAG-based in-
+ference system include (1) an embeddings algorithm (e.g.,
+MPNet [20]) used to compress the tokens of the data to a fixed
+size vector which optimizes the retrieval time, (2) a similarity
+function (e.g., cosine similarity) intended to provide a similar-
+ity score between two vectors of embeddings generated from
+a document and a query, and (3) a database (e.g., VectorDB)
+which stores the embeddings of the indexed documents.
+In inference time, RAG retrieves the most relevant docu-
+ments, d1,...dk, based on the similarity score to a user query
+q and uses an input prompt p to combine d1,...dk with q. For
+example, p = "Here is a query from the user: q. Use this
+context to answer it: d1,...dk". Finally, p is provided to the
+Generative AI engine for inference. RAG is commonly used
+in applications that require up-to-date information, personal-
+ized responses, or detailed knowledge.
+Related Work. The increasing integration of RAG into
+GenAI-powered applications attracted researchers to investi-
+gate the security and privacy of such applications. One line
+of research investigated attacks against the integrity of RAG-
+based inference, namely RAG poisoning attacks. These stud-
+ies explored the various outcomes that could be triggered
+by attackers given the ability to inject (i.e., insert) data into
+the database used by RAG-based GenAI-powered applica-
+tion including (1) backdooring an application, by causing
+it to generate a desired output for a given input [5, 6, 9],
+(2) compromising the integrity of an application, by caus-
+ing it to generate misinformation and disinformation [7], (3)
+compromising the availability of an application, by block-
+ing the retrieval of relevant information [8,9]. A second line
+of research investigated attacks against the confidentiality
+of RAG-based inference [2–4] divided into two categories:
+(1) membership-inference attacks [2, 3], i.e., validating the
+existence of a specific entity (e.g., a phone number) or a doc-
+ument in the database, and (2) entity extraction attacks [4]
+from the database of the RAG, i.e., extracting confidential
+entities (e.g., names, phone numbers, user addresses, emails,
+etc.) from the database. In a related topic to the RAG docu-
+ment extraction attack we present in this research, a few works
+investigated extraction of prompts from GenAI-powered appli-
+cations [21–24] and training data from ML models [25–27].
+Worms. A computer worm is a type of malware with the
+ability to propagate to new computers, often without requir-
+ing any user interaction. Computer worms have played a
+significant role in the evolution of cyber threats since their
+inception [28–31]. In recent decades, we witnessed a rapid
+proliferation of worms, with the first Internet worm, Morris
+Worm [32–34], in 1988 serving as a notable example that
+highlighted the potential for widespread damage. As tech-
+nology advanced, so did the sophistication of worms and the
+versatility of the target hosts, with notable instances like the
+ILOVEYOU worm [35,36] in 2000 that exploited the human
+factor, the Stuxnet [37–39] in 2010 worm that targeted in-
+dustrial control systems, Mirai [40] in 2016 that target IoT
+devices, and WannaCry [41–44] in 2017 that was used to
+demand ransom from end users.
+3
+RAG Documents Extraction Attack
+In this section, we investigate the risks posed by a jailbroken
+GenAI model to RAG-based GenAI-powered applications.
+We show that with the ability to jailbreak a GenAI model,
+attackers could escalate RAG membership inference attacks
+and RAG entity extraction attacks from the entity level (i.e.,
+extracting phone numbers, contacts, and addresses) to a docu-
+ment level, i.e., extract complete documents from the database
+used by a RAG-based GenAI-powered application.
+3.1
+Threat Model
+In this threat model, the attacker attempts to extract documents
+from the database used by the RAG of a GenAI-powered ap-
+plication using a series of queries via direct prompt injection.
+Targets. A RAG-based GenAI-powered application at risk
+of being targeted by an extraction attack via direct prompt
+injection is an application with the following characteristics:
+(1) receives user inputs: the application is capable of receiv-
+ing user inputs (which makes it vulnerable to direct prompt
+injection) (2) providing automatic feedback to the user: the
+GenAI application provides automatic RAG-based feedback
+to the user on his/her input, (3) allows multiple inferences:
+the GenAI application allows users to use it repeatedly. We
+note that many Q&amp;A chatbots satisfy the characteristics men-
+tioned above due to their nature of receiving questions from
+users and replying to them using RAG-based inference.
+Attacker Objective. We consider the attacker to be a mali-
+cious entity with the desire to extract data from the database
+used by RAG-based GenAI-powered applications. The at-
+tacker can be any user of a RAG-based Q&amp;A chatbot. The
+objective of the attacker can be to (1) embarrass or identify
+users based on information that exists in the extracted docu-
+ments, and (2) violate the intellectual property of a paid Q&amp;A
+chatbot (e.g., customer support, medical chatbots, legal au-
+tomation chatbots) by developing its paid application based
+on the data extracted from the database of the paid Q&amp;A
+chatbot.
+Attacker Capabilities. We assume the attacker knows the
+embeddings algorithm used to index the data in the RAG and
+has black-box access to the algorithm. We do not assume any
+prior knowledge of the distribution of the data stored in the
+database of the RAG-based GenAI-powered application.
+Significance. (1) Our threat model is lighter than RAG
+membership inference attacks [2,3] and RAG entity extraction
+3</text></page>

@@ -1,0 +1,53 @@
+<page><text>Published as a conference paper at ICLR 2025
+OpenAI. Chatgpt, 2023. URL https://openai.com/index/chatgpt/. Accessed: 2024-
+09-01.
+OpenAI, Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Floren-
+cia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, Red
+Avila, Igor Babuschkin, Suchir Balaji, Valerie Balcom, Paul Baltescu, Haiming Bao, Moham-
+mad Bavarian, Jeff Belgum, Irwan Bello, Jake Berdine, Gabriel Bernadett-Shapiro, Christopher
+Berner, Lenny Bogdonoff, Oleg Boiko, Madelaine Boyd, Anna-Luisa Brakman, Greg Brockman,
+Tim Brooks, Miles Brundage, Kevin Button, Trevor Cai, Rosie Campbell, et al. Gpt-4 technical
+report, 2024. URL https://arxiv.org/abs/2303.08774.
+Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong
+Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kel-
+ton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike,
+and Ryan Lowe. Training language models to follow instructions with human feedback, 2022.
+URL https://arxiv.org/abs/2203.02155.
+Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Dmytro Okhonko, Samuel Broscheit,
+Gautier Izacard, Patrick Lewis, Barlas O˘guz, Edouard Grave, Wen-tau Yih, et al.
+The
+web is your oyster-knowledge-intensive nlp against a very large web corpus.
+arXiv preprint
+arXiv:2112.09924, 2021.
+Ori Press, Andreas Hochlehnert, Ameya Prabhu, Vishaal Udandarao, Ofir Press, and Matthias
+Bethge. Citeme: Can language models accurately cite scientific claims?, 2024. URL https:
+//arxiv.org/abs/2407.12861.
+Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, and
+Chelsea Finn. Direct preference optimization: Your language model is secretly a reward model,
+2024a. URL https://arxiv.org/abs/2305.18290.
+Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea
+Finn. Direct preference optimization: Your language model is secretly a reward model. Advances
+in Neural Information Processing Systems, 36, 2024b.
+Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi
+Zhou, Wei Li, and Peter J Liu. Exploring the limits of transfer learning with a unified text-to-text
+transformer. Journal of machine learning research, 21(140):1–67, 2020.
+Hannah Rashkin, Vitaly Nikolaev, Matthew Lamm, Lora Aroyo, Michael Collins, Dipanjan Das,
+Slav Petrov, Gaurav Singh Tomar, Iulia Turc, and David Reitter. Measuring attribution in natural
+language generation models, 2022. URL https://arxiv.org/abs/2112.12870.
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. Proximal policy
+optimization algorithms, 2017. URL https://arxiv.org/abs/1707.06347.
+Freda Shi, Xinyun Chen, Kanishka Misra, Nathan Scales, David Dohan, Ed H. Chi, Nathanael
+Sch¨arli, and Denny Zhou. Large language models can be easily distracted by irrelevant context.
+In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and
+Jonathan Scarlett (eds.), Proceedings of the 40th International Conference on Machine Learning,
+volume 202 of Proceedings of Machine Learning Research, pp. 31210–31227. PMLR, 23–29 Jul
+2023. URL https://proceedings.mlr.press/v202/shi23a.html.
+Kurt Shuster, Spencer Poff, Moya Chen, Douwe Kiela, and Jason Weston. Retrieval augmentation
+reduces hallucination in conversation. arXiv preprint arXiv:2104.07567, 2021.
+Aviv Slobodkin, Eran Hirsch, Arie Cattan, Tal Schuster, and Ido Dagan. Attribute first, then gener-
+ate: Locally-attributable grounded text generation, 2024.
+Yixiao Song, Yekyung Kim, and Mohit Iyyer. Veriscore: Evaluating the factuality of verifiable
+claims in long-form text generation, 2024. URL https://arxiv.org/abs/2406.19276.
+Ivan Stelmakh, Yi Luan, Bhuwan Dhingra, and Ming-Wei Chang. Asqa: Factoid questions meet
+long-form answers, 2023. URL https://arxiv.org/abs/2204.06092.
+14</text></page>

@@ -1,0 +1,61 @@
+<page><text>Published as a conference paper at ICLR 2025
+Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha
+Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan, Anirudh Goyal, Anthony
+Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark,
+Arun Rao, Aston Zhang, Aurelien Rodriguez, Austen Gregerson, Ava Spataru, Baptiste Roziere,
+Bethany Biron, Binh Tang, Bobbie Chern, Charlotte Caucheteux, Chaya Nayak, Chloe Bi, Chris
+Marra, et al. The llama 3 herd of models, 2024. URL https://arxiv.org/abs/2407.
+21783.
+Angela Fan, Yacine Jernite, Ethan Perez, David Grangier, Jason Weston, and Michael Auli. Eli5:
+Long form question answering, 2019. URL https://arxiv.org/abs/1907.09190.
+Wenqi Fan, Yujuan Ding, Liangbo Ning, Shijie Wang, Hengyun Li, Dawei Yin, Tat-Seng Chua, and
+Qing Li. A survey on rag meeting llms: Towards retrieval-augmented large language models. In
+Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining,
+pp. 6491–6501, 2024.
+Luyu Gao, Zhuyun Dai, Panupong Pasupat, Anthony Chen, Arun Tejasvi Chaganty, Yicheng Fan,
+Vincent Zhao, Ni Lao, Hongrae Lee, Da-Cheng Juan, and Kelvin Guu. RARR: Researching
+and revising what language models say, using language models. In Anna Rogers, Jordan Boyd-
+Graber, and Naoaki Okazaki (eds.), Proceedings of the 61st Annual Meeting of the Association for
+Computational Linguistics (Volume 1: Long Papers), pp. 16477–16508, Toronto, Canada, July
+2023a. Association for Computational Linguistics. doi: 10.18653/v1/2023.acl-long.910. URL
+https://aclanthology.org/2023.acl-long.910.
+Tianyu Gao, Howard Yen, Jiatong Yu, and Danqi Chen. Enabling large language models to generate
+text with citations, 2023b.
+Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, and
+Haofen Wang.
+Retrieval-augmented generation for large language models: A survey.
+arXiv
+preprint arXiv:2312.10997, 2023c.
+Or Honovich, Roee Aharoni, Jonathan Herzig, Hagai Taitelbaum, Doron Kukliansy, Vered Cohen,
+Thomas Scialom, Idan Szpektor, Avinatan Hassidim, and Yossi Matias. TRUE: Re-evaluating
+factual consistency evaluation. In Song Feng, Hui Wan, Caixia Yuan, and Han Yu (eds.), Pro-
+ceedings of the Second DialDoc Workshop on Document-grounded Dialogue and Conversational
+Question Answering, pp. 161–175, Dublin, Ireland, May 2022. Association for Computational
+Linguistics.
+doi: 10.18653/v1/2022.dialdoc-1.19.
+URL https://aclanthology.org/
+2022.dialdoc-1.19.
+I-Hung Hsu, Zifeng Wang, Long T. Le, Lesly Miculicich, Nanyun Peng, Chen-Yu Lee, and Tomas
+Pfister. Calm: Contrasting large and small language models to verify grounded generation, 2024.
+URL https://arxiv.org/abs/2406.05365.
+Chengyu Huang, Zeqiu Wu, Yushi Hu, and Wenya Wang. Training language models to generate text
+with citations via fine-grained rewards, 2024a.
+Lei Huang, Xiaocheng Feng, Weitao Ma, Yuxuan Gu, Weihong Zhong, Xiachong Feng, Weijiang
+Yu, Weihua Peng, Duyu Tang, Dandan Tu, and Bing Qin. Learning fine-grained grounded cita-
+tions for attributed large language models. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar
+(eds.), Findings of the Association for Computational Linguistics ACL 2024, pp. 14095–14113,
+Bangkok, Thailand and virtual meeting, August 2024b. Association for Computational Linguis-
+tics. URL https://aclanthology.org/2024.findings-acl.838.
+Bin Ji, Huijun Liu, Mingzhe Du, and See-Kiong Ng.
+Chain-of-thought improves text genera-
+tion with citations in large language models.
+Proceedings of the AAAI Conference on Arti-
+ficial Intelligence, 38(16):18345–18353, Mar. 2024.
+doi: 10.1609/aaai.v38i16.29794.
+URL
+https://ojs.aaai.org/index.php/AAAI/article/view/29794.
+Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang,
+Andrea Madotto, and Pascale Fung. Survey of hallucination in natural language generation. ACM
+Computing Surveys, 55(12):1–38, March 2023. ISSN 1557-7341. doi: 10.1145/3571730. URL
+http://dx.doi.org/10.1145/3571730.
+12</text></page>

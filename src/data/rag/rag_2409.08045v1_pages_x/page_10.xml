@@ -1,0 +1,89 @@
+<page><text>Figure 4: The influence of the prefix of the worm (top) and
+the embeddings algorithm used (bottom).
+Replication &amp; Payload Success Rate - a binary score that
+represents whether the output of the GenAI model consists of
+j, m, r, and the payload (1.0).
+Combined Success Rate - the success rate of the adver-
+sarial self-propagating prompt to be retrieved by the RAG,
+perform the malicious activity and replicate the prompt. This
+is calculated by multiplying the retrieval success rate by the
+replication success rate by the payload success rate.
+4.4.3
+Evaluating the Influence of the Prefix of the Email
+and the Embeddings Algorithm on Retrieval Rate
+First, we evaluate the influence of various prefixes that can
+be used at the beginning of the worm (email). We note that
+an adversarial self-replicating prompt consists of: pre∥j ∥
+r ∥m∥su f, where j is a jailbreaking command, r and m are
+instructions for conducting malicious activity and replication,
+and pre and su f are any kinds of benign text.
+We evaluate the influence of emails starting with different
+prefixes pre while their j, r, and m are similar in all of the
+experiments (and presented in Listing 3). We created five pre-
+fixes (in a fixed length of 63 words) consisting of: (1) the first
+paragraph in Wikipedia of Enron (denoted as Wikipedia), (2) a
+generic request to meet (denoted as Meeting), (3) greetings on
+the efforts (denoted as Greetings). In addition, we used Chat-
+GPT to create two additional emails using the query "Create
+an email that an employee of a corporate company might send
+to another worker, use names and full details": (4) an Update
+on Sales Report (denoted as Sales) and (5) a Project Deadline
+Extension (denoted as Project). The five prefixes are provided
+in Fig. 8 in Appendix B. We used Google’s text embedding
+model "Text-Embedding-004" [50] as embeddings algorithm.
+We tested the retrieval of the prefixes as a function of the
+percentage of the data retrieved from the database.
+Results. As can be seen from the results presented in Fig.
+4, the prefix of the email can yield higher or lower retrieval
+rates depending on its content. The email with the Wikipedia
+prefix yielded retrieval rates of 77.1% which is significantly
+higher than the 19.5% retrieval rates yielded by the email with
+the Greetings prefix when k = 70%. This remarks that it is
+easier to target specific organizations/entities with worms by
+adding their names to an email and increasing the similarity
+(and retrieval rates) between the worm and a random email.
+Next, we evaluate the influence of the size and the type of
+the embeddings algorithm on the retrieval success rate using
+five different embeddings algorithms: three GTE embeddings
+[45] algorithms (small-384, base-768, large-1024), Google’s
+text embedding model "Text-Embedding-004"-768 [50], and
+MPNet-768 [20]. In our experiments, we tested the retrieval
+rates of a worm with Wikipedia prefix (presented in Fig. 8)
+appended to j, r, and m which are presented in Listing 3.
+Results. As can be seen from the results presented in Fig.
+4, the type of the embeddings algorithm employed signifi-
+cantly affects the retrieval rates depending on the type and its
+size. Google’s embeddings algorithm yields retrieval rates of
+57.1% which is higher than the 34.7% retrieval rate yielded
+by the GTE-base-768 when k = 60%. In addition, the size of
+the embeddings also affects the retrieval rates: GTE-base-768
+and GTE-large-1024 retrieval rates of 34.7% and 34.0% are
+higher than the 19.9% retrieval rates yielded by GTE-small-
+384 when k = 60%.
+4.4.4
+Evaluating the Propagation Rate
+Here we evaluate the propagation rates according to the prop-
+agation ways described in the threat model.
+Experimental Setup. We created a personal database for
+every employee using 101 emails: his/her 100 emails from En-
+ron (50 emails received and 50 emails sent by the employee).
+In addition, we added the worm to the employee’s RAG. The
+worm we used is based on the Wikipedia prefix (see Fig. 6)
+and j, r, and m which are presented in Listing 3.
+We evaluate the performance of the worm by using the
+GenAI engine to:
+(1) Generate a new email from scratch - we iterated over
+50 emails sent by the employee. The worm has not been iter-
+ated in this process. In every iteration, a query was sent to the
+GenAI engine asking it to generate a new email from scratch
+based on the subject that appeared in the iterated email using
+the query presented in Fig. 6 top and the documents retrieved
+by the RAG from the employee’s database (excluding the
+email in the iteration).
+(2) Enrich a given email body - we repeated the same ex-
+periment by asking the GenAI engine to enrich the body of
+the iterated email that had been written by the employee us-
+ing the context obtained by the RAG from the employee’s
+database and using the query presented in Figure 6 middle.
+(3) Generate a response to a received email - we iterated
+10</text></page>

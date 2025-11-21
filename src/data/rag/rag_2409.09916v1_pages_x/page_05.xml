@@ -1,0 +1,55 @@
+<page><text>contributions that make ContextualBench stand out as a comprehensive benchmarking framework for
+contextual LLMs:
+• The measures in ContextualBench are evaluated under the same instruction with contextual contents
+being consistently specified. The contextual contents include the original context documents of
+each benchmark if provided, or otherwise they are retrieved from a much larger Wikipedia database
+with an embedding model of choice.
+• As it is not trivial to evaluate assistant-style LLMs with a wide range of verbosity in the generated
+output, ContextualBench offers multiple scoring methods to account for variations in answers
+compared to the ground truths. These scoring methods are (i) Exact Match (EM) of the generated
+answer with the ground truth, (ii) Easy match (EasyM) to check if the ground truth is in the
+generated answer, and (iii) the F1 score, with room for further addition. The Appendix provides
+the complete results for all of these metrics.
+• ContextualBench offers multiple setups common in the RAG scenarios, among which is whether to
+retrieve top-k chunks using consistent embedding models or feed the entire available contextual
+documents directly to the LLM (no retrieval needed).
+The variety of measures and tasks in ContextualBench enables both holistic and specific evaluation
+of contextual LLMs. By weighing each task and measure equally, ContextualBench allows for
+direct comparison of model performance in general. On the other hand, depending on practitioner
+use-case and domain specifications, certain measures or datasets may be prioritized, allowing for
+quick identification of the best task-specific models.
+Dataset Specific Settings.
+For 2WikiHopQA, HotpotQA and Musique, the context documents are
+already provided for each question, so we use them directly as contextual sources. For TriviaQA,
+TruthfulQA, and NQ, the questions come with their respective Wikipedia article or source URL. We
+scraped the web content from these sources and used Cohere embedding [35] to retrieve top-10 chunks
+from the contextual sources where each chunk is 512 tokens long. Meanwhile, PopQA itself does not
+come with context documents, so we make use of the off-the-shelf context documents produced by
+the Self-RAG retriever [1]. For each task, we use the test set if they are complete with gold labels,
+otherwise we use the entire validation set to measure models’ performance. This is different from
+Command-R’s report [36], where HotpotQA evaluation was conducted on a 100-sample subset of
+validation set, with no details about the context documents disclosed.
+Note that ContextualBench contains popular existing benchmarks, such as TriviaQA and TruthfulQA,
+where evaluation utilizes certain contexts to which models are expected to be faithful. That is,
+models are expected to utilize only the information found in such contexts, in contrast to traditional
+closed-book QA settings, where the parametric knowledge of LLMs are evaluated sans provided
+contexts. In other words, the presence of these contexts may cause the scores to differ significantly.
+3.2
+Experimental Results on ContextualBench
+Table 1 compares the performance of our 9B SFR-RAG model on ContextualBench against state-
+of-the-art large models as well as comparable ones across the 7 question answering tasks. PopQA
+scores are measured in easy matching, while the remaining are measured in exact matching. As
+shown, GPT-4o [30] unsurprisingly aces most of the benchmarks. However, given its small size, our
+SFR-RAG-9B model significantly outperforms strong open-source baselines such as Command-R
+and Command-R+ that have up to 10 times larger parameter counts. Remarkably, it achieves the
+state of the art in TruthfulQA, 2WikihopQA and HotpotQA in contextual settings. Overall, it also
+achieves the state of the art average performance, demonstrating our model’s strong ability across
+many contextual tasks. In particular, our model excels at 2WikiHopQA, with nearly a 25% increase
+in performance compared to GPT-4o. Meanwhile, our 9B model consistently outperforms Llama-3.1
+8B Instruct and gemma-2-9b-it across most benchmarks.
+3.3
+Resilience to Unanswerable, Conflicting and Counterfactual Contexts
+Because most QA benchmarks are realistically based on real-world facts, understanding LLMs
+performance in contextual QA tasks may be ambiguous because high scores may be attributed to
+either (i) the ability to seek accurate facts from the contextual documents and content, or (ii) the
+5</text></page>

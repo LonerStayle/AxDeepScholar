@@ -1,0 +1,59 @@
+<page><text>arXiv Template
+A PREPRINT
+• Reduction in Model Hallucination: Data augmented LLM applications generate responses based on real
+data, grounding their reactions in facts and significantly minimizing the possibility of hallucinations.
+• Improved Controllability and Explainability: The data used can serve as a reference for the model’s
+predictions, enhancing both controllability and explainability.
+Despite the enthusiasm for these advancements, developers often struggle and have to invest a significant amount
+of human labor to meet its expectations (e.g., achieving a high success rate in question answering). Numerous
+studies [1, 2, 3, 4, 5] highlight the challenges and frustrations involved in constructing a data augmented LLM
+applications based on technologies like RAG and fine-tuning, particularly in specialized domains such as the legal field,
+healthcare, manufacturing, and others.
+These challenges span a wide range, from constructing data pipelines (e.g., data processing and indexing) to leveraging
+LLMs’ capabilities to achieve complex intelligent reasoning. For example, in applications of finance, there is a frequent
+need to understand and utilize high-dimensional time series data, whereas in healthcare, medical images or time-series
+medical records are often essential. Enabling LLMs to comprehend these varied forms of data represents a recurring
+challenge. On the other hand, in legal and mathematical applications, LLMs typically struggle to grasp long-distance
+dependencies between different structures. Additionally, depending on the specific application domain, there are
+increased demands for the interpretability and consistency of LLM responses. The inherent nature of LLMs tends
+to be characterized by low interpretability and high uncertainty, which poses significant challenges. Enhancing the
+transparency of LLMs and reducing their uncertainty are critical for increasing trust and reliability in their outputs,
+especially in fields where precision and accountability are paramount.
+Through extensive discussions with domain experts and developers, and by carefully analyzing the challenges they
+face, we have gained a deep understanding that data augmented LLM applicationsis not a one-size-fits-all solution. The
+real-world demands, particularly in expert domains, are highly complex and can vary significantly in their relationship
+with given data and the reasoning difficulties they require. However, developers often do not realize these distinctions
+and end up with a solution full of performance pitfalls (akin to a house with leaks everywhere). In contrast, if we could
+fully understand the demands at different levels and their unique challenges, we could build applications accordingly
+and make the application steadily improve (like constructing a solid and reliable house step by step).
+Yet, research efforts and existing relevant surveys [6, 7, 8, 9, 10, 11, 12, 13] frequently focus on only one of these
+levels or a particular topic of technologies. This has motivated us to compile this comprehensive survey, which aims to
+clearly define these different levels of queries, identify the unique challenges associated with each(Figure 1) , and list
+related works and efforts addressing them. This survey is intended to help readers construct a bird’s-eye view of data
+augmented LLM applications and also serve as a handbook on how to approach the development of such applications
+systematically.
+2
+Problem Definition
+Data-augmented LLM applications can take many forms, ranging from the frequently seen Question-Answering bots
+based on domain-specific data, to semantic processing operators within complex data pipelines, or even agents handling
+specific steps in a multi-agent system. However, in general, a data-augmented LLM application can be formulated as
+follows:
+f : Q
+D
+−→A
+(1)
+where Q, A, and D represent the user’s input (Query), the expected response (Answer), and the given data, respectively.
+The task of the application f is to establish the mapping from Q to A based on D.
+In contrast to standalone LLM systems that rely solely on pre-existing knowledge, data augmented LLM applications
+are characterized by their reliance on external data (D) to accurately address the posed queries (Q). The incorporation of
+external data D can significantly bolster the capabilities of LLMs, granting them the ability to tap into current, domain-
+specific knowledge and to understand expert rationales. Queries can be stratified into various levels of complexity based
+on the extent and manner in which they utilize external data, reflecting the depth and nature of engagement required by
+the queries.
+2.1
+Stratification of Queries
+In the landscape of data-augmented LLM applications, queries can be stratified based on their complexity and the depth
+of data interaction required. This stratification helps in understanding the varying levels of cognitive processing that an
+LLM must perform to generate accurate and relevant responses. From straightforward fact retrieval to the nuanced
+interpretation of implicit knowledge, each level represents a step up in the sophistication of the tasks that LLMs are
+2</text></page>

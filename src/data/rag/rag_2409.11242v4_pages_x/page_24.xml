@@ -1,0 +1,85 @@
+<page><text>Published as a conference paper at ICLR 2025
+6384
+27
+65
+1458
+1698
+2864
+6636
+Inaccurate Answer
+Improper Citation
+Overcitation
+Overlap of Inaccurate Answer, Improper Citation, Overcitation Errors in Augmented Set 
+ (# of hallucinations in these three categories = 19132, # Over Responsiveness hallucinations = 13067, 
+ # Excessive Refusal hallucinations = 8786, # of samples with no error: 28518, Total # of samples = 69503)
+Figure 5: Statistics of hallucinations from the output of LLaMA-2-7b SFT model prompted using
+70K (q, D) samples obtained in Step-2 of TRUST-ALIGN.
+F
+ADDITIONAL ANALYSIS
+F.1
+REVISED METRICS ARE LESS BIASED
+L-2-7b
+EM reg
+L-2-7b
+EM calib
+L-3-8b
+EM reg
+L-3-8b
+EM calib
+L-3.2-1b
+EM reg
+L-3.2-1b
+EM calib
+L-3.2-3b
+EM reg
+L-3.2-3b
+EM calib
+P-3.5-
+mini EM
+reg
+P-3.5-
+mini EM
+calib
+Q-2.5-
+0.5b EM
+reg
+Q-2.5-
+0.5b EM
+calib
+Q-2.5-
+1.5b EM
+reg
+Q-2.5-
+1.5b EM
+calib
+Q-2.5-3b
+EM reg
+Q-2.5-3b
+EM calib
+Q-2.5-7b
+EM reg
+Q-2.5-7b
+EM calib
+Models
+0
+10
+20
+30
+40
+50
+60
+EM Score
+DPO
+Baseline
+Figure 6: Comparison of AC regular and AC calibrated (F1AC) across models on ASQA. EM regu-
+lar/calibrated is synonymous with AC regular/calibrated.
+Fig. 6 shows the performance of our models on EM regular and EM calibrated. In ASQA, our
+measure of Answer Correctness (AC) was Exact Match (EM) and thus EM regular/calibrated is
+synonymous with AC regular/calibrated. As seen across the models, AC regular tends to unduly
+penalize our models for refusals, resulting in baselines performing disproportionately better than
+our models. By measuring AC on both the answerable and answered set for F1AC, we arrive at an
+AC metric that is more fair in the presence of refusals. By correcting for the bias toward answering at
+all costs, we are able to reveal more balanced perspective on model performance as demonstrated by
+a reduction in the performance gap (e.g. in LLaMA-2-7b, LLaMA-3-8b, LLaMA-3.2-1b, LLaMA-
+3.2-3b) or even revealing our model’s stronger performance as compared to baseline (e.g. Phi-3.5
+24</text></page>

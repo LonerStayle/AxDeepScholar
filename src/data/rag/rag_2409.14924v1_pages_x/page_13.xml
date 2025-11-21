@@ -1,0 +1,52 @@
+<page><text>arXiv Template
+A PREPRINT
+accuracy of LLM responses. Another innovative strategy, Directional Stimulus Prompting, leverages the performance
+of LLMs on downstream tasks as a reward mechanism. This method trains models to extract and utilize directional
+stimuli—specific cues or keywords tailored to individual instances—as prompts, thereby ensuring the LLMs’ actions
+align more closely with expected outcomes.
+Additionally, for optimization within discrete prompt spaces, edit-based methodologies such as GrIPS [117] are
+utilized. This technique involves using a small dataset as a scoring set to experiment with various prompt modifica-
+tions—including deletions, swaps, paraphrases, and additions—to ascertain the most effective prompt configurations
+swiftly and effectively.
+Recent advancements [118, 119] have also seen the rise of using LLMs themselves to facilitate prompt optimization.
+OPRO [120] employs an LLM both to generate new prompt solutions based on historical data and their associated
+performance metrics and to score these prompts, thus streamlining the optimization process. Furthermore, the Reflexion
+framework [121] introduces a novel prompt optimization approach based on linguistic feedback, using a language
+model to analyze and store reflections on LLM outputs in an episodic memory buffer. This memory component aids in
+refining decision-making processes and evaluating outcomes in future interactions, leveraging accumulated historical
+insights.
+5.4
+CoT Prompting
+Addressing complex rationales necessitates that LLMs engage in extended chains of reasoning, a process distinct
+from the reasoning across disparate factual information typical of fact queries. However, Chain-of-Thoughts [122],
+Tree-of-Thoughts [123] or Graph-of-Thoughts [124] methodologies proves effective for such scenarios. For issues that
+are well-studied and have high general applicability, manually designing CoT prompts emerges as a feasible solution. Ji
+et al. (2023) [125] proposed a method of self-reflection that integrates knowledge acquisition with answer generation.
+By utilizing external tools and designing prompts, they constructed three types of self-reflection loops: the Factual
+Knowledge Acquiring Loop, the Knowledge-Consistent Answering Loop, and the Question-Entailment Answering
+Loop, thereby incorporating external rationales into the model’s processing. Furthermore, Wu et al. (2024) [126]
+conducted a manual analysis of error types in clinical records and developed three distinct CoT prompts to direct the
+GPT-4 model [127] in focusing on intervention, diagnostic, and management errors. This targeted prompting facilitates
+the tasks of automatic error detection, span identification, and correction within clinical records.
+While manual design of CoT prompts is highly effective, it requires substantial human and temporal resources. To
+mitigate these costs, Automate-CoT [128] proposed a technique for generating augmenting rational chains from a
+minimally labeled dataset. This approach employs a variance-reduced policy gradient strategy to evaluate the importance
+of each CoT chain, thus facilitating the selection of the most effective prompt combination.
+Another form of utilizing Chain of Thoughts prompting involves constructing an agent workflow centered around
+LLMs. This typically requires the development of a more comprehensive system to address various real-world
+scenarios. According to Wang et al., such systems can be broadly divided into profiling, memory, planning, and
+action modules [129]. Interpretable rationales can be integrated into multiple modules in various forms, allowing the
+agent to adapt and iterate based on environmental or human feedback. Recent advancements, such as those by LLM
+Reasoners [130] and SocREval [131], have focused on automatically evaluating the quality of reasoning chains. These
+methodologies also assist in constructing robust data augmented LLM applications.
+Applications based on interpretable rationales span various domains. For instance, CoML [132] integrates AutoML
+knowledge as prompts into an LLM, dynamically retrieves useful information from historical experimental records, and
+combines these elements to empower the LLM to develop machine learning solutions for novel tasks. MetaGPT [133]
+has developed a multi-agent system for software development, where different stakeholders within a project are each
+represented as an agent. This setup enables multiple agents to collaborate according to a real-world work pipeline,
+effectively completing software development tasks. Similarly, sophisticated agent systems have been designed in fields
+such as customer service [134] and medical question answering [135]. In these domains, agents are tailored to handle
+specific types of inquiries, which can involve understanding complex user requests or providing accurate medical
+information. These systems not only enhance the interaction quality but also improve the efficiency and accuracy of
+responses, demonstrating the versatility and potential of LLMs when integrated into well-designed agent workflows.
+13</text></page>

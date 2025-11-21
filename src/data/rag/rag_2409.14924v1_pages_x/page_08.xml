@@ -1,0 +1,36 @@
+<page><text>arXiv Template
+A PREPRINT
+Figure 3: Three Types of Query-Document Alignment
+adapter to refine the output of retriever[80]. Additionally, some research focuses on pre-training a small language model
+dedicated to fact verification, which is used to filter out incorrect retrieved text chunks, thus improving the quality of
+the recalled text[81].
+Recursive Retrieval or Iterative Retrieval Considering the inherent limitations in the accuracy of a single retrieval
+attempt, an effective mitigation strategy is to perform multiple retrievals to progressively address any omissions. Kim et
+al. (2023) introduced a tree-like recursive retrieval method, incorporating pruning strategies to incrementally break
+down ambiguous questions into disambiguated ones, ultimately arriving at the closest correct answer [82]. Similarly,
+SEATER uses the k-means algorithm to construct a hierarchical tree structure of items to be retrieved, and iteratively
+recalls nodes within the tree structure [83].
+3.3.3
+Response Generation Enhancement
+Generating responses requires determining if the retrieved information is sufficient or if additional external data is
+needed. Handling conflicts between retrieved knowledge and the model’s internal prior knowledge is also essential
+[84, 85, 86]. Supervised fine-tuning is an effective method to enhance the generation performance in RAG systems.
+When faced with irrelevant or erroneous information as the retrieved context, pre-trained large language models are
+often easily misled, resulting in incorrect responses. Many studies have shown that by subtly designing training data
+for RAG systems, fine-tuning or pretraining can effectively mitigate this issue [87, 88, 89]. Through experimental
+analysis, RAAT [89], demonstrated that the detrimental effects of irrelevant retrieval noise, relevant retrieval noise, and
+counterfactual retrieval noise on RAG models increase progressively. By incorporating with these training process,
+these methods enables the LLM to internally recognize noisy contexts, leading to significant improvements in response
+generation quality even in the presence of noisy retrievals. Furthermore, to ensure more consistent performance between
+the retriever and generator within the RAG system, some studies employ joint training of both retriever and generator
+during the training phase [90, 91, 92].
+4
+Implicit Fact Queries (L2)
+4.1
+Overview
+These queries involve data dependencies that are not immediately obvious and may require some level of common
+sense reasoning or basic logical deductions. The necessary information might be spread across multiple segments or
+require simple inferencing. (Example in Figure 2)
+Queries at this level require gathering and processing information from multiple documents within the collection. The
+collection of required information may exceed the ability of a single retrieval request, necessitating the decomposition
+8</text></page>

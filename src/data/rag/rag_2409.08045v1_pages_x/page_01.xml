@@ -1,0 +1,83 @@
+<page><text>Unleashing Worms and Extracting Data: Escalating the Outcome of Attacks against
+RAG-based Inference in Scale and Severity Using Jailbreaking
+Stav Cohen, Ron Bitton, Ben Nassi
+cohnstav@campus.technion.ac.il, ron_bitton@intuit.com, nassiben@technion.ac.il, bn267@cornell.edu
+Technion - Israel Institute of Technology, Intuit, Cornell Tech
+Abstract
+In this paper, we show that with the ability to jailbreak a
+GenAI model, attackers can escalate the outcome of attacks
+against RAG-based GenAI-powered applications in severity
+and scale. In the first part of the paper, we show that attackers
+can escalate RAG membership inference attacks and RAG
+entity extraction attacks to RAG documents extraction at-
+tacks, forcing a more severe outcome compared to existing
+attacks. We evaluate the results obtained from three extrac-
+tion methods, the influence of the type and the size of five
+embeddings algorithms employed, the size of the provided
+context, and the GenAI engine. We show that attackers can
+extract 80%-99.8% of the data stored in the database used by
+the RAG of a Q&amp;A chatbot. In the second part of the paper,
+we show that attackers can escalate the scale of RAG data poi-
+soning attacks from compromising a single GenAI-powered
+application to compromising the entire GenAI ecosystem,
+forcing a greater scale of damage. This is done by crafting
+an adversarial self-replicating prompt that triggers a chain
+reaction of a computer worm within the ecosystem and forces
+each affected application to perform a malicious activity and
+compromise the RAG of additional applications. We evaluate
+the performance of the worm in creating a chain of confiden-
+tial data extraction about users within a GenAI ecosystem of
+GenAI-powered email assistants and analyze how the perfor-
+mance of the worm is affected by the size of the context, the
+adversarial self-replicating prompt used, the type and size of
+the embeddings algorithm employed, and the number of hops
+in the propagation. Finally, we review and analyze guardrails
+to protect RAG-based inference and discuss the tradeoffs.
+1
+Introduction
+Generative Artificial Intelligence (GenAI) represents a signifi-
+cant advancement in artificial intelligence, noted for its ability
+to produce textual content. However, GenAI models often
+face challenges in generating accurate, up-to-date, and con-
+textually relevant information, especially when the relevant
+information is not part of their training data. To address this,
+Retrieval-Augmented Generation (RAG) [1] is typically inte-
+grated into the inference process, allowing the GenAI model
+to access external knowledge sources relevant to the query.
+This integration greatly enhances the accuracy and reliability
+of the generated content, reduces the risk of hallucinations,
+and ensures the alignment of the content with the most re-
+cent information. Consequently, RAG is commonly integrated
+into GenAI-powered applications requiring personalized and
+up-to-date information (e.g., personal user assistants) and spe-
+cialized knowledge areas (e.g., customer service chatbots).
+Due to its popular use, researchers started investigating the
+security and privacy of RAG-based inference. Various tech-
+niques have been demonstrated in studies to conduct RAG
+membership inference attacks (e.g., to validate the existence
+of specific documents in the database used by RAG [2, 3]),
+RAG entity extraction attacks (e.g., to extract Personal Identi-
+fiable Information from the database used by the RAG [4]),
+and RAG poisoning attacks (e.g., for backdooring, i.e., gen-
+erating a desired output for a given input [5, 6], generating
+misinformation and disinformation [7], blocking relevant in-
+formation [8,9]). These methods shed light on the risks posed
+by user inputs to RAG-based inference. However, with the
+ability to provide user inputs to RAG-based GenAI-powered
+applications, attackers can also jailbreak the GenAI model
+using various techniques (e.g., [10–16]). Therefore, to fully
+understand the risks associated with RAG-based inference,
+we must explore the risks posed by a jailbroken GenAI model.
+In this paper, we explore the risks posed to RAG-based
+GenAI-powered applications when interfacing with GenAI
+models that were jailbroken through direct or indirect prompt
+injection. In the first part of the paper, we explore the risks
+posed by a jailbroken model to a single GenAI-powered ap-
+plication. We show that with the ability to jailbreak a GenAI
+model, attackers can escalate RAG membership inference
+attacks [2,3] and RAG entity extraction attacks [4] to RAG
+documents extraction attack, forcing a more severe outcome.
+By doing so, attackers could escalate entity-level extraction
+(e.g., phone numbers, emails, names) [4] to document-level ex-
+1
+arXiv:2409.08045v1  [cs.CR]  12 Sep 2024</text></page>

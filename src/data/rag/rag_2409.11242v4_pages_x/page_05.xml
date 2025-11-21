@@ -1,0 +1,174 @@
+<page><text>Published as a conference paper at ICLR 2025
+Responsiveness.
+To measure the answering tendency of an LLM, we define Responsiveness. It is
+the fraction of answered questions, denoted by the Answered Ratio (AR %), which is calculated as
+AR % =
+|Ar|
+|Ag|+|¬Ag|. |Ar|, |Ag|, and |¬Ag| are the number of answered, answerable, and unanswer-
+able questions respectively. A model is expected to show a high AR% for answerable questions and
+a low AR% for unanswerable ones, with the scores expected to align with the dataset distribution.
+Top-100
+documents
+Filter top ~3k
+knowledge
+intensive
+questions
+Seed Prompt Curation
+Augmented Prompt Curation
+Question
+Top-100
+Docs
+Combination
+of 5 docs
+Question
+Combination
+of 5 docs
+Question
+3
+70k
+Questions
+Documents
+Aug. Set
+Find different
+sets of 5 docs
+covering
+distinct subset
+of claims
+...
+ASQA
+ELI5
+QAMPARI
+Questions
+Gold claim 1
+Gold claim 2
+Gold claim 3
+Answerability Labelling
+Doc 1
+[1,1,0]
+Doc 2
+[1,1,0]
+Doc 3
+[1,0,0]
+Doc 4
+[1,0,0]
+Doc 5
+[0,0,0]
+[1,1,0]
+Union
+Answerable
+2
+Matt Prater
+(Gold Claim 2)
+Positive Answer Generation
+LLaMA-2-7b
+70k
+Responses
+Alignment
+DPO-
+LLaMA
+Negative Answer Generation
+Trainable
+Parameters
+Frozen
+Parameters
+Seed Set
+Augmented
+Set
+Document
+Ove Johansson
+(Gold Claim 1)
+1
+4
+5
+6
+Questions
+Documents
+Seed Set
+Retrieve top 100
+docs using
+Wikipedia,
+Sphere
+GPT-4
+synthesizer
+... Matt Prater at 64 yards
+[Gold Claim 2], ... Ove
+Johansson in a 1976
+... [Gold Claim 1].
+... Matt Prater at 64
+yards [1][3], ... Ove
+Johansson in a 1976
+...[2][4].
+Answerable Questions
+Unanswerable Questions Positive Answer: “I apologize, but I couldn't find an answer to your question in the search results.”
+Supervised Finetuning 
+SFT
+Calculate
+Hallucination
+Score
+Filter
+top-50%
+Direct Preference
+Optimization
+Inference
+10k
+Positive Answer (r  )
++
+Questions
+Oracle Docs
+Positive Ans
+Seed Set
+Aug. Set
+Questions
+Set of 5 Docs
+Negative
+Answer (r  )
+-
+19k
+Questions
+Set of  5 Documents
+Positive Answer
+ Negative Answer
+Aug. Set
+Only 40k have 
+~19k
+Use TRUE NLI to check if doc
+supports gold claim
+Repeat for k=5 docs
+Doc 1
+x7
+Greedily find
+the smallest
+subset of
+documents
+that support
+claim using
+TRUE NLI
+Figure 2: Overview of the TRUST-ALIGN. Left: The curation of both seed and augmented prompts (Q-
+D pairs) and an example of the answerability labeling process during the retrieval stage. Right: The response
+paired data generation process. First, we obtain positive answers and then select hard negative answers. Finally,
+we align our model via DPO.
+4
+THE TRUST-ALIGN DATASET
+To align LLMs towards trustworthiness, we propose a new approach, TRUST-ALIGN. The approach
+constructs an LLM trustworthiness alignment dataset, where each sample in the dataset consists of
+a question q, a set of retrieved documents D, and a pair of positive (preferred) and negative (un-
+preferred) responses (r+, r−). The positive response corresponds to an answer that encompasses
+expected gold claims for q and corresponding citations referring to the documents. If D is not suf-
+ficient to answer q, r+ is assigned a refusal response, while r−is its non-refusal counterpart. We
+build the dataset in multiple steps: 1) Obtain a set of high-quality and diverse questions, 2) Obtain
+documents for each question, 3) Augmenting (q, D) pairs that cover diverse hallucination types,
+4) Construct positive responses entailing gold claims, and 5) Construct negative (unpreferred) re-
+sponses by prompting a fine-tuned model and observing its hallucinations. We relegate fine-grained
+details about the dataset to Figure 2 and Appendix E.
+Collecting quality questions.
+The dataset construction begins by collecting a set of high-quality
+and diverse questions from the training splits of ASQA, QAMPARI, and ELI5, referred to as seed
+samples. We first divide the questions into k clusters and use Mixtral-8x7B to assign each a quality
+score from 1 to 7, based on how difficult they are to answer without additional information. Clusters
+with scores of 4 or higher are selected. Next, we sample questions from the clusters of each dataset
+to construct approximately 10K questions in the seed set.
+Collecting D’s.
+Next, we collect relevant documents for each question in the seed set by querying
+Wikipedia and Common Crawl, retrieving the top 100 documents. We filter out seed questions where
+relevant documents are not retrieved. We then identify 5 documents that perform as well as the full
+5</text></page>

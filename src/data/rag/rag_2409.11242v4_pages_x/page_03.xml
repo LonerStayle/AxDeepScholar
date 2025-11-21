@@ -1,0 +1,59 @@
+<page><text>Published as a conference paper at ICLR 2025
+2
+PROBLEM DESCRIPTION
+2.1
+TASK SETUP
+Given a question q and a set of retrieved documents D as input, the LLM is instructed to generate
+a response S which consists of a set of citation-grounded statements {s1, . . . , sn}; each statement
+si follows a set of inline citations Ci = {ci,1, ci,2, . . .} referring to the documents in D. If D is not
+sufficient to answer q, the gold response would be a refusal statement1, such as, “I apologize, but
+I couldn’t find an answer to your question in the search results”. Otherwise, the response would
+follow the pattern: “statement1 [1][2] statement2 [3]” where [1][2] and [3] denote the enumeration
+of documents that supports each statement respectively.
+Trust-Score
+Response Truthfulness
+Attribution Groundedness
+Grounded Refusals (F1      )
+GR
+Answer Correctness (F1      )
+AC
+Grounded Citations (F1      )
+GC
+Set of answered questions
+(statements only, no citations /
+citations only, no statements)
+Set of answered questions
+Set of answerable questions
+Number of elements in the set
+/
+Statement and
+corresponding citations
+Answer correctness for question
+Citation recall for statement
+Citation precision for citation
+Figure 1: TRUST-SCORE calculation shown as a computational graph.
+2.2
+ON ANSWERABILITY OF A QUESTION
+To label if a response should be a refusal or consist of claims, we define the notion of answerability.
+A question q is considered answerable if D contains sufficient information to answer q. Formally,
+we label a question as answerable if a subset of the retrieved documents entails at least one of
+the gold claims; otherwise, q is unanswerable and thus should result in a ground truth refusal. A
+refusal response contains no claims or citations but provides a generic message conveying the LLM’s
+inability to respond to q.
+2.3
+HALLUCINATION IN LLM IN RAG
+We define an LLM’s response as grounded when it correctly answers a question using only the
+information in the documents, and the response can be inferred from the inline citations to those
+documents. When a response is not grounded, it is considered a case of hallucination. We define
+hallucination as an erroneous LLM response, categorized into five types: (1) Inaccurate Answer –
+The generated statements S fail to cover the claims in the gold response, (2) Over-Responsiveness
+– The model answers a question that should result in a refusal, (3) Excessive Refusal – The model
+refuses to answer a question that is answerable, (4) Overcitation – The model generates redundant
+citations, and (5) Improper Citation – The citations provided do not support the statement. Next, we
+introduce a comprehensive metric to concretely measure hallucinations in LLMs, i.e., to assess an
+LLM’s groundedness or trustworthiness2.
+1There are many applications where LLM parametric knowledge use is expected and retrieved documents
+serve to improve the LLM’s response. However, in this paper we study the problem of complete grounded-
+ness—i.e., all claims should be documents derivable, making this an IR task.
+2In this paper, we use LLM groundedness and trustworthiness interchangeably in the context of RAG.
+3</text></page>

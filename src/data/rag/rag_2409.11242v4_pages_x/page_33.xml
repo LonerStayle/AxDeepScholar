@@ -1,0 +1,11 @@
+<page><text>Published as a conference paper at ICLR 2025
+making detection more challenging. Two human annotators verified that fuzzy matching yielded
+poor performance Table 18. Hence, GPT-4o was employed as an evaluator to classify whether an
+answer should be considered a refusal. The specific prompt used is provided in Table 27.
+I
+DETAILED RESULTS
+Table 19, Table 20, Table 21 and Table 22 show the full results of our experiments.
+J
+PROMPT TEMPLATES
+Table 23, Table 24, Table 25, Table 26 and Table 27 show the prompts used in our experiments.
+33</text></page>

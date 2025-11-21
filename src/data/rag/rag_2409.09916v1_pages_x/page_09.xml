@@ -1,0 +1,55 @@
+<page><text>[13] Xanh Ho, Anh-Khoa Duong Nguyen, Saku Sugawara, and Akiko Aizawa. Constructing
+a multi-hop QA dataset for comprehensive evaluation of reasoning steps. In Donia Scott,
+Nuria Bel, and Chengqing Zong, editors, Proceedings of the 28th International Conference
+on Computational Linguistics, pages 6609–6625, Barcelona, Spain (Online), December 2020.
+International Committee on Computational Linguistics. doi: 10.18653/v1/2020.coling-main.580.
+URL https://aclanthology.org/2020.coling-main.580.
+[14] Albert Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh
+Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile
+Saulnier, et al. Mistral 7b. arXiv preprint arXiv:2310.06825, 2023.
+[15] Mandar Joshi, Eunsol Choi, Daniel S Weld, and Luke Zettlemoyer.
+Triviaqa: A large
+scale distantly supervised challenge dataset for reading comprehension.
+arXiv preprint
+arXiv:1705.03551, 2017.
+[16] Zixuan Ke, Weize Kong, Cheng Li, Mingyang Zhang, Qiaozhu Mei, and Michael Bendersky.
+Bridging the preference gap between retrievers and llms. arXiv preprint arXiv:2401.06954,
+2024.
+[17] Aniruddha Kembhavi, Minjoon Seo, Dustin Schwenk, Jonghyun Choi, Ali Farhadi, and
+Hannaneh Hajishirzi. Are you smarter than a sixth grader? textbook question answering
+for multimodal machine comprehension. In Proceedings of the IEEE Conference on Computer
+Vision and Pattern recognition, pages 4999–5007, 2017.
+[18] Tom Kwiatkowski, Jennimaria Palomaki, Olivia Redfield, Michael Collins, Ankur Parikh, Chris
+Alberti, Danielle Epstein, Illia Polosukhin, Jacob Devlin, Kenton Lee, et al. Natural questions: a
+benchmark for question answering research. Transactions of the Association for Computational
+Linguistics, 7:453–466, 2019.
+[19] Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy. RACE: Large-scale
+ReAding comprehension dataset from examinations. In Proceedings of the 2017 Conference on
+Empirical Methods in Natural Language Processing, pages 785–794, Copenhagen, Denmark,
+September 2017. Association for Computational Linguistics. doi: 10.18653/v1/D17-1082. URL
+https://aclanthology.org/D17-1082.
+[20] Myeonghwa Lee, Seonho An, and Min-Soo Kim. Planrag: A plan-then-retrieval augmented
+generation for generative large language models as decision makers.
+arXiv preprint
+arXiv:2406.12430, 2024.
+[21] Chaofan Li, Zheng Liu, Shitao Xiao, and Yingxia Shao. Making large language models a better
+foundation for dense retrieval, 2023.
+[22] Xingxuan Li, Ruochen Zhao, Yew Ken Chia, Bosheng Ding, Shafiq Joty, Soujanya Poria, and
+Lidong Bing. Chain-of-knowledge: Grounding large language models via dynamic knowledge
+adapting over heterogeneous sources. arXiv preprint arXiv:2305.13269, 2023.
+[23] Stephanie Lin, Jacob Hilton, and Owain Evans. Truthfulqa: Measuring how models mimic
+human falsehoods. arXiv preprint arXiv:2109.07958, 2021.
+[24] Yubo Ma, Yixin Cao, YongChing Hong, and Aixin Sun. Large language model is not a
+good few-shot information extractor, but a good reranker for hard samples! arXiv preprint
+arXiv:2303.08559, 2023.
+[25] Alex Mallen, Akari Asai, Victor Zhong, Rajarshi Das, Daniel Khashabi, and Hannaneh
+Hajishirzi. When not to trust language models: Investigating effectiveness of parametric
+and non-parametric memories. arXiv preprint arXiv:2212.10511, 2022.
+[26] Rui Meng, Ye Liu, Shafiq Rayhan Joty, Caiming Xiong, Yingbo Zhou, and Semih
+Yavuz.
+Sfr-embedding-mistral:enhance text retrieval with transfer learning.
+Salesforce
+AI Research Blog, 2024.
+URL https://blog.salesforceairesearch.com/
+sfr-embedded-mistral/.
+9</text></page>

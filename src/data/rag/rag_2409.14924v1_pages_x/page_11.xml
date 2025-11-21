@@ -1,0 +1,57 @@
+<page><text>arXiv Template
+A PREPRINT
+structured data, enhancing their ability to generate more accurate and contextually relevant responses. This integration
+not only improves the depth and quality of the generated content but also expands the scope of LLM applications,
+enabling them to perform more complex tasks that require interaction with and interpretation of database content.
+4.6
+Discussion on Fact Queries
+Whether to Use Fine-tuning. Some works [110] have demonstrated the hardness of LLMs to acquire new factual
+knowledge during fine tuning. This process can lead to a deterioration in the overall performance of the LLMs in
+generating accurate responses, and it often results in the generation of more hallucinations. Furthermore, study [111]
+suggests that fine-tuning LLMs with new factual data may cause the models to mechanically memorize fact statements.
+Interestingly, altering the phrasing of these memorized facts can render the recently learned knowledge ineffective,
+indicating a superficial level of understanding and retention by the LLMs. This points to limitations in the current
+fine-tuning processes and the need for more sophisticated methods to integrate and adapt new information effectively.
+Whether to Separate Different Levels of Fact Queries. Both explicit fact queriesand implicit fact queriesare fact-based,
+and it is crucial to determine which level these queries belong before constructing data augmented LLM applications.
+Misclassifying explicit fact queriesas implicit fact queriescan lead to the retrieval of an abundance of superficial
+information that is seemingly relevant but ultimately unhelpful for answering the question, which can mislead the LLM
+and waste computational resources. Conversely, mistaking implicit fact queriesfor explicit fact queriescan prevent
+the use of appropriate methods to retrieve a sufficient and comprehensive set of external auxiliary data. Implicit fact
+queries often require dynamically integrating information specific to the context of the queries, whereas explicit fact
+queriesgenerally need only a single data snippet, leading to the retrieval of a fixed amount of external data. This can
+result in suboptimal performance of the LLM. Therefore, it is advantageous to preliminarily distinguish the level of
+queries based on a thorough understanding of the target task. Additionally, considerable effort has been directed towards
+training models to autonomously assess whether the information retrieved is sufficient, exemplified by approaches such
+as self-RAG [92].
+5
+Interpretable Rationale Queries (L3)
+5.1
+Overview
+In this section and the next, we will explore queries that necessitate external data to furnish rationales for their resolution.
+These queries demand not only a grasp of the factual content but also the ability to comprehend and apply domain-
+specific rationales that are integral to the data’s context. We classify these queries into two categories based on the
+nature of the rationales involved: queries based on interpretable rationales and those based on hidden rationales, as
+illustrated in the Figure 4.
+Interpretable rationale queries represent a relatively straightforward category within applications that rely on external
+data to provide rationales. The auxiliary data for these types of queries often include clear explanations of the thought
+processes used to solve problems. The data can be organized in several forms:
+• Plain Texts: Textual descriptions are the most common form of presenting interpretable rationales. These may
+include specialized or official documents such as handbooks or guidelines, as well as domain-specific manuals
+or operational guides. These texts articulate the reasoning processes that facilitate decision-making in complex
+scenarios. For example, documents such as FDA Guidance for pharmaceutical factories or medication guides
+for physicians provide insights into how experts, like FDA officers or doctors, approach specific cases.
+• Structured Instructions: More explicit reasoning relationships or decision pathways might be presented in
+a structured format. These rationales can be understood as either a Text-Conditioned Moore Machine or a
+Text-Conditioned Mealy Machine. In the theory of computation, a Moore machine is a finite-state machine
+where the output values are determined solely by its current state4. The conditions that control state transitions
+are often expressed in text, which LLMs need to interpret, unlike traditional programs that operate on native
+code. For instance, consider a customer supporting agent that follows a handbook to handle user’s request to
+product changing or refunding. Similarly, a Mealy machine is a finite-state machine where output values are
+determined by both its current state and the inputs5. The distinction here is that actions (such as API calls) are
+determined not only by the state but also by the textual messages associated with transitions from the previous
+state. Naturally, these domain-specific rationales can be represented in formats such as workflows, decision
+trees, or pseudocode.
+4https://en.wikipedia.org/wiki/Moore_machine
+5https://en.wikipedia.org/wiki/Mealy_machine
+11</text></page>

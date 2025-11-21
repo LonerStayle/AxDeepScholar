@@ -1,0 +1,62 @@
+<page><text>Published as a conference paper at ICLR 2025
+3
+METRICS FOR LLM-IN-RAG
+Given a question q and the corresponding ground truth response AG = {ag1, . . . , agn} consisting of
+gold claims, we define the claims obtainable from the provided documents as AD = {ad1, . . . , adn}
+and the claims generated in the response as AR = {ar1, . . . , arn}. We aim to measure two aspects
+of an LLM in RAG: 1) the correctness of the generated claims (Response Truthfulness); and 2) the
+correctness of citations generated (Attribution Groundedness).
+Insufficiency of the existing metrics.
+Gao et al. (2023b) measure Response Truthfulness by first
+computing the per-sample Answer Correctness recall (ACq
+reg) score for gold claims AG, disregarding
+how many of these claims are obtainable from D. This is followed by averaging the recall scores
+across samples to obtain a single score for the dataset. This method introduces inconsistencies:
+models that rely on parametric knowledge (Mp) may generate gold claims not found in D, leading
+to an artificially inflated recall value. In contrast, an ideal LLM (Mi) would rely solely on D to
+generate responses (a desired trait) and would be constrained by an upper recall limit of |AG∩AD|
+|AG|
+,
+which varies depending on the question. This approach presents two key problems: (1) Recall
+Consolidation: Since the measurement range depends on the claims present in D, it is infeasible to
+provide a consistent, consolidated ACreg score across the dataset, (2) Recall Gamification: Mp may
+have a higher upper limit on ACreg (up to 1) because they can generate gold claims not present in D
+(an undesirable trait), unlike Mi that depend entirely on D.
+Answer Calibration.
+To address the challenges of recall consolidation and gamification in exist-
+ing evaluation metrics, we propose new metrics that measure sample-wise recall score based on the
+fraction of gold claims ontainable from D. Specifically, this involves computing |AG ∩AD|, which
+measures the Answer Correctness (AC) recall after calibrating the gold claims. This approach sets a
+maximum recall limit of 1 for all models. For dataset-wide scoring, we consolidate per-sample AC
+scores using two methods: 1) PAC: The average AC score across samples answered by the LLM, i.e.,
+samples where AR ̸= ∅, reflecting a precision oriented perspective; 2) RAC: The average AC score
+across samples that are answerable, i.e., samples where AG ∩AD ̸= ∅, reflecting a recall oriented
+perspective3. These metrics, illustrated in Fig. 1, are then combined into a single score, F1AC, which
+serves as a comprehensive measure of how well the LLM grounds its claims on the document D.
+This combined metric not only facilitates the consolidation of recall but also addresses issues related
+to recall gamification.
+Scoring refusals.
+An important capability of an LLM in RAG is its ability to identify when a
+response is unanswerable based on the provided documents D. To measure this, we introduce a
+metric called Grounded Refusals. This metric evaluates the model’s refusal performance by calcu-
+lating dataset-wide precision and recall for both ground-truth answerable cases and refusals. These
+values are then combined into their respective F1 scores, F1ref for refusals and F1ans for answerable
+cases. The final score, F1GR, is the average of these two F1 scores, as shown in Figure 1.
+Measuring attribution groundedness.
+While Response Truthfulness metrics like F1AC and F1GR
+evaluate the quality of generated claims, it is equally important to measure how well these statements
+are supported by relevant citations—what we call Attribution Groundedness. To this end, we adopt
+two sub-metrics from (Gao et al., 2023b): Citation Recall (Rcite) and Citation Precision (Pcite). To
+compute Rcite, we first determine if a generated statement si is supported by its cited documents
+using an NLI model4, thus obtaining sample-wise recall scores Rcitesi. Then we take the mean
+across all samples to obtain the final Rcite score (Figure 1). To compute Pcite, we first score each
+citation ci,j of a statement si, followed by computing the average across citations in a response S
+(sample-wise score). The dataset-wide citation score is computed by averaging the citation scores
+across all the samples. To quantify the Groundedness of Citations, we compute F1GC, the harmonic
+mean of Pcite and Rcite. A detailed breakdown of this metric is provided in Appendix D and Figure 1.
+Thus, we define a new metric TRUST-SCORE = 1
+3(F1GR + F1AC + F1GC).
+3Notably, both PAC and RAC sum over samples that are both answered and answerable, differing primarily
+in their normalization values.
+4An NLI model checks if the cited document entails the statement.
+4</text></page>

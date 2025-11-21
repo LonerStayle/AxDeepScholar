@@ -1,0 +1,59 @@
+<page><text>arXiv Template
+A PREPRINT
+3.3.2
+Data Retrieval Enhancement
+Information Retrieval (IR) techniques can be smoothly transferred into RAG applicaitons. The primary steps involved
+include establishing data indexes, processing queries, retrieving and matching, re-ranking, and evaluation.
+Indexing The purpose of this step is to establish mappings from search terms to text segments, determining the logic by
+which the retrieval system operates. Indexing methods are broadly classified into three types: sparse, dense, and hybrid
+retrieval. Sparse retrieval uses specific words to index text segments. In contrast, dense retrieval maps text segments
+into a dense vector space of features. Hybrid retrieval combines elements of both sparse and dense techniques.
+• Sparse Retrieval: This was the first indexing method to be widely adopted due to its simplicity and intuitiveness.
+Techniques like TF-IDF and BM25[47, 48] are designed to identify the most representative keywords of each
+text segment based on their relative frequency. These methods are still prevalent in many RAG projects[49,
+50, 51]. However, word matching methods can lead to retrieval losses due to their inability to recognize
+synonyms. To address this issue, methods like KNN can be used for similarity-based matching of keywords
+[52]. Alternatively, indices like keywords can be changed into the prediction of the probabilities of query
+tokens for the corresponding text segment[53, 54].
+• Dense Retrieval: This approach often involves using pre-trained or fine-tuned text encoders to map texts to
+a dense vector space that aligns with query requirements. BERT-based encoders [55] are commonly to be
+fine-tuned as dense retriever on unsupervised data using methods such as DPR[56], ANCE[57], SimCSE[58]
+and TAS-B[59]. Others employ unsupervised contrastive learning for fine-tuning, such as Contriever[60].
+Using feedback from LLMs to guide the training objectives of retrievers can also effectively enhance the
+retriever’s suitability for LLMs [61, 62, 63]. Given the powerful capabilities and expressive potential of
+LLMs, LLM-based dense retrieval has recently emerged as a key area of interest and exploration [64].
+LLM2vec [65] modifies the attention mechanism of a pre-trained LLM to a bidirectional one and employs the
+masked next-token prediction method for unsupervised training, resulting in an LLM-based dense retrieval
+embedder. Similarly, Llama2Vec [66] leverages two pretext tasks—Embedding-Based Auto-Encoding and
+Embedding-Based Auto-Regression—to train an unsupervised dense retrieval encoder based on the LLaMA
+architecture [67], leading to significant improvements in retrieval task performance.
+• Others: Combining sparse retrieval and dense retrieval is an effective method to focus simultaneously on
+the central theme of text segments and global features. Feng et al. (2023) propose initially determining the
+knowledge domain needed to answer a query as a fixed area of expertise, and then using dense retrieval to
+recall supplementary information within this domain [68]. Numerous studies have explored various methods
+of blending dense vector indexing with sparse encoder indexing to better capture the semantic information of
+text blocks and enhance the precision of targeted paragraph retrieval [69, 70, 71]. On the other hand, Tang et
+al. (2024) have enhanced the capabilities of a LLM by fine-tuning it for indexing and retrieving, effectively
+integrating these abilities directly into the LLM. This allows the LLM to autonomously generate data indices
+and text segments for each query [72, 73].
+Query Document Alignment The goal of this step is to align the query with document segments in external data to
+identify the best document segment that can assist in answering the query. As Figure 3 illustrated, there are primarily
+three approaches to this alignment: traditional alignment, document domain alignment, and query domain alignment.
+Traditional alignment involves mapping both document segments and the query into the same encoding space. For
+instance, many dense retrieval architectures based on dual encoders feature specialized query encoders [56, 57, 59].
+Conversely, if a system like RAG employs sparse retrieval, it is necessary to extract keywords from the query for the
+search. Further refinement can be achieved through query rewriting techniques, which enhance search accuracy by
+mitigating issues related to user terminological inaccuracies or vague descriptions, effectively improving the precision
+of the search results [74]. Document domain alignment involves generating synthetic answers first, then using these
+answers to recall relevant data, effectively addressing the issue of queries and retrieved data not being in the same
+distribution space. A notable work in this area is HyDE [75]. Query domain alignment [76] involves generating a set of
+synthetic questions for each atomic unit of text, mapping text segments into the query space, and then retrieving the
+synthetic questions closest to the original query along with their corresponding text segments. This method ensures
+that the most relevant and contextually appropriate segments are selected for responding to the query. SlimPLM [77]
+employs a small proxy model to generate heuristic answers, which are then used to predict the knowledge needed to
+answer the question. This approach also provides an effective method for aligning queries to the document space.
+Re-ranking and Correction After retrieving the top k text blocks, RAG systems must filter and reorder these segments.
+Most RAG systems use the relevance scores provided by the retriever as the basis for ranking, while some studies
+employ specific metrics such as perplexity or perplexity gain as ranking criteria [78, 79]. Other efforts involve using
+LLMs to evaluate the credibility and utility of retrieved text blocks, training a pluggable reward-driven contextual
+7</text></page>

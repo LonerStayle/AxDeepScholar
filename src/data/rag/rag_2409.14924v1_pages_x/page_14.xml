@@ -1,0 +1,55 @@
+<page><text>arXiv Template
+A PREPRINT
+6
+Hidden Rationale Queries (L4)
+6.1
+Overview
+Hidden rationale queries are the most challenging type of queries to address. Unlike interpretable rationale queries,
+which provide clear guidance on the rationales needed to respond to queries, hidden rationale queriesinvolve domain-
+specific reasoning method that may not be explicitly described and are too numerous to exhaust. These rationales
+often encompass a wide variety that cannot be fully explored within the typical context window and may lack clear
+instructions, representing a form of domain expertise that is implicit within the data. Such data might include, but is not
+limited to:
+• In-domain Data: Hidden rationale queries might utilize data from the same domain, such as historical
+question-and-answer records or artificially generated data. This in-domain data inherently contains the
+reasoning skills or methodologies necessary to address current queries. For instance, in the context of Python
+programming puzzles, solutions to historical problems often include classical algorithms and problem-solving
+strategies that could aid in resolving current issues.
+• Preliminary Knowledge: Another form of hidden rationales consists of extensive, dispersed knowledge
+bases that vary in application across different scenarios. This preliminary knowledge may constitute a
+comprehensive axiomatic system, such as all local legal codes that form the basis for legal judgments. It could
+also include proven intermediate conclusions that simplify reasoning processes in fields like mathematical
+proofs. When addressing real-world issues using external data, this prior knowledge might also stem from
+complex accumulations of human experiences and empirical summaries.
+Navigating hidden rationale queriesthus demands sophisticated analytical techniques to decode and leverage the latent
+wisdom embedded within disparate data sources, presenting significant challenges for RAG systems in effectively
+interpreting and applying such intricate and implicit information.
+Here are some examples of queries at this level:
+• How will the economic situation affect the company’s future development? (given a collection of financial
+reports, with economic and financial rationale required)
+• How to achieve 24 points using the numbers 5, 5, 5, and 1? (given a series of 24-point game examples and
+corresponding answers.)
+• Does Afghanistan permit a parent to confer his or her citizenship on a child born abroad? (given the
+GLOBALCIT citizenship law dataset [136])
+6.2
+Challenges and Solutions
+The construction of data-augmented LLM applications is significantly challenged by hidden rationale queries, with
+primary difficulties manifesting in the following areas:
+• Logical retrieval: For questions involving hidden rationales, the helpfulness of external data does not simply
+depend on entity-level or semantic similarity, but rather on logical congruence or thematic alignment. Standard
+retrieval methods often struggle to capture the true target of the query or to identify text segments with logical
+similarities based on the problem presented. This necessitates the development of more sophisticated retrieval
+algorithms that can parse and identify underlying logical structures rather than relying solely on superficial
+textual similarities.
+• Data insufficiency: Fundamentally, external data may not explicitly contain the guidance or answers relevant
+to the current query. Instead, relevant information is often embedded in dispersed knowledges or illustrated
+through examples. This indirect presentation demands robust capabilities in data interpretation and synthesis,
+requiring LLMs to effectively derive coherent answers from fragmented or tangentially related data sources.
+Such challenges underscore the imperative for sophisticated data integration and reasoning capabilities within
+LLM frameworks to navigate the complexities of hidden rationale querieseffectively.
+6.3
+Offline Learning
+To address these types of queries, a common approach is to identify and extract rules and guidelines from datasets
+offline, subsequently retrieving related items. For generate reasoning rationales, some work like STaR [137] and
+LXS [138] used LLM for rationale generation. The former employs an iterative few-shot example method to generate
+14</text></page>

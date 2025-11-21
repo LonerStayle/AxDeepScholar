@@ -1,0 +1,44 @@
+<page><text>TriviaQA
+2WikiHopQA
+TruthfulQA
+NQ
+MuSiQue
+HotpotQA
+PopQA
+SFR-RAG-9B
+GPT-4o
+Command R+ (104B)
+Command R (35B)
+Figure 1: Our SFR-RAG-9B model exhibits strong overall performance on an ContextualBench,
+our comprehensive evaluation suite of seven contextual tasks under a standardized setup. Notably,
+SFR-RAG achieves state-of-the-art performance on three of seven tasks, with extremely competitive
+performance on the rest, despite having far fewer parameters than competitive baselines.
+In this work, we focus our efforts on the generator LLM component of the RAG framework.
+Traditional general-purpose LLMs trained for chat often struggle when directly applied to the
+RAG framework. This can be attributed to several potential factors, including:
+• The knowledge in the context obtained from the retriever might conflict with the training data used
+for the LLM.
+• The LLM is not trained to deal with conflicting or redundant facts from the retriever.
+• In scenarios where the retrieved knowledge is insufficient, the LLMs revert to answering questions
+based on its training data.
+• It may also fail to provide adequate citations or to call appropriate functions and parameters to
+retrieve appropriate contexts in an agentic environment [50], in which the model may use provided
+functions or tools to perform tasks.
+Recent attempts have focused on training LLMs specifically tuned to succeed in the RAG framework,
+such as Command-R(+) [36] and RAG-2.0 [37]. Such RAG-specific LLMs not only serve as the
+foundation for generating up-to-date and factual AI responses, but also enable quick adoption in
+different domains, avoid the need to increase model capacity, context length or fine-tune an LLM on
+potentially proprietary data.
+In this work, we introduce SFR-RAG1, a 9-billion-parameter language model trained with a significant
+emphasis on reliable, precise and faithful contextual generation abilities specific to RAG and relevant
+agentic tasks. Beyond contextual tasks, SFR-RAG is also trained to serve as a competitive AI
+assistant in regular tasks [12, 7]. We develop a comprehensive recipe, on both data synthesis and
+training procedures, to train the base LLM so that it is familiar and adaptable to diverse real-life
+RAG use cases. This includes precise factual knowledge extraction, distinguishing relevant against
+distracting contexts, citing appropriate sources along with answers, producing complex and multi-hop
+reasoning over multiple contexts, consistent format following, as well as refraining from hallucination
+over unanswerable queries. SFR-RAG is also equipped with function calling and agentic abilities,
+which enable it to proactively search for knowledge from external tools, as well as conduct complex
+inference and reasoning strategies similar to Self-RAG [1], ReAct [50] and alike [22, 51, 20, 34].
+1The model will be made available via API and later fully open-sourced.
+2</text></page>

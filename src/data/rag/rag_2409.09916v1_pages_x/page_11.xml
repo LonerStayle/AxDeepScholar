@@ -1,0 +1,31 @@
+<page><text>[45] Shi Weijia, Min Sewon, Yasunaga Michihiro, Seo Minjoon, James Rich, Lewis Mike, and Yih
+Wen-tau. Replug: Retrieval-augmented black-box language models. ArXiv: 2301.12652, 2023.
+[46] Shitao Xiao, Zheng Liu, Peitian Zhang, and Niklas Muennighoff. C-pack: Packaged resources
+to advance general chinese embedding, 2023.
+[47] Fangyuan Xu, Weijia Shi, and Eunsol Choi. Recomp: Improving retrieval-augmented lms with
+compression and selective augmentation. arXiv preprint arXiv:2310.04408, 2023.
+[48] Fanjia Yan, Huanzhi Mao, Charlie Cheng-Jie Ji, Tianjun Zhang, Shishir G. Patil, Ion Stoica,
+and Joseph E. Gonzalez. Berkeley function calling leaderboard. 2024.
+[49] Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W. Cohen, Ruslan
+Salakhutdinov, and Christopher D. Manning. HotpotQA: A dataset for diverse, explainable
+multi-hop question answering. In Conference on Empirical Methods in Natural Language
+Processing (EMNLP), 2018.
+[50] Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao.
+React: Synergizing reasoning and acting in language models. arXiv preprint arXiv:2210.03629,
+2022.
+[51] Yue Yu, Wei Ping, Zihan Liu, Boxin Wang, Jiaxuan You, Chao Zhang, Mohammad Shoeybi,
+and Bryan Catanzaro. Rankrag: Unifying context ranking with retrieval-augmented generation
+in llms. arXiv preprint arXiv:2407.02485, 2024.
+[52] Rowan Zellers, Ari Holtzman, Yonatan Bisk, Ali Farhadi, and Yejin Choi. Hellaswag: Can a
+machine really finish your sentence? arXiv preprint arXiv:1905.07830, 2019.
+[53] Penghao Zhao, Hailin Zhang, Qinhan Yu, Zhengren Wang, Yunteng Geng, Fangcheng Fu, Ling
+Yang, Wentao Zhang, and Bin Cui. Retrieval-augmented generation for ai-generated content: A
+survey. arXiv preprint arXiv:2402.19473, 2024.
+[54] Ruochen Zhao, Hailin Chen, Weishi Wang, Fangkai Jiao, Xuan Long Do, Chengwei Qin,
+Bosheng Ding, Xiaobao Guo, Minzhi Li, Xingxuan Li, and Shafiq Joty. Retrieving multimodal
+information for augmented generation: A survey. In Houda Bouamor, Juan Pino, and Kalika
+Bali, editors, Findings of the Association for Computational Linguistics: EMNLP 2023,
+pages 4736–4756, Singapore, December 2023. Association for Computational Linguistics.
+doi: 10.18653/v1/2023.findings-emnlp.314. URL https://aclanthology.org/2023.
+findings-emnlp.314.
+11</text></page>

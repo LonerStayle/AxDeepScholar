@@ -1,0 +1,56 @@
+<page><text>Published as a conference paper at ICLR 2025
+hallucination errors, including inappropriate refusals, thereby enhancing the overall trustworthiness
+and reliability of the model’s outputs.
+D
+METRICS
+In this section, we elaborate on how we compute metrics that are components of TRUST-SCORE.
+D.1
+RESPONSE TRUTHFULNESS
+Truthfulness captures the model’s ability to answer or refuse a question correctly by computing
+the grounded refusal (F1GR) and the factual accuracy by computing the answer-calibrated answer
+correctness score (F1AC).
+Grounded Refusal [F1GR]:
+A macro-averaged F1 score that measures the LLM’s ability in cor-
+rectly refusing to answer a question (F1ref) and correctly providing an answer when required (F1ans).
+• F1ref: This metric evaluates a model’s ability to correctly refuse unanswerable questions.
+We calculate it based on how accurately the model identifies and refuses these questions.
+Let Ag and ¬Ag represent the sets of ground truth answerable and unanswerable questions,
+respectively, and Ar and ¬Ar denote the sets of questions where the model provided an
+answer and refused to answer, respectively. F1ref is computed from precision Pref and recall
+Rref:
+Pref = |¬Ar ∩¬Ag|
+|¬Ar|
+(1)
+Rref = |¬Ar ∩¬Ag|
+|¬Ag|
+(2)
+F1ref = 2Pref · Rref
+Pref + Rref
+,
+(3)
+where Pref measures the proportion of correctly refused unanswerable questions among
+all refused questions, and Rref measures the proportion of correctly refused unanswerable
+questions out of all unanswerable questions. Here, |·| denote the cardinality of the set, thus
+Pref, Rref, and F1ref are scalar values.
+• F1ans: This metric evaluates a model’s ability to correctly answer answerable questions.
+It is computed based on the precision Pans and recall Rans for non-refusal responses to
+answerable questions:
+Pans = |Ar ∩Ag|
+|Ar|
+(4)
+Rans = |Ar ∩Ag|
+|Ag|
+(5)
+F1ans = 2Pans · Rans
+Pans + Rans
+(6)
+F1GR (Grounded Refusals) provides an overall assessment of the model’s refusal capabilities by
+computing the macro-average of F1ref and F1ans:
+F1GR = 1
+2(F1ref + F1ans)
+(7)
+F1ref evaluates the model’s ability to correctly refuse unanswerable questions, while F1ans assesses
+its ability to correctly answer answerable ones. By penalizing both incorrect refusals and incor-
+rect non-refusals, F1GR offers a balanced evaluation of the model’s over-responsiveness and under-
+responsiveness
+19</text></page>

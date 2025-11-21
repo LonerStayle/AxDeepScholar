@@ -1,0 +1,205 @@
+<page><text>A
+Appendix
+Table 4: ContextualBench scores for HotpotQA, 2WikihopQA and Musique, as measured in easy
+matching, strict matching accuracy and the F1 score.
+Model
+HotpotQA
+2WikiHopQA
+MuSiQue
+EasyM
+EM
+F1
+EasyM
+EM
+F1
+EasyM
+EM
+F1
+GPT 4 Turbo
+70.90
+54.20
+69.00
+73.00
+59.90
+69.60
+53.10
+37.10
+52.70
+GPT 4o
+72.70
+57.2
+71.40
+74.70
+62.40
+70.90
+60.20
+44.40
+58.60
+GPT-4o-mini
+68.70
+49.80
+65.50
+57.70
+46.60
+56.50
+48.30
+32.10
+48.90
+GPT 3.5 Turbo
+63.10
+48.10
+61.80
+50.50
+41.20
+49.70
+34.90
+22.60
+35.90
+Command R (35B)
+63.10
+48.20
+63.00
+55.70
+41.50
+52.30
+36.70
+14.60
+34.10
+Command R + (104B)
+67.30
+52.50
+66.60
+60.80
+47.50
+57.30
+46.30
+29.00
+43.60
+LLama3 8B Instruct (8B)
+58.80
+45.90
+60.00
+46.50
+27.90
+42.20
+29.30
+9.90
+25.30
+LLama3.1 8B Instruct (8B)
+64.80
+46.70
+62.00
+51.70
+17.70
+38.30
+38.00
+9.40
+29.00
+gemma-2-9b-it
+67.20
+52.60
+66.10
+59.60
+49.70
+58.10
+47.00
+30.50
+43.50
+SFR-RAG-9B
+83.60
+65.70
+79.90
+86.20
+79.50
+84.60
+57.40
+42.90
+53.50
+Table 5: ContextualBench scores for TriviaQA, TruthfulQA, PopQA and NQ, as measured in easy
+matching, strict matching accuracy and the F1 score.
+Model
+TriviaQA
+TruthfulQA
+PopQA
+NQ
+EM
+F1
+EM
+EasyM
+EM
+F1
+GPT 4 Turbo
+78.34
+86.30
+76.13
+53.82
+48.23
+67.20
+GPT 4o
+81.73
+88.20
+76.47
+42.24
+51.85
+69.75
+GPT-4o-mini
+72.55
+81.77
+61.02
+54.75
+30.75
+54.90
+GPT 3.5 Turbo
+77.43
+84.70
+47.00
+53.39
+40.40
+60.69
+Command R (35B)
+71.75
+79.81
+51.65
+52.60
+35.76
+55.50
+Command R + (104B)
+76.34
+83.05
+56.30
+59.18
+47.44
+63.21
+LLama3 8B Instruct (8B)
+72.28
+79.07
+51.52
+52.82
+31.01
+48.22
+LLama3.1 8B Instruct (8B)
+71.33
+78.33
+59.43
+59.68
+44.41
+61.60
+gemma-2-9b-it
+77.66
+83.23
+59.43
+53.75
+37.37
+53.15
+SFR-RAG-9B
+79.24
+84.35
+77.45
+53.97
+48.01
+59.66
+Tables 4 and 5 present the complete results of ContextualBench across 7 benchmarks as measured in
+different metrics. As these metrics measure different aspects of the question-answering responses, the
+numbers provide more insights into the performance comparison between for models. For instance, a
+model that is too verbose may score low in EM and high in F1, and vice-versa.
+12</text></page>

@@ -1,0 +1,56 @@
+<page><text>Published as a conference paper at ICLR 2025
+ACKNOWLEDGEMENT
+This research/project is supported by the National Research Foundation, Singapore under its AI
+Singapore Programme (AISG Award No: AISG3-GV-2023-010). This work is also supported by
+the Microsoft Research Accelerate Foundation Models Academic Research program.
+REFERENCES
+Marah Abdin, Jyoti Aneja, Hany Awadalla, Ahmed Awadallah, Ammar Ahmad Awan, Nguyen
+Bach, Amit Bahree, Arash Bakhtiari, Jianmin Bao, Harkirat Behl, Alon Benhaim, Misha Bilenko,
+Johan Bjorck, S´ebastien Bubeck, Martin Cai, Qin Cai, Vishrav Chaudhary, Dong Chen, Dong-
+dong Chen, Weizhu Chen, Yen-Chun Chen, Yi-Ling Chen, Hao Cheng, Parul Chopra, Xiyang
+Dai, Matthew Dixon, Ronen Eldan, Victor Fragoso, Jianfeng Gao, Mei Gao, Min Gao, Amit
+Garg, Allie Del Giorno, Abhishek Goswami, Suriya Gunasekar, Emman Haider, Junheng Hao,
+Russell J. Hewett, Wenxiang Hu, Jamie Huynh, Dan Iter, Sam Ade Jacobs, Mojan Javaheripi, Xin
+Jin, Nikos Karampatziakis, Piero Kauffmann, Mahoud Khademi, Dongwoo Kim, Young Jin Kim,
+Lev Kurilenko, James R. Lee, Yin Tat Lee, Yuanzhi Li, Yunsheng Li, Chen Liang, Lars Liden,
+Xihui Lin, Zeqi Lin, Ce Liu, Liyuan Liu, Mengchen Liu, Weishung Liu, Xiaodong Liu, Chong
+Luo, Piyush Madan, Ali Mahmoudzadeh, David Majercak, Matt Mazzola, Caio C´esar Teodoro
+Mendes, Arindam Mitra, Hardik Modi, Anh Nguyen, Brandon Norick, Barun Patra, Daniel Perez-
+Becker, Thomas Portet, Reid Pryzant, Heyang Qin, Marko Radmilac, Liliang Ren, Gustavo
+de Rosa, Corby Rosset, Sambudha Roy, Olatunji Ruwase, Olli Saarikivi, Amin Saied, Adil Salim,
+Michael Santacroce, Shital Shah, Ning Shang, Hiteshi Sharma, Yelong Shen, Swadheen Shukla,
+Xia Song, Masahiro Tanaka, Andrea Tupini, Praneetha Vaddamanu, Chunyu Wang, Guanhua
+Wang, Lijuan Wang, Shuohang Wang, Xin Wang, Yu Wang, Rachel Ward, Wen Wen, Philipp
+Witte, Haiping Wu, Xiaoxia Wu, Michael Wyatt, Bin Xiao, Can Xu, Jiahang Xu, Weijian Xu, Ji-
+long Xue, Sonali Yadav, Fan Yang, Jianwei Yang, Yifan Yang, Ziyi Yang, Donghan Yu, Lu Yuan,
+Chenruidong Zhang, Cyril Zhang, Jianwen Zhang, Li Lyna Zhang, Yi Zhang, Yue Zhang, Yunan
+Zhang, and Xiren Zhou. Phi-3 technical report: A highly capable language model locally on your
+phone, 2024. URL https://arxiv.org/abs/2404.14219.
+Samuel Joseph Amouyal, Tomer Wolfson, Ohad Rubin, Ori Yoran, Jonathan Herzig, and Jonathan
+Berant. Qampari: An open-domain question answering benchmark for questions with many an-
+swers from multiple paragraphs, 2023. URL https://arxiv.org/abs/2205.12665.
+Anthropic.
+Introducing claude 3.5 sonnet.
+Anthropic News, 2024.
+URL https://www.
+anthropic.com/news/claude-3-5-sonnet.
+Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-RAG: Learning
+to retrieve, generate, and critique through self-reflection. In The Twelfth International Confer-
+ence on Learning Representations, 2024. URL https://openreview.net/forum?id=
+hSyW5go0v8.
+Patrice B´echard and Orlando Marquez Ayala.
+Reducing hallucination in structured outputs via
+retrieval-augmented generation. arXiv preprint arXiv:2404.08189, 2024.
+Rishabh Bhardwaj, Yingting Li, Navonil Majumder, Bo Cheng, and Soujanya Poria. knn-cm: A non-
+parametric inference-phase adaptation of parametric text classifiers. In Findings of the Association
+for Computational Linguistics: EMNLP 2023, pp. 13546–13557, 2023.
+Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhari-
+wal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal,
+Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel M.
+Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz
+Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec
+Radford, Ilya Sutskever, and Dario Amodei. Language models are few-shot learners, 2020. URL
+https://arxiv.org/abs/2005.14165.
+Jan Buchmann, Xiao Liu, and Iryna Gurevych. Attribute or abstain: Large language models as long
+document assistants, 2024. URL https://arxiv.org/abs/2407.07799.
+11</text></page>

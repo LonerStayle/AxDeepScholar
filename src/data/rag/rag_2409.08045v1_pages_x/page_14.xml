@@ -1,0 +1,99 @@
+<page><text>References
+[1] P. Lewis, E. Perez, A. Piktus, F. Petroni, V. Karpukhin,
+N. Goyal, H. Küttler, M. Lewis, W.-t. Yih, T. Rock-
+täschel, et al., “Retrieval-augmented generation for
+knowledge-intensive nlp tasks,” Advances in Neural In-
+formation Processing Systems, vol. 33, pp. 9459–9474,
+2020.
+[2] M. Anderson, G. Amit, and A. Goldsteen, “Is my data in
+your retrieval database? membership inference attacks
+against retrieval augmented generation,” arXiv preprint
+arXiv:2405.20446, 2024.
+[3] Y. Li, G. Liu, Y. Yang, and C. Wang, “Seeing is
+believing: Black-box membership inference attacks
+against retrieval augmented generation,” arXiv preprint
+arXiv:2406.19234, 2024.
+[4] S. Zeng, J. Zhang, P. He, Y. Xing, Y. Liu, H. Xu, J. Ren,
+S. Wang, D. Yin, Y. Chang, et al., “The good and the bad:
+Exploring privacy issues in retrieval-augmented genera-
+tion (rag),” arXiv preprint arXiv:2402.16893, 2024.
+[5] J. Xue, M. Zheng, Y. Hu, F. Liu, X. Chen, and Q. Lou,
+“Badrag: Identifying vulnerabilities in retrieval aug-
+mented generation of large language models,” arXiv
+preprint arXiv:2406.00083, 2024.
+[6] P. Cheng, Y. Ding, T. Ju, Z. Wu, W. Du, P. Yi, Z. Zhang,
+and G. Liu, “Trojanrag: Retrieval-augmented generation
+can be backdoor driver in large language models,” arXiv
+preprint arXiv:2405.13401, 2024.
+[7] W. Zou, R. Geng, B. Wang, and J. Jia, “Poisonedrag:
+Knowledge poisoning attacks to retrieval-augmented
+generation of large language models,” arXiv preprint
+arXiv:2402.07867, 2024.
+[8] A. Shafran, R. Schuster, and V. Shmatikov, “Ma-
+chine against the rag: Jamming retrieval-augmented
+generation with blocker documents,” arXiv preprint
+arXiv:2406.05870, 2024.
+[9] H. Chaudhari, G. Severi, J. Abascal, M. Jagielski,
+C. A. Choquette-Choo, M. Nasr, C. Nita-Rotaru, and
+A. Oprea, “Phantom: General trigger attacks on re-
+trieval augmented language generation,” arXiv preprint
+arXiv:2405.20485, 2024.
+[10] X. Shen, Z. Chen, M. Backes, Y. Shen, and Y. Zhang,
+“" do anything now": Characterizing and evaluating in-
+the-wild jailbreak prompts on large language models,”
+arXiv preprint arXiv:2308.03825, 2023.
+[11] Z. Yu, X. Liu, S. Liang, Z. Cameron, C. Xiao, and
+N. Zhang, “Don’t listen to me: Understanding and ex-
+ploring jailbreak prompts of large language models,”
+arXiv preprint arXiv:2403.17336, 2024.
+[12] A. Zou, Z. Wang, N. Carlini, M. Nasr, J. Z. Kolter, and
+M. Fredrikson, “Universal and transferable adversarial
+attacks on aligned language models,” arXiv preprint
+arXiv:2307.15043, 2023.
+[13] Y. Yang, B. Hui, H. Yuan, N. Gong, and Y. Cao,
+“Sneakyprompt: Jailbreaking text-to-image generative
+models,” arXiv preprint arXiv:2305.12082, 2023.
+[14] Z.-X. Yong, C. Menghini, and S. H. Bach, “Low-
+resource languages jailbreak gpt-4,” arXiv preprint
+arXiv:2310.02446, 2023.
+[15] X. Liu, N. Xu, M. Chen, and C. Xiao, “Autodan: Generat-
+ing stealthy jailbreak prompts on aligned large language
+models,” arXiv preprint arXiv:2310.04451, 2023.
+[16] A. Wei, N. Haghtalab, and J. Steinhardt, “Jailbroken:
+How does llm safety training fail?,” Advances in Neural
+Information Processing Systems, vol. 36, 2024.
+[17] J. Hayase, E. Borevkovic, N. Carlini, F. Tramèr, and
+M. Nasr, “Query-based adversarial prompt generation,”
+arXiv preprint arXiv:2402.12329, 2024.
+[18] Y. Li, Z. Li, K. Zhang, R. Dan, S. Jiang, and Y. Zhang,
+“Chatdoctor: A medical chat model fine-tuned on a large
+language model meta-ai (llama) using medical domain
+knowledge,” Cureus, vol. 15, no. 6, 2023.
+[19] B. Klimt and Y. Yang, “The enron corpus: A new dataset
+for email classification research,” in European confer-
+ence on machine learning, pp. 217–226, Springer, 2004.
+[20] K. Song, X. Tan, T. Qin, J. Lu, and T.-Y. Liu, “Mpnet:
+Masked and permuted pre-training for language under-
+standing,” arXiv preprint arXiv:2004.09297, 2020.
+[21] Y. Zhang and D. Ippolito, “Prompts should not be seen
+as secrets: Systematically measuring prompt extraction
+attack success,” arXiv preprint arXiv:2307.06865, 2023.
+[22] B. Hui, H. Yuan, N. Gong, P. Burlina, and Y. Cao, “Pleak:
+Prompt leaking attacks against large language model
+applications,” arXiv preprint arXiv:2405.06823, 2024.
+[23] Z. Sha and Y. Zhang, “Prompt stealing attacks
+against large
+language
+models,”
+arXiv
+preprint
+arXiv:2402.12959, 2024.
+[24] J. X. Morris, W. Zhao, J. T. Chiu, V. Shmatikov, and
+A. M. Rush, “Language model inversion,” arXiv preprint
+arXiv:2311.13647, 2023.
+[25] N. Carlini, F. Tramer, E. Wallace, M. Jagielski,
+A. Herbert-Voss, K. Lee, A. Roberts, T. Brown, D. Song,
+U. Erlingsson, et al., “Extracting training data from large
+language models,” in 30th USENIX Security Symposium
+(USENIX Security 21), pp. 2633–2650, 2021.
+14</text></page>

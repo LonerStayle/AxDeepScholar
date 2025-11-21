@@ -1,0 +1,51 @@
+<page><text>arXiv Template
+A PREPRINT
+This definition underscores the reliance of explicit fact querieson direct data retrieval without the need for complex
+reasoning or inference beyond the scope of the identified data segments.
+Here are some examples of queries at this level:
+• What method was used in Paper X to solve problem Y? (given a collection of academic papers)
+• What’s the AI strategy of company X? (given a series of the latest news and articles about company X)
+3.2
+Challenges and Solutions
+Queries at this level primarily necessitate the correct retrieval of data for LLMs to provide accurate responses. RAG [6],
+due to its effectiveness, flexibility, and relatively low costs, is the most commonly adopted technical solution for
+handling this level of queries. However, even with RAG, there are significant challenges in constructing a robust and
+high-quality system. These challenges include:
+• Data Processing Difficulties: External data is often highly unstructured and contains multi-modal components
+such as tables, images, videos, and more. Additionally, the process of segmenting or "chunking" this data
+presents challenges in maintaining the original context and meaning.
+• Data Retrieval Difficulties: The retrieval of relevant data segments from a large, unstructured dataset can be
+computationally intensive and prone to errors. The challenge lies in developing efficient and accurate retrieval
+mechanisms.
+• Evaluation Difficulties: Evaluating the performance of a RAG system, particularly at a component level, is
+a complex task. It requires the development of robust metrics that can accurately assess the quality of data
+retrieval and response generation.
+Given the popularity of RAG, a wealth of literature and tools have been developed to address these challenges. In
+the remainder of this section, we will highlight some of the most practical and impactful enhancements to RAG.
+Additionally, we will discuss alternative technical solutions that may be employed beyond RAG.
+3.3
+Retrieval-augmented Generation (RAG)
+Retrieval-Augmented Generation refers to a methodology where a language model augments its natural language
+generation capabilities by dynamically retrieving external information during the generation process. This technique
+blends the generative capabilities of LLMs with the information retrieval from extensive databases or documents. The
+process is typically implemented as data index construction, retrieval system construction and answer generation.
+3.3.1
+Data Processing Enhancement
+Document parsing at this level often involves extracting information from text, tables, and figures in a coherent manner,
+ensuring that the relevant snippets are accurately identified and retrieved.
+Multi-modal Documents Parsing Addressing multi-modal content in source documents, such as charts, tables, or
+even videos (e.g. meeting recordings), is one of the most frequently asked questions. Broadly, two approaches are
+employed to tackle this issue. The first approach involves converting multi-modal content into textual form. For instance,
+Table-to-Text methods [34] translate tables into text, while other techniques convert visual content into textual or
+attribute-based descriptions [35, 36], which are subsequently processed by large language models. The second approach
+leverages multi-modal embedding techniques [37, 38, 39], utilizing the retrieved embeddings from multi-modal data as
+soft prompts for input.
+Chunking Optimization For long texts, segmenting documents into text chunks is a common and necessary operation.
+Larger text chunks can preserve more of the semantic coherence of the context, but they also tend to contain more noise
+within each chunk[40]. Commonly-used chunking strategies [41, 42] include fixed size chunking, recursive chunking,
+sliding window chunking, paragraph-based chunking ,semantic chunking, etc. Certain methods are designed to ascertain
+the level of detail a query demands and, based on this identification, select text chunks of appropriate granularity for
+retrieval[43, 44]. Alternatively, some methods opt to process and refine the text into smaller segments that maintain a
+high degree of information completeness[45]. Additionally, there are approaches that employ vision models to segment
+text in accordance with the original document structure[46].
+6</text></page>

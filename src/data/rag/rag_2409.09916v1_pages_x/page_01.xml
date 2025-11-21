@@ -1,0 +1,50 @@
+<page><text>SFR-RAG: Towards Contextually Faithful LLMs
+Xuan-Phi Nguyen∗
+Shrey Pandit
+Senthil Purushwalkam
+Austin Xu
+Hailin Chen
+Yifei Ming
+Zixuan Ke
+Silvio Savarese
+Caiming Xong
+Shafiq Joty
+Salesforce AI Research
+Abstract
+Retrieval Augmented Generation (RAG), a paradigm that integrates external
+contextual information with large language models (LLMs) to enhance factual
+accuracy and relevance, has emerged as a pivotal area in generative AI. The LLMs
+used in RAG applications are required to faithfully and completely comprehend the
+provided context and users’ questions, avoid hallucination, handle unanswerable,
+counterfactual or otherwise low-quality and irrelevant contexts, perform complex
+multi-hop reasoning and produce reliable citations. In this paper, we introduce SFR-
+RAG, a small LLM that is instruction-tuned with an emphasis on context-grounded
+generation and hallucination minimization. We also present ContextualBench,
+a new evaluation framework compiling multiple popular and diverse RAG
+benchmarks, such as HotpotQA and TriviaQA, with consistent RAG settings
+to ensure reproducibility and consistency in model assessments. Experimental
+results demonstrate that our SFR-RAG-9B model outperforms leading baselines
+such as Command-R+ (104B) and GPT-4o, achieving state-of-the-art results in 3
+out of 7 benchmarks in ContextualBench with significantly fewer parameters. The
+model is also shown to be resilient to alteration in the contextual information and
+behave appropriately when relevant context is removed. Additionally, the SFR-
+RAG model maintains competitive performance in general instruction-following
+tasks and function-calling capabilities.
+1
+Introduction
+Retrieval Augmented Generation (RAG) has recently garnered significant attention as one of the
+most prominent areas of research in generative AI [53, 54], driven by the latest advancements in
+foundational large language models (LLMs) [4, 39, 29, 30, 40, 9, 14, 2]. RAG frameworks are well-
+suited for solving knowledge-dependent problems or questions, where external contextual information
+is provided and the generated answer is expected to be factually grounded on the contextual cues. In
+practice, the RAG setup is designed such that a generator LLM works in tandem with a knowledge
+retriever. The retriever [26, 46, 5, 21] is tasked with retrieving passages relevant to a given query from
+a database of documents (potentially the entire internet). The LLM interacts with users, formulates
+queries for the retriever to gather knowledge, and finally answers users’ questions. To retrieve the
+most accurate context information, the retriever typically relies on an embedding model [28, 26, 5, 21],
+and optionally employs a re-ranker to get a refined list of context documents [24]. Recent research
+has also led to the development of more sophisticated RAG frameworks [1, 13, 22, 47, 16, 45] that
+involve multiple inference steps to improve the reliability of answers.
+∗Corresponding author: xnguyen@salesforce.com
+Technical Report.
+arXiv:2409.09916v1  [cs.CL]  16 Sep 2024</text></page>

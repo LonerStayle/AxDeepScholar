@@ -1,0 +1,57 @@
+<page><text>arXiv Template
+A PREPRINT
+from small dataset to large dataset, the later introduced a two-role explaining extraction process where a learner model
+generated explanations and a critic model assess them for validation.
+GL [139] identifies errors and generalizes them into guidelines for future tasks through an in-context-learning.
+LEAP [140] forms principles by generating mistakes, low-level principles, and high-level principles, incorporat-
+ing these principles into prompts for final inference. RICP [141] uses mistakes from training data to generate high-level
+reasoning and specific insights, then employs hierarchical clustering to group modes of errors, generating task-level and
+question-level principles, which are combined and retrieved for question-level insights. A Buffer-of-Thought [142] uses
+a problem distiller to distill a meta-buffer across many reasoning tasks.
+Some integrated methods, like MedPrompt [143], include GPT-4-generated chains of thought for training examples with
+self-validation, using these in conjunction with a KNN retrieval in-context learning approach. Agent Hospital [144]
+generates rationales through reflection and utilizes both record retrieval and experience retrieval on generated data.
+Although these concepts go by many different names—such as guidelines, principles, experiences, and thought
+templates—the main idea is to extract common useful rationales to enhance reasoning queries. These rationales may
+come from self-generated chains of thought (MedPrompt, Buffer-of-Thought), training set mistakes (GL, RICP, Agent
+Hospital), or intentionally generated mistakes (LEAP). Additionally, some principles are used across all tasks (Agent
+Hospital, RICP), while others are dynamically retrieved for specific questions (MedPrompt, Buffer-of-Thought). Many
+of these works demonstrate that learning from cases to accumulate experience as rationales is beneficial for various
+reasoning tasks.
+6.4
+In Context Learning (ICL)
+Using examples for in-context learning is a common method for uncovering hidden rationales. Pre-trained large
+language models exhibit substantial in-context learning capabilities, which can be enhanced by retrieving examples
+based on similarity, thereby leveraging the models’ few-shot learning abilities [145, 146]. However, the inclusion of
+irrelevant information in prompts can easily distract LLMs, leading to incorrect responses [147, 148]. OpenICL, as
+developed by Wu et al. [149], constructed an ICL framework that explores the impact of different traditional methods of
+retrieving examples and inference techniques on ICL effectiveness.
+Furthermore, training smaller models based on the feedback from LLMs regarding context examples to select optimal
+demonstrations and examples can improve the construction of context for specific tasks in a more targeted manner [150,
+5, 151]. To address the issue that semantic similarity-based example retrieval may not cover the broader range of
+associations needed in practical tests, Su et al.[152] employed an unsupervised, graph-based selective annotation method
+called vote-k, constructing a more diverse and representative example database for few-shot learning. Additionally,
+Zhang et al.[153] proposed an Auto-CoT method that clusters examples into various representative types. By sampling
+problems diversely and generating reasoning chains, this method constructs examples that better support the learning
+process.
+However, enabling LLMs to master reasoning capabilities outside their trained domains through few-shot learning
+remains a substantial challenge. Wang et al. addressed this by sampling a variety of reasoning paths and marginalizing
+over these paths to select the most consistent answer, thereby enhancing the probability of LLMs selecting correct
+reasoning chains [154]. Agarwal et al. introduced two scalable methods for generating usable example, namely
+reinforced ICL and unsupervised ICL, that aim to replace human-generated examples, thus expanding the pool of
+available examples [155]. DIN-SQL [156] sought to decompose tasks into simpler subtasks and used the solutions
+to these sub-problems as prompts for LLMs, significantly improving their performance in generating SQL from text.
+Similarly, DUP [157] identified three main issues LLMs face when using the chain of thought approach to solve
+complex mathematical word problems: semantic misunderstandings, computational errors, and missing steps, with
+semantic misunderstandings being a primary limiting factor. Encouraging LLMs to deeply understand the problems and
+extract essential information for resolution can significantly enhance their ability to solve mathematical problems by
+addressing these semantic misunderstandings.
+In-context learning is increasingly being utilized across various fields such as mathematics, law, medicine, and
+finance [158, 159, 160], playing a crucial role in the development of data-augmented LLM applications. This approach
+not only extends the functional capabilities of LLMs but also enhances their practical utility across diverse domains.
+6.5
+Fine-tuning
+Despite the robust in-context learning capabilities of LLMs, accurately identifying rationales or optimal examples for
+complex and lengthy logical chains remains a significant challenge. Additionally, the provision of extensive external
+prior knowledge can also pose challenges to the inference capabilities of LLMs. Given these factors, fine-tuning
+15</text></page>

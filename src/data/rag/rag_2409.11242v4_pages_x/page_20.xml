@@ -1,0 +1,58 @@
+<page><text>Published as a conference paper at ICLR 2025
+Answer Correctness (Answer Calibrated) [F1AC]:
+Given a question q and the corresponding
+gold claims AG = {ag1, . . . , agn}, we define the claims obtainable from the provided documents
+as AD = {ad1, . . . , adn} and the claims generated in the response r as AR = {ar1, . . . , arn}. ACq
+disregards the claims that cannot be inferred from D (answer calibration), and the exact match recall
+scores is computed on the remaining claims, i.e., AG ∩AD:
+ACqi = |AG ∩AD ∩AR|
+|AG ∩AD|
+(8)
+For the whole dataset with multiple questions {q1 . . . qk}, one can compute the average:
+AC = 1
+k
+X
+qi∈Ag∩Ar
+ACqi
+(9)
+Where Ag denote the set of questions that are answerable using the provided documents, fully or
+partially; Ar denote the set of questions that are answered by the model (non-refusal). There are two
+variants of AC we study— precision-oriented PAC with denominator k = |Ar| (number of answered
+questions). Second variant, recall-oriented RAC with denominator k = |Ag| (number of answerable
+questions). Here | · | denotes the cardinality of the set. We denote the aggregated score by
+F1AC = 2 PAC · RAC
+PAC + RAC
+.
+(10)
+The primary reason for adjusting the conventional Answer Correctness (AC) metric to account for
+the presence of answers in retrieved documents is to avoid rewarding models for generating correct
+answers without locating them in the provided documents. This approach discourages models from
+relying solely on their pre-trained knowledge to answer questions, instead encouraging them to find
+and ground their answers within the provided documents.
+D.2
+ATTRIBUTION GROUNDEDNESS
+Attribution or citation groundedness measures the relevance of generated citations to their corre-
+sponding statements, both individually and collectively. A citation ci,j is deemed ”relevant” when
+the statement it cites can be inferred from the cited document. The collective importance of ci-
+tations is assessed using a statement-wise recall metric, while the individual importance of each
+citation is evaluated using a precision metric. Given that a generated response r consists of multiple
+statements S and their corresponding citations C, we first compute statement-wise citation recall
+and per-citation precision. These scores are then averaged to obtain sample-wise scores, which are
+finally averaged to produce dataset-wide scores.
+Grounded Citation F1 [F1GC]:
+For a given statement si, statement-wise citation recall is com-
+puted by:
+Rsi
+cite = ϕ({ci,1, . . . , ci,j}, si)
+(11)
+where ϕ({ci,1, . . . , ci,j}, si) →{0, 1} is a function that determines whether the concatenation of all
+cited documents fully supports the statement si. Next, we compute precision for a generated citation
+ci,j for statement si as:
+Pcj
+cite = ϕ(ci,j, si)
+(12)
+OR
+¬ϕ({ci,k | k ̸= j}, si)
+Thus, citation precision is 0 if and only if the cited document ci,j does not entail the statement si,
+while all other citations collectively entail si without ci,j.
+20</text></page>

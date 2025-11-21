@@ -1,0 +1,55 @@
+<page><text>arXiv Template
+A PREPRINT
+[161] Shayne Longpre, Le Hou, Tu Vu, Albert Webson, Hyung Won Chung, Yi Tay, Denny Zhou, Quoc V Le, Barret
+Zoph, Jason Wei, et al. The flan collection: Designing data and methods for effective instruction tuning. In
+International Conference on Machine Learning, pages 22631–22648. PMLR, 2023.
+[162] Victor Sanh, Albert Webson, Colin Raffel, Stephen H Bach, Lintang Sutawika, Zaid Alyafeai, Antoine Chaf-
+fin, Arnaud Stiegler, Teven Le Scao, Arun Raja, et al. Multitask prompted training enables zero-shot task
+generalization. arXiv preprint arXiv:2110.08207, 2021.
+[163] Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang,
+Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models to follow instructions with human
+feedback. Advances in neural information processing systems, 35:27730–27744, 2022.
+[164] Mike Conover, Matt Hayes, Ankit Mathur, Jianwei Xie, Jun Wan, Sam Shah, Ali Ghodsi, Patrick Wendell, Matei
+Zaharia, and Reynold Xin. Free dolly: Introducing the world’s first truly open instruction-tuned llm. Company
+Blog of Databricks, 2023.
+[165] Andreas Köpf, Yannic Kilcher, Dimitri von Rütte, Sotiris Anagnostidis, Zhi Rui Tam, Keith Stevens, Abdullah
+Barhoum, Duc Nguyen, Oliver Stanley, Richárd Nagyfi, et al. Openassistant conversations-democratizing large
+language model alignment. Advances in Neural Information Processing Systems, 36, 2024.
+[166] Can Xu, Qingfeng Sun, Kai Zheng, Xiubo Geng, Pu Zhao, Jiazhan Feng, Chongyang Tao, and Daxin Jiang.
+Wizardlm: Empowering large language models to follow complex instructions. arXiv preprint arXiv:2304.12244,
+2023.
+[167] Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei
+Li, and Peter J Liu. Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of
+machine learning research, 21(140):1–67, 2020.
+[168] Srinivasan Iyer, Xi Victoria Lin, Ramakanth Pasunuru, Todor Mihaylov, Daniel Simig, Ping Yu, Kurt Shuster,
+Tianlu Wang, Qing Liu, Punit Singh Koura, et al. Opt-iml: Scaling language model instruction meta learning
+through the lens of generalization. arXiv preprint arXiv:2212.12017, 2022.
+[169] Yizhong Wang, Hamish Ivison, Pradeep Dasigi, Jack Hessel, Tushar Khot, Khyathi Chandu, David Wadden,
+Kelsey MacMillan, Noah A Smith, Iz Beltagy, et al. How far can camels go? exploring the state of instruction
+tuning on open resources. Advances in Neural Information Processing Systems, 36:74764–74786, 2023.
+[170] Neil Houlsby, Andrei Giurgiu, Stanislaw Jastrzebski, Bruna Morrone, Quentin De Laroussilhe, Andrea Gesmundo,
+Mona Attariyan, and Sylvain Gelly. Parameter-efficient transfer learning for nlp. In International conference on
+machine learning, pages 2790–2799. PMLR, 2019.
+[171] Junxian He, Chunting Zhou, Xuezhe Ma, Taylor Berg-Kirkpatrick, and Graham Neubig. Towards a unified view
+of parameter-efficient transfer learning. arXiv preprint arXiv:2110.04366, 2021.
+[172] Tao Lei, Junwen Bai, Siddhartha Brahma, Joshua Ainslie, Kenton Lee, Yanqi Zhou, Nan Du, Vincent Zhao,
+Yuexin Wu, Bo Li, et al. Conditional adapters: Parameter-efficient transfer learning with fast inference. Advances
+in Neural Information Processing Systems, 36:8152–8172, 2023.
+[173] Alexandra Chronopoulou, Matthew E Peters, Alexander Fraser, and Jesse Dodge. Adaptersoup: Weight averaging
+to improve generalization of pretrained language models. arXiv preprint arXiv:2302.07027, 2023.
+[174] Aleksandar Petrov, Philip HS Torr, and Adel Bibi. When do prompting and prefix-tuning work? a theory of
+capabilities and limitations. arXiv preprint arXiv:2310.19698, 2023.
+[175] Rabeeh Karimi Mahabadi, Sebastian Ruder, Mostafa Dehghani, and James Henderson. Parameter-efficient
+multi-task fine-tuning for transformers via shared hypernetworks. arXiv preprint arXiv:2106.04489, 2021.
+[176] Wei Zhu and Ming Tan. Spt: learning to selectively insert prompts for better prompt tuning. In Proceedings of
+the 2023 Conference on Empirical Methods in Natural Language Processing, pages 11862–11878, 2023.
+[177] Qifan Wang, Yuning Mao, Jingang Wang, Hanchao Yu, Shaoliang Nie, Sinong Wang, Fuli Feng, Lifu Huang,
+Xiaojun Quan, Zenglin Xu, et al. Aprompt: Attention prompt tuning for efficient adaptation of pre-trained
+language models. In Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing,
+pages 9147–9160, 2023.
+[178] Joon-Young Choi, Junho Kim, Jun-Hyung Park, Wing-Lam Mok, and SangKeun Lee. Smop: Towards efficient
+and effective prompt tuning with sparse mixture-of-prompts. In Proceedings of the 2023 Conference on Empirical
+Methods in Natural Language Processing, pages 14306–14316, 2023.
+[179] Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu
+Chen. Lora: Low-rank adaptation of large language models. arXiv preprint arXiv:2106.09685, 2021.
+26</text></page>

@@ -1,0 +1,115 @@
+<page><text>Published as a conference paper at ICLR 2025
+on how the prompt is structured for each dataset. The prompt template asks GPT-4 to label each
+gold claim used with its index from the provided list (e.g., ”[Gold Claim X]”), allowing for later
+matching of claims to documents. For unanswerable questions, a refusal response is assigned. To
+generate citations corresponding to each statement generated, we map the ”[Gold Claim X]” labels
+to the appropriate documents. First, we extract all such labels from a sentence (which may contain
+multiple claims and labels). Then, we greedily identify the smallest combination of documents that
+covers these claims, minimizing over-citation. Details of this process is illustrated in Fig. 4.
+Claim-document mapping
+Matt Prater
+Ove Johansson
+Doc 1
+[1,0,1]
+Doc 4
+[1,0,0]
+Doc 5
+[0,0,0]
+Doc 2
+[1,0,1]
+Doc 3
+[1,0,0]
+Union
+Ronaldo Cristiano
+Matt Prater
+Ove Johansson
+[1,0,1]
+Calibration
+Get Mapper
+[1,0,1]
+[Gold Claim 1]
+[Gold Claim 3]
+... Matt Prater at 64 yards
+[Gold Claim 2]. ... Ove Johansson
+in a 1976... [Gold Claim 1].
+GPT-4
+synthesizer
+{'1':0,'2':2}
+Sentence
+tokenizer
+Matt Prater at 64
+yards
+[Gold Claim 2]
+Extract
+claim label
+[Gold Claim 2]
+[2]
+[Gold Claim 2]
+[Gold Claim 1]
+[Gold Claim 2]
+ans_idx = {2}
+Map to
+original
+claim idx
+{'1':0,
+'2':2}
+Check doc combinations can
+cover minimally in greedy
+fashion
+Transformed
+claim idx
+Doc 1
+[1,0,1]
+Matt Prater at 64
+yards [1]
+Figure 4: Claim-document-mapping process.
+Details on prompt structure for each dataset.
+For ASQA, we include the question q, a list of
+(calibrated) gold claims, and their corresponding supporting documents D as additional context. For
+ELI5, we follow Gao et al. (2023b) by decomposing each labeled response into three claims, which
+serve as a set of ground truth answers. Since the claim labels already provide sufficient context,
+we only fit the question and calibrated claims into the template. For QAMPARI, since its response
+format aligns with its labeled ground truth format (a list of entities), no additional action is required.
+E.5
+OBTAINING r−
+To create high-quality preference data, we aim to obtain quality negative (unpreferred) responses.
+We first fine-tune LLaMA-2-7b on the training set of the source datasets12, creating Msft. We then
+test Msft on the above-obtained dataset with approximately 70K questions and identify that 40K
+responses exhibit hallucinations. Table 9 shows the severity computation (ei) and the frequency
+of each hallucination type (wi). Thus, we can compute hallucination severity for each sample as
+eq = P
+i ei · wi.
+Table 9: Fraction of each hallucination amongst all the observed hallucinations in Msft (40,985), with possi-
+ble overlap. wi shows the severity computation of each hallucination. Icondition = 1 if condition is True otherwise
+it is 0. See Fig. 5 for the detailed breakdown of the last three errors.
+Hallucination type
+Frequency (wi)
+Severity (ei)
+Unwarranted Refusal
+8,786
+0.50
+I(Ag̸=∅,Ar=∅)
+Over Responsiveness
+13,067
+0.50
+I(Ag=∅,Ar̸=∅)
+Overcitation
+12,656
+0.34
+1 - CP
+Improper Citation
+9,592
+0.26
+1 - CR
+Inaccurate Claims
+14,783
+0.40
+1 - F1AC
+To obtain good negative samples, we first rank each of the 40K responses according to their severity
+score eq. We then select the top 50% of the corresponding samples for both answerable and unan-
+swerable responses. Thus, we demonstrate the alignment data construction phase of TRUST-
+ALIGN, i.e., obtaining 19K samples with all the desired attributes (q, D, r+, r−). We perform
+DPO using this set of 19k samples to obtain the final aligned model.
+12Seed questions, corresponding oracle documents, and the gold answers (r+) are concatenated together
+using the refusal prompt in Table 25.
+23</text></page>

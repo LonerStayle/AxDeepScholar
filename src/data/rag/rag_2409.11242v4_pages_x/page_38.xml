@@ -1,0 +1,78 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table 23: GPT-4 prompting templates used for generating natural response based on gold claims for
+ASQA and ELI5.
+Type
+Template
+ASQA
+Please provide a high-quality answer to the given
+question using the provided document.
+The answer must
+include all the answer labels, and each answer label used
+should be marked with its index immediately after it in
+the format [Answer Label X], where X is the index of the
+answer label in the provided list starting from 1.
+For
+example, [Answer Label 1].
+Ensure the answer is coherent
+and natural and does not exceed four statements.
+You
+cannot make up any factual information based on your
+imagination:
+The additional information added from
+the given document should be relevant to the question
+and grounded by the document, but must not contain any
+factual information that cannot be inferred from the
+given answer labels.
+(e.g., if the answer label does not
+mention a specific year, you cannot introduce a specific
+year in the final answer).
+Question:
+{question}
+Document:
+{passage}
+{answers}
+Output:
+ELI5
+Given a problem and some claims as answer tags, please
+generate a high-quality response.
+The response needs to
+follow the following requirements:
+1.
+Use only all of the claims:
+Ensure that the response
+contains and only contains information from the given
+claims, without introducing any new information.
+Guarantee covering all claims in the response.
+2.
+Each statement must contain valuable information:
+Every statement must either directly originate from the
+claims or infer from the claims, avoiding any irrelevant
+and unuseful information included in the response.
+You
+can use each claim only for one time.
+3.
+Condense and combine:
+If there are similarities
+between claims, merge them into a comprehensive statement
+to make the response more concise.
+For example, if two
+claims both mention similar aspect of health benefits,
+they can be merged into one statement.
+4.
+Fluent and natural:
+Ensure that the statements in
+the response are coherent and natural, using connecting
+words and maintaining logical order between statements.
+5.
+Answer tags in response:
+Indicate each claim
+immediately after the corresponding content in the
+response with the format [Claim X], where X is the index
+of the claim in the provided list starting from 1.
+For
+example, [Claim 1].
+Question:
+{question}
+{claims}
+Generated Response:
+38</text></page>

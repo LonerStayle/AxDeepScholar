@@ -1,0 +1,56 @@
+<page><text>arXiv Template
+A PREPRINT
+[19] Ivan Stelmakh, Yi Luan, Bhuwan Dhingra, and Ming-Wei Chang. Asqa: Factoid questions meet long-form
+answers. arXiv preprint arXiv:2204.06092, 2022.
+[20] Wen-tau Yih, Matthew Richardson, Chris Meek, Ming-Wei Chang, and Jina Suh. The value of semantic parse
+labeling for knowledge base question answering. In Katrin Erk and Noah A. Smith, editors, Proceedings of the
+54th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 201–206,
+Berlin, Germany, August 2016. Association for Computational Linguistics.
+[21] Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W Cohen, Ruslan Salakhutdinov, and Christo-
+pher D Manning. Hotpotqa: A dataset for diverse, explainable multi-hop question answering. arXiv preprint
+arXiv:1809.09600, 2018.
+[22] Xanh Ho, Anh-Khoa Duong Nguyen, Saku Sugawara, and Akiko Aizawa. Constructing a multi-hop qa dataset
+for comprehensive evaluation of reasoning steps. arXiv preprint arXiv:2011.01060, 2020.
+[23] Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal. Musique: Multihop questions
+via single-hop question composition. Transactions of the Association for Computational Linguistics, 10:539–554,
+2022.
+[24] Ofir Press, Muru Zhang, Sewon Min, Ludwig Schmidt, Noah A Smith, and Mike Lewis. Measuring and
+narrowing the compositionality gap in language models. arXiv preprint arXiv:2210.03350, 2022.
+[25] Mor Geva, Daniel Khashabi, Elad Segal, Tushar Khot, Dan Roth, and Jonathan Berant. Did aristotle use a
+laptop? a question answering benchmark with implicit reasoning strategies. Transactions of the Association for
+Computational Linguistics, 9:346–361, 2021.
+[26] Alon Talmor and Jonathan Berant. The web as a knowledge-base for answering complex questions. In Marilyn
+Walker, Heng Ji, and Amanda Stent, editors, Proceedings of the 2018 Conference of the North American Chapter
+of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers),
+pages 641–651, New Orleans, Louisiana, June 2018. Association for Computational Linguistics.
+[27] Jonathan Berant, Andrew Chou, Roy Frostig, and Percy Liang. Semantic parsing on freebase from question-
+answer pairs. In Proceedings of the 2013 conference on empirical methods in natural language processing, pages
+1533–1544, 2013.
+[28] Priyanka Sen, Alham Fikri Aji, and Amir Saffari. Mintaka: A complex, natural, and multilingual dataset for
+end-to-end question answering. arXiv preprint arXiv:2210.01613, 2022.
+[29] Yuyu Zhang, Hanjun Dai, Zornitsa Kozareva, Alexander J Smola, and Le Song. Variational reasoning for
+question answering with knowledge graph. In AAAI, 2018.
+[30] Pradeep Dasigi, Kyle Lo, Iz Beltagy, Arman Cohan, Noah A. Smith, and Matt Gardner. A dataset of information-
+seeking questions and answers anchored in research papers. 2021.
+[31] Dheeru Dua, Yizhong Wang, Pradeep Dasigi, Gabriel Stanovsky, Sameer Singh, and Matt Gardner. Drop: A read-
+ing comprehension benchmark requiring discrete reasoning over paragraphs. arXiv preprint arXiv:1903.00161,
+2019.
+[32] Richard Yuanzhe Pang, Alicia Parrish, Nitish Joshi, Nikita Nangia, Jason Phang, Angelica Chen, Vishakh
+Padmakumar, Johnny Ma, Jana Thompson, He He, et al. Quality: Question answering with long input texts, yes!
+arXiv preprint arXiv:2112.08608, 2021.
+[33] Rami Aly, Zhijiang Guo, Michael Schlichtkrull, James Thorne, Andreas Vlachos, Christos Christodoulopoulos,
+Oana Cocarascu, and Arpit Mittal. Feverous: Fact extraction and verification over unstructured and structured
+information. arXiv preprint arXiv:2106.05707, 2021.
+[34] Dehai Min, Nan Hu, Rihui Jin, Nuo Lin, Jiaoyan Chen, Yongrui Chen, Yu Li, Guilin Qi, Yun Li, Nijun Li, and
+Qianren Wang. Exploring the impact of table-to-text methods on augmenting llm-based question answering with
+domain hybrid data, 2024.
+[35] Dídac Surís, Sachit Menon, and Carl Vondrick. Vipergpt: Visual inference via python execution for reasoning.
+In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 11888–11898, 2023.
+[36] Difei Gao, Lei Ji, Luowei Zhou, Kevin Qinghong Lin, Joya Chen, Zihan Fan, and Mike Zheng Shou. Assistgpt:
+A general multi-modal assistant that can plan, execute, inspect, and learn. arXiv preprint arXiv:2306.08640,
+2023.
+[37] Ziniu Hu, Ahmet Iscen, Chen Sun, Zirui Wang, Kai-Wei Chang, Yizhou Sun, Cordelia Schmid, David A Ross,
+and Alireza Fathi. Reveal: Retrieval-augmented visual-language pre-training with multi-source multimodal
+knowledge memory. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,
+pages 23369–23379, 2023.
+19</text></page>

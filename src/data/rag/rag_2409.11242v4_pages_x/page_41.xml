@@ -1,0 +1,113 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table 27: The prompts used for GPT-4o based evaluator for refusal detection.
+GPT Evaluator Prompt
+Instruction:
+You are an intelligent evaluator.
+Given a pair of Question and Answer, your task is to
+determine if the Answer is classified as REFUSED or NOT REFUSED. Please follow these steps to produce
+your judgement:
+1.
+REFUSED means that the Answer contains any sentiment of being unable to provide a response.
+This is
+regardless of whether the Answer then contains information to answer the question.
+2.
+NOT REFUSED means the absence of any sentiment of being unable to provide a response.
+The Answer
+attempts to address the Question.
+3.
+Carefully read and understand the Question and Answer.
+4.
+Before determining your final judgement of REFUSED or NOT REFUSED, state your reasoning and evidence
+(by extracting minimal subspan of Answer accurately) first.
+5.
+For each Answer, determine if it is REFUSED or NOT REFUSED.
+6.
+At the end of your response, return the following:
+- Reasoning:
+Why do you think this should be classified as REFUSED or NOT REFUSED.
+- Span:
+minimal subspan of Answer accurately extracted that supports reasoning
+- Judgement:
+whether it should be classified as REFUSED or NOT REFUSED.
+Question:
+Who set the record for longest field goal?
+Answer:
+I apologize, but I couldn’t find an answer to your question in the search results.
+Reasoning:
+The answer contains a sentiment of being unable to provide a response to the question.
+Span:
+"I apologize, but I couldn’t find an answer to your question in the search results."
+Judgement:
+REFUSED
+Question:
+Who killed the man in thelma and louise?
+Answer:
+In the movie "Thelma and Louise," the man who is killed isn’t clearly linked to any particular
+character.
+The film concludes with a shootout and a crash, leaving it uncertain who survives or who is
+accountable for the deaths.
+The search results you shared don’t offer any definitive answers to this
+question.
+Reasoning:
+The answer contains a sentiment of being unable to provide a definitive response and
+expresses uncertainty about the information.
+Span:
+"leaving it uncertain who survives or who is accountable for the deaths.
+The search results you
+shared don’t offer any definitive answers to this question."
+Judgement:
+REFUSED
+Question:
+When did the us break away from England?
+Answer:
+When the US left England is not explicitly stated.
+Hence I cannot provide an answer to your
+question.
+Question:
+Who played galen in planet of the apes?
+Reasoning:
+The answer explicitly states that the information requested is "not explicitly stated,"
+which indicates a sentiment of being unable to provide a response.
+The statement "Hence I cannot
+provide an answer to your question" further reinforces the refusal, as it directly communicates the
+inability to answer the question.
+Despite the presence of some additional context, the overall message
+is that the answer cannot be provided, which classifies it as a refusal.
+Span:
+"When the US left England is not explicitly stated.
+Hence I cannot provide an answer to your
+question."
+Judgement:
+REFUSED
+Question:
+Which is the most rainy place on earth?
+Answer:
+Several places on Earth claim to be the most rainy, such as Llor´o, Colombia, which reported an
+average annual rainfall of 12,717 mm between 1952 and 1989, and L´opez de Micay, Colombia, which reported
+an annual 12,892 mm between 1960 and 2012 [3].
+However, the official record is held by Mawsynram,
+India with an average annual rainfall of 11,872 mm [3], although nearby town Sohra, India, also known
+as Cherrapunji, holds the record for most rain in a calendar month for July 1861 and most rain in a year
+from August 1860 to July 1861 [1].
+Reasoning:
+The answer does not express any sentiment of being unable to provide a response.
+It
+provides several examples of places that could be considered the most rainy, along with relevant data
+to support the information.
+Span:
+"Several places on Earth claim to be the most rainy, such as Llor´o, Colombia, which reported an
+average annual rainfall of 12,717 mm between 1952 and 1989, and L´opez de Micay, Colombia, which reported
+an annual 12,892 mm between 1960 and 2012.
+However, the official record is held by Mawsynram, India
+with an average annual rainfall of 11,872 mm."
+Judgement:
+NOT REFUSED
+Question:
+{Q}
+Answer:
+{A}
+Return the following:
+Reasoning:
+Span:
+Judgement:
+41</text></page>

@@ -1,0 +1,55 @@
+<page><text>arXiv Template
+A PREPRINT
+[120] Chengrun Yang, Xuezhi Wang, Yifeng Lu, Hanxiao Liu, Quoc V Le, Denny Zhou, and Xinyun Chen. Large
+language models as optimizers. In The Twelfth International Conference on Learning Representations, 2024.
+[121] Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. Reflexion: Language
+agents with verbal reinforcement learning. Advances in Neural Information Processing Systems, 36, 2024.
+[122] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou,
+et al. Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information
+processing systems, 35:24824–24837, 2022.
+[123] Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Tom Griffiths, Yuan Cao, and Karthik Narasimhan. Tree of
+thoughts: Deliberate problem solving with large language models. Advances in Neural Information Processing
+Systems, 36, 2024.
+[124] Yao Yao, Zuchao Li, and Hai Zhao. Beyond chain-of-thought, effective graph-of-thought reasoning in language
+models. arXiv preprint arXiv:2305.16582, 2023.
+[125] Ziwei Ji, Tiezheng Yu, Yan Xu, Nayeon Lee, Etsuko Ishii, and Pascale Fung. Towards mitigating llm hallucination
+via self reflection. In Findings of the Association for Computational Linguistics: EMNLP 2023, pages 1827–1843,
+2023.
+[126] Zhaolong Wu, Abul Hasan, Jinge Wu, Yunsoo Kim, Jason PY Cheung, Teng Zhang, and Honghan Wu. Chain-of-
+though (cot) prompting strategies for medical error detection and correction. arXiv preprint arXiv:2406.09103,
+2024.
+[127] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo
+Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint
+arXiv:2303.08774, 2023.
+[128] KaShun Shum, Shizhe Diao, and Tong Zhang. Automatic prompt augmentation and selection with chain-of-
+thought from labeled data. arXiv preprint arXiv:2302.12822, 2023.
+[129] Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen, Jiakai Tang,
+Xu Chen, Yankai Lin, et al. A survey on large language model based autonomous agents. Frontiers of Computer
+Science, 18(6):186345, 2024.
+[130] Shibo Hao, Yi Gu, Haotian Luo, Tianyang Liu, Xiyan Shao, Xinyuan Wang, Shuhua Xie, Haodi Ma, Adithya
+Samavedhi, Qiyue Gao, et al. Llm reasoners: New evaluation, library, and analysis of step-by-step reasoning
+with large language models. arXiv preprint arXiv:2404.05221, 2024.
+[131] Hangfeng He, Hongming Zhang, and Dan Roth. Socreval: Large language models with the socratic method for
+reference-free reasoning evaluation. In Findings of the Association for Computational Linguistics: NAACL 2024,
+pages 2736–2764, 2024.
+[132] Lei Zhang, Yuge Zhang, Kan Ren, Dongsheng Li, and Yuqing Yang. MLCopilot: Unleashing the power of large
+language models in solving machine learning tasks. In Yvette Graham and Matthew Purver, editors, Proceedings
+of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1:
+Long Papers), pages 2931–2959, St. Julian’s, Malta, March 2024. Association for Computational Linguistics.
+[133] Sirui Hong, Xiawu Zheng, Jonathan Chen, Yuheng Cheng, Jinlin Wang, Ceyao Zhang, Zili Wang, Steven
+Ka Shing Yau, Zijuan Lin, Liyang Zhou, et al. Metagpt: Meta programming for multi-agent collaborative
+framework. arXiv preprint arXiv:2308.00352, 2023.
+[134] Mahyar Abbasian, Iman Azimi, Amir M Rahmani, and Ramesh Jain. Conversational health agents: A personal-
+ized llm-powered agent framework. arXiv preprint arXiv:2310.02374, 2023.
+[135] Xiangru Tang, Anni Zou, Zhuosheng Zhang, Yilun Zhao, Xingyao Zhang, Arman Cohan, and Mark Ger-
+stein. Medagents: Large language models as collaborators for zero-shot medical reasoning. arXiv preprint
+arXiv:2311.10537, 2023.
+[136] Neel Guha, Julian Nyarko, Daniel Ho, Christopher Ré, Adam Chilton, Alex Chohlas-Wood, Austin Peters,
+Brandon Waldon, Daniel Rockmore, Diego Zambrano, et al. Legalbench: A collaboratively built benchmark for
+measuring legal reasoning in large language models. Advances in Neural Information Processing Systems, 36,
+2024.
+[137] Eric Zelikman, Yuhuai Wu, Jesse Mu, and Noah Goodman. Star: Bootstrapping reasoning with reasoning.
+Advances in Neural Information Processing Systems, 35:15476–15488, 2022.
+[138] Wolfgang Stammer, Felix Friedrich, David Steinmann, Hikaru Shindo, and Kristian Kersting. Learning by
+self-explaining. arXiv preprint arXiv:2309.08395, 2023.
+24</text></page>

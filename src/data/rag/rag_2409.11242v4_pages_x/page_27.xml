@@ -1,0 +1,207 @@
+<page><text>Published as a conference paper at ICLR 2025
+F.5
+COMPARISON WITH CLOSED-SOURCE MODELS
+We continue our comparison of trustworthiness against competitive closed-source models utilizing
+in-context learning techniques. As shown in Table 12, our aligned models outperform GPT-3.5
+(69.23 vs. 67.64) and Claude-3.5 (69.23 vs. 64.36) on the ASQA dataset, and substantially out-
+perform GPT-3.5 (55.31 vs. 38.95), GPT-4 (55.31 vs. 40.35), and Claude-3.5 (55.31 vs. 39.78)
+on QAMPARI. However, the responsiveness of current closed-source models remains much higher
+than that of our models: even with a refusal prompt, ICL-GPT-4 still answers a significant fraction
+of questions (86.81% on ASQA, 73.40% on QAMPARI). As discussed in Section 6, this tendency
+allows GPT-4 to achieve higher F1AC scores on ASQA, but it negatively impacts its attribution
+groundedness: its F1GC scores on both datasets are lower than those of our models. Similarly, GPT-
+4’s F1GR scores on both datasets are also lower. On QAMPARI, the F1AC scores of all closed-source
+models are lower than those of our models.
+Moreover, there still remains a gap between our models and the closed-source models on the ELI5
+dataset. Our models’ TRUST-SCORE is 2.45 points lower than that of the advanced ICL-GPT-4,
+and specifically, the F1AC and F1GC scores are lower. For higher F1AC, as discussed in Section 6,
+it is due to a higher number of its answered answerable questions with comparable EMα
+AC. As
+for higher F1GC, We hypothesize that this gap could be attributed to the information density of the
+extracted claims utilized in constructing the alignment data (Section 4). Specifically, the three claims
+derived from the decomposition process may either be redundant or inadequate to fully encapsulate
+the information inherent in the original labelled response. In some cases, the decomposed claims
+may even fail to align with the original facts. First, insufficient information can lead the model
+to learn to extract fewer facts from the document, thereby reducing the answerability by covering
+fewer correct answers after training. Second, redundant information can impair grounded citation
+learning, as it repeats the same information across different claims, making the model less capable
+of performing precise citations from the corresponding documents. This issue is illustrated in the
+case study presented in Table 13.
+This experiment reveals that proprietary models demonstrate greater responsiveness compared to
+our models. While GPT-4 achieves superior F1AC scores, it underperforms in terms of F1GC and
+F1GR, suggesting limitations in its ability to ground responses and refuse unanswerable questions.
+Overall, GPT-3.5 and GPT-4 outperform our models in utilizing retrieved documents for long-
+form question answering, primarily due to the limited capacity of our base model.
+Table 12: Our models vs closed source: AR% := Answered Ratio in %; F1AC := Answer Correctness
+F1 (Calibrated); F1GR := Grounded refusals F1; F1GC := Grounded Citation F1; TRUST := TRUST
+score. R := Refusal prompt is used. D := Default prompt is used.
+ASQA
+QAMPARI
+ELI5
+Responsiveness
+Trustworthiness
+Responsiveness
+Trustworthiness
+Responsiveness
+Trustworthiness
+AR (%)
+Truthfullness
+Attr. Grdness
+TRUST
+AR (%)
+Truthfullness
+Attr. Grdness
+TRUST
+AR (%)
+Truthfullness
+Attr. Grdness
+TRUST
+Prompt
+F1AC
+F1GR
+F1GC
+F1AC
+F1GR
+F1GC
+F1AC
+F1GR
+F1GC
+Closed-source Models
+ICL-GPT-3.5
+R
+71.20
+52.91
+66.07
+83.94
+67.64
+65.30
+26.57
+58.49
+31.80
+38.95
+49.00
+32.38
+58.27
+57.29
+49.31
+ICL-GPT-4
+R
+86.81
+62.96
+61.85
+84.35
+69.72
+73.40
+30.13
+55.46
+35.45
+40.35
+61.50
+33.05
+53.11
+61.84
+49.33
+ICL-Claude-3.5
+R
+84.60
+59.97
+64.77
+68.35
+64.36
+69.80
+28.40
+58.10
+32.83
+39.78
+59.00
+11.34
+54.00
+12.43
+25.92
+ICL-GPT-3.5
+D
+94.41
+55.03
+52.48
+78.04
+61.85
+94.50
+20.30
+29.54
+21.22
+23.69
+93.50
+23.88
+24.68
+46.28
+31.61
+ICL-GPT-4
+D
+92.72
+62.37
+54.17
+79.70
+65.41
+87.70
+26.19
+40.03
+30.02
+32.08
+82.80
+29.09
+37.02
+48.33
+38.15
+ICL-Claude-3.5
+D
+82.49
+54.20
+66.49
+58.88
+59.86
+69.90
+0.00
+57.40
+0.00
+19.13
+56.60
+11.56
+56.03
+11.22
+26.27
+TRUST-ALIGN Models
+DPO-LLaMA-2-7b
+R
+65.30
+52.48
+66.12
+83.94
+67.51
+31.10
+32.09
+71.83
+51.33
+51.75
+21.60
+22.54
+63.27
+48.43
+44.75
+DPO-LLaMA-3-8b
+R
+56.43
+53.94
+65.49
+88.26
+69.23
+23.10
+35.94
+71.11
+58.87
+55.31
+15.50
+22.81
+64.00
+53.84
+46.88
+27</text></page>

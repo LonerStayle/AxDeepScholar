@@ -1,0 +1,70 @@
+<page><text>Figure 1: The influence of various extraction methods (top)
+and context size k (bottom) on the extraction rates.
+GenAI engine, and GTE-base-768 [45] for the embeddings
+algorithm in all of the experiments performed.
+Results. As can be seen from the results presented in Fig.
+1 top, the extraction method affects the extraction rate sig-
+nificantly. Using the Adaptive Method, attackers can extract
+80.6% of the documents in the database used by the Q&amp;A
+chatbot. The number of documents that could be extracted
+using the Adaptive method is x4 times greater than the results
+received by the two other extraction methods that yielded
+extraction rates lower than 20%.
+Next, we evaluate the influence of the context size (the
+number of documents provided by the RAG to the GenAI
+engine) on the performance of the RAG documents extraction
+attack. To evaluate the influence of the three context sizes (k
+= 5, 10, 20), we used the adaptive method as the extraction
+method, Gemini 1.5 Flash for the GenAI engine, GTE-base-
+768 for the embeddings algorithm, and a total number of 800
+queries in all of the experiments performed.
+Results. As can be seen from the results presented in
+Fig. 1 bottom, for k = 5,10,20, we were able to extract
+43.4%,64.5%,80.6% of the documents. This marks that the
+extraction rates are highly affected by the context size k.
+3.4.4
+Evaluating the Influence of the GenAI Engine, Em-
+beddings Algorithm, and Space
+Here we evaluate the influence of the embeddings algorithm
+and its space on the performance of the RAG documents ex-
+traction attack using five different embeddings algorithms:
+three GTE embeddings [45] algorithms (small-384, base-768,
+large-1024), Nomic-768 [46], and MPNet-768 [20]. To evalu-
+ate it, we used the adaptive method as the extraction method,
+Gemini 1.5 Flash for the GenAI engine, k = 20 for the context
+size, and a total of 800 queries in all experiments performed.
+Figure 2: The influence of various embeddings algorithms
+and sizes (top) and GenAI engine (bottom).
+Results. As can be seen from the results presented in Fig. 2,
+the extraction rates for GTE-768, MPNet-768, and Nomic-768
+are 80.6%, 98.8%, 90.9%, marking that there is a significant
+difference of 18.2% in the extraction rates depending on the
+target embedding algorithm used for similar sizes. As can
+also be seen from the results, the extraction rates for GTE-
+384, GTE-768, GTE-1024 are 91.0%, 80.6%, 80.4%, yielding
+a difference of 10.6%, marking a significant difference in
+extraction rates depending on the size of the embedding algo-
+rithm used.
+Finally, we evaluate the influence of the GenAI engine on
+the performance of the RAG documents extraction attack us-
+ing three different GenAI engines: Gemini 1.0 Pro, Gemini
+1.5 Flash, and GPT-4o Mini. To evaluate it, we used the adap-
+tive method as the extraction method, GTE-base-768 for the
+embedding algorithm, k = 20 for the context size, and a total
+number of 800 queries in all of the experiments performed.
+Results. As can be seen from the results presented in Fig.
+2, there is a significant difference of in the extraction rates,
+depending on the GenAI engine being used by the Q&amp;A
+chatbot. This difference is based by the fact that GenAI engine
+returned different number of documents on average: Gemini
+1.0 Pro returned 4.06 documents on average (σ = 2.76) from
+the 20 documents provided by the RAG, yielding extraction
+rates of 42.9%. Gemini 1.5 Flash and GPT-4o-Mini returned
+18.36 (σ = 2.86) and 15.05 (σ = 4.99) documents on average
+from the 20 documents provided by the RAG, and therefore
+yielded higher extraction rates of 73.6% and 80.6%.
+4
+RAG-based Worm
+In this section, we investigate the risk posed by a jailbroken
+GenAI model to GenAI ecosystems that consist of RAG-
+6</text></page>

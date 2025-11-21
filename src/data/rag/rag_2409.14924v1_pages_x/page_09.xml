@@ -1,0 +1,53 @@
+<page><text>arXiv Template
+A PREPRINT
+of the original query into multiple retrieval operations and the aggregation of results into a comprehensive answer. This
+level often involves common-sense reasoning without requiring domain-specific expertise. This type of queries may
+include statistical queries, descriptive analysis queries, and basic aggregation queries. For example, operations such as
+counting, comparison, trend analysis, and selective summarization are common in "how many" and "what’s the most"
+type queries, while multi-hop reasoning is frequently used. Therefore, we can define the level-2 queries, Q2 as follows:
+For any query q and its corresponding answer a, a Q2 fact query is one where:
+• There exists a set of explicit fact queries{q1, q2, . . . , qm} ⊂Q1, each of which can be directly retrieved from
+specific data segments within the dataset D, such that:
+rD(q) =
+m
+[
+i=1
+rD(qi)
+where rD(qi) identifies the relevant data segments from D necessary to answer qi, and the union of these
+segments provides the information necessary to answer q.
+• A response generator θ, typically a prompted LLM inference, constructs the answer a to q by aggregating
+the responses {θ(rD(q1)), θ(rD(q2)), . . . , θ(rD(qm))} and applying common-sense reasoning to derive an
+answer that is not explicitly stated in the data. The response θ(rD(q)) should approximate the correct answer
+a, demonstrating that the query q can be effectively answered through the aggregation of responses to the Q1
+queries.
+This definition underscores the reliance of Q2 queries on the ability to decompose complex queries into a set of simpler,
+explicit fact queriesQ1, whose answers can then be combined to generate the correct response to the original query Q2.
+Here are some examples of queries at this level:
+• How many experiments have sample sizes greater than 1000? (given a collection of experimental records)
+• What are the top 3 most frequently mentioned symptoms? (given a collection of medical records)
+• What’s the difference between the AI strategies of company X and company Y? (given a series of the latest
+news and articles about companies X and Y)
+4.2
+Challenges and Solutions
+At this level, queries still revolve around factual questions, but the answers are not explicitly presented in any single text
+passage. Instead, they require combining multiple facts through common-sense reasoning to arrive at a conclusion. The
+challenges of a level-2 query primarily include:
+• Adaptive retrieval volumes: Different questions may require varying numbers of retrieved contexts, and the
+specific number of retrieved contexts can depend on both the question and the dataset. A fixed number of
+retrievals may result in either information noise or insufficient information.
+• Coordination between reasoning and retrieval: Reasoning can guide the focus of what needs to be retrieved,
+while the insights gained from retrieved information can iteratively refine reasoning strategies. Addressing
+these complexities calls for an intelligent integration and selective harnessing of external data, capitalizing on
+the inherent reasoning prowess of LLMs.
+Methods to address challenges at this level include iterative RAG, RAG on graph/tree, and RAG with SQL, among
+others.
+4.3
+Iterative RAG
+Implicit fact queries is similar to multi-hop RAG tasks. This category of methods dynamically controls multi-step RAG
+processes, iteratively gathering or correcting information until the correct answer is achieved.
+• Planning-based: Generating a stepwise retrieval plan during the prior-retrieval stage or dynamically within
+the retrieval process can refine the focus of each retrieval, efficiently guiding the iterative RAG system. For
+example, ReAct [93] progressively updates the target of each step, reducing the knowledge gap required
+to answer the question. IRCoT [94] and RAT[95] uses a Chain of Thought to guide the RAG pipeline,
+making decisions about the current retrieval target based on previously recalled information. GenGround [96]
+9</text></page>

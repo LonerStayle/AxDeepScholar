@@ -1,0 +1,76 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table 26: The prompts used for GPT-4 based critic.
+Coverage Critic Prompt
+[INSTRUCTION]
+You will be given Question and the corresponding correct answers, along with a candidate answer and
+reference facts.
+Please follow these steps to process the candidate answer:
+1.
+Carefully read and understand the given Question, the list of correct answers, and the candidate
+answer.
+2.
+For each given correct answer, first determine if there is a conflict with the candidate answer:
+- If there is no conflict, and it is included in the candidate answer, extract the matched term from the
+candidate answer and classify them as "upvote".
+- If there is a conflict, identify the specific conflicting span within the candidate answer (accurately
+pinpoint the details), classify it as "downvote", then only minimally modify the conflicting part of
+the candidate answer to correct it according to the corresponding correct answer (using context from the
+reference fact).
+Classify the modified span as "revise".
+- If there is a conflict, but it is not included in the candidate answer, extend the candidate answer
+to include the correct answer (using material from the corresponding part of the reference facts), and
+classify the extended portion as "revise".
+3.
+At the end of your response, provide the following:
+- The final revised candidate answer that
+includes all correct answers and has no conflicts (if no modification is needed, output the original
+one).
+[TASK]
+Question:
+{QUESTION}
+Correct Answers:
+{SHORT ANS}
+Candidate Answer:
+{CANDIDATE}
+Reference Facts:
+{FACT}
+Citation Critic Prompt
+[INSTRUCTION]
+Given a question and a list of CLAIMs, use the provided FACTs to determine which numbered FACTs togeter
+SUPPORT, OPPOSE, or are IRRELEVANT to each CLAIM. Follow these to give your judgement:
+1.
+"SUPPORT" means the FACT directly participates in supporting the factuality of the CLAIM. The CLAIM
+should be strongly implied by the FACT.
+2.
+"OPPOSE" means the FACT contributes to prove the CLAIM contains at least one factual error.
+3.
+"IRRELEVANT" means the FACT does not contribute directly to either SUPPORT or OPPOSE the given
+CLAIM.
+4.
+Carefully read the given question and FACTs to ensure you have a clear understanding of them.
+5.
+For each CLAIM, analyze its content to show all factual arguments and assertions.
+6.
+Look into the details of each FACT, and find factual-related points of each FACT.
+7.
+Before determining your final judgement for all CLAIMs at the end, state your reasoning and evidence
+first.
+8.
+In your final judgement, give a numbered list with each line corresponding to a CLAIM. Then, for
+each CLAIM, separately list the index of each FACT for "SUPPORT", "OPPOSE", and "IRRELEVANT", with the
+format [FACT X], where X is the index of the FACT starting from 1.
+For example, suppose we have two
+CLAIMs and three FACTs in total:
+"/n/n1.
+SUPPORT: [FACT 1][FACT 3], OPPOSE: NONE, IRRELEVANT: [FACT
+2]/n/n2.
+SUPPORT: NONE, OPPOSE: [FACT 2], IRRELEVANT: [FACT 1][FACT 3]".
+If no FACT, then just give
+"NONE".
+[TASK]
+Question:
+{QUESTION}
+CLAIM: {CLAIM PLACEHOLDER}
+FACTs:
+{FACT PLACEHOLDER}
+40</text></page>

@@ -1,0 +1,78 @@
+<page><text>Published as a conference paper at ICLR 2025
+As an aggregate measure, we report F1GC, which computes the F1 score using cumulative precision
+and recall over the answered questions only (non-refusals):
+Rcite =
+1
+|Ar|
+X
+S∈Asr
+1
+|S|
+X
+si∈S
+Rsi
+cite
+(13)
+Pcite =
+1
+|Ar|
+X
+C∈Acr
+1
+|C|
+X
+cj∈C
+Pcj
+cite
+(14)
+F1GC = 2 · Pcite · Rcite
+Pcite + Rcite
+(15)
+Where Ar denotes the number of samples answered by the model, S denotes the set of statements
+in a generated response, and As
+r denotes the set of responses (including only statements, ignoring
+citations) in the dataset. Similarly, C denotes the set of citations in a generated response, and Ac
+r
+denotes the set of responses (including only citations, ignoring statements) in the dataset.
+TRUST-SCORE:
+Finally, we combine the metrics to produce a single trustworthiness score, which
+allows us to rank models based on their trustworthiness. This score is calculated as the average of
+each component metric.
+TRUST-SCORE = 1
+3(F1GR + F1AC + F1GC)
+(16)
+E
+THE TRUST-ALIGN DATASET
+To align LLMs towards trustworthiness, we propose a new approach, TRUST-ALIGN. The approach
+constructs an LLM trustworthiness alignment dataset, where each sample in the dataset consists
+of a question q, a set of retrieved documents D, and a pair of positive (preferred) and negative
+(unpreferred) responses (r+, r−). The positive response corresponds to an answer that encompasses
+expected gold claims for q and corresponding citations referring to the documents. If D is not
+sufficient to answer q, r+ is assigned a refusal response, while r−is its non-refusal counterpart.
+We build the dataset in multiple steps: 1) Obtain a set of high-quality and diverse questions, 2)
+Obtain documents for each question, 3) Augmenting (q, D) pairs that cover diverse hallucination
+types, 4) Construct positive responses entailing gold claims, and 5) Construct negative (unpreferred)
+responses by prompting a fine-tuned model and observing its hallucinations.
+E.1
+COLLECTING QUALITY QUESTIONS
+The dataset construction process begins with gathering a diverse set of high-quality, challenging
+questions from the training splits of source datasets, including ASQA, QAMPARI, and ELI5. To
+collect seed samples, we first divide the questions in a dataset into k clusters using a Hugginface
+pipeline11. After identifying the diverse clusters, we use Mixtral-8x7B with the prompt described in
+Table 24 to assign each a quality score ranging from 1 to 7. The quality of a cluster is determined
+by how difficult it is to answer the questions without requiring additional information i.e. a higher
+score corresponds to a high difficulty. We then select clusters with a quality score of 4 or higher and
+sample the desired number of questions from these top clusters. Suppose we have three clusters,
+C1, C2, C3, with respective sizes N1, N2, N3, where Nc = N1 + N2 + N3. To sample Ns questions
+from the clusters, we sample Ns× Ci
+Nc questions from cluster Ci. If this number exceeds the available
+questions in the cluster, we randomly sample the remaining questions from the filtered-out clusters
+(those with a quality score below 4). This process ensures that the seed set prioritizes both high
+quality and diversity. For this paper, we set Ns to 3K, 3K, and 4K for ASQA, QAMPARI, and ELI5,
+respectively, resulting in approximately 10K questions in the seed set.
+E.2
+COLLECTING D’S
+For each seed question q that is obtained from ASQA and QAMPARI, we used gtr-t5-xxl (Ni
+et al., 2022) to retrieve the top 100 relevant documents D from the 2018-12-20 Wikipedia snapshot.
+11https://github.com/huggingface/text-clustering/
+21</text></page>

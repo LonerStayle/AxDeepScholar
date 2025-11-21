@@ -1,0 +1,59 @@
+<page><text>Published as a conference paper at ICLR 2025
+ExpertQA
+(Malaviya et al., 2024).
+This dataset spans various topics and requires domain-
+specific knowledge to solve long-form questions. To further verify the generalizability of our ap-
+proach, we test our best model and some of the baselines on this unseen dataset.
+H.3
+BASELINES
+Table 18: A case study illustrating the necessity of GPT-4o matching for detecting refusals in models
+prompted with default prompt.
+Question:
+Who killed the man in thelma and louise?
+Answer:
+"In the movie ¨Thelma and Louise,¨the man who is killed is not
+explicitly identified as being killed by any specific character.
+The
+movie ends with a shootout and a crash, and it is unclear who
+survives or who is responsible for the deaths.
+The search results
+you provided do not provide any clear answers to this question.
+Fuzzy match judgement:
+Not refusal
+Human judgement:
+Refusal
+GPT-4o judgement:
+Refusal
+H.3.1
+IN-CONTEXT LEARNING (ICL)
+Following Gao et al. (2023b), we prepend with two demonstrations, each consisting of a query, top-5
+retrieved passages, and an answer with inline citations.
+H.3.2
+POST-HOC SEARCH (POSTCITE)
+Following Gao et al. (2023b), we first prompt the model under a closed book setting i.e. without
+any retrieved passages, to obtain an uncited answer. Then, GTR is used to find the best matching
+citation among the top-5 retrieved passages for every statement.
+H.3.3
+POST-HOC ATTRIBUTE (POSTATTR)
+Similar to PostCite, we first obtain model response under a closed book setting. Then we use the
+TRUE NLI model to find the best matching citation among top-5 retrieved passages.
+H.3.4
+SELF-RAG
+Self-RAG trains the LLM to retrieve documents on demand using special reflection tokens and
+enhances generation quality through self-reflection. We compare our results against the 7b and 13b
+models released, using the default settings as described in (Asai et al., 2024).
+H.3.5
+FRONT
+FRONT (Huang et al., 2024b) utilizes a fine-grained attribution training framework that first grounds
+specific supporting quotes, and then generates responses with citations based on those quotes. It
+tunes the LLM with automatically collected data based on ChatGPT and quality filtering. We repro-
+duce its 7b model for the evaluation.
+H.4
+REFUSAL DETECTION
+We employed two methods to measure refusals robustly. In a refusal prompt, models were explic-
+itly instructed to respond only with the phrase: ”I apologize, but I couldn’t find an answer to your
+question in the search results.” without providing any further explanation. As the models generally
+complied with this pattern, we were able to apply fuzzy matching17 to detect the phrase above indi-
+cating refusal. For models responding to a default prompt, refusals did not adhere to a fixed pattern,
+17Fuzz Partial Ratio was used to mitigate the impact of string length.
+32</text></page>

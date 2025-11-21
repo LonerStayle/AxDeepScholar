@@ -1,0 +1,94 @@
+<page><text>arXiv Template
+A PREPRINT
+Task Categorization
+Datasets
+levels
+Mutiple References
+QA
+NQ(Natural Questions)[15]
+1 - Explicit Facts
+False
+MS MARCO [16]
+1 - Explicit Facts
+False
+TriviaQA[17]
+1 - Explicit Facts
+False
+SQuAD [18]
+1 - Explicit Facts
+False
+ASQA [19]
+1 - Explicit Facts
+False
+WebQSP [20]
+1 - Explicit Facts
+False
+HotPotQA[21]
+2 - Implicit Facts
+True
+2WikiMultiHopQA[22]
+2 - Implicit Facts
+True
+MuSiQue[23]
+2 - Implicit Facts
+True
+Bamboogle[24]
+2 - Implicit Facts
+True
+StrategyQA[25]
+2 - Implicit Facts
+True
+ComplexWebQuestions [26]
+2 - Implicit Facts
+True
+WebQuestions [27]
+2 - Implicit Facts
+True
+Mintaka [28]
+2 - Implicit Facts
+True
+MetaQA [29]
+2 - Implicit Facts
+True
+qasper [30]
+2 - Implicit Facts
+True
+DROP [31]
+2 - Implicit Facts
+True
+Multi-Choice
+QuALITY [32]
+2 - Implicit Facts
+True
+Fact Checking
+Feverous[33]
+2 - Implicit Facts
+True
+Table 1: Stratification of Common Datasets Providing Facts
+3.1.1
+Data Dependency
+The dataset D can be segmented into documents or segments, denoted as D1, D2, . . . , Dn, in various ways:
+D = {D1, D2, . . . , Dn}
+(2)
+Each segment Di is considered relatively short and contains content that is more focused and specific2.
+For a given query q ∈Q, not every segment within D is requisite for formulating a response. Let δ : Q × D →{0, 1}
+denote the necessity of data segment d ∈D for a specific query q, where δ(q, d) = 1 means that data segment d is
+required to answer the query q, and δ(q, d) = 0 otherwise. Then the data dependency of query q, characterized by the
+subset of segments indispensable for addressing query q, is defined as:
+Dep(q) = {d | d ∈D and δ(q, d) = 1}
+(3)
+It’s easy to understand that Dep(q) ∈P(D), where P(D) is the power set3 of D.
+3.1.2
+Definition
+Explicit fact queries, denoted as Q1, are characterized by the direct retrievability of answers from specific data segments
+within the dataset D. These queries can be formally defined in the context of a data-augmented LLM system as follows:
+For any query q and its corresponding answer a, an explicit fact query is one where there exists:
+• A retrieval component rD : Q →P(D) that identifies the relevant data segments from D necessary to answer
+q. This component ensures that rD(q) closely matches Dep(q), the minimal subset of D required to respond
+to q.
+• A response generator θ, typically a prompted LLM inference, that constructs the answer a based solely on the
+information retrieved by rD. The response θ(rD(q)) should be equal to or approximate a, demonstrating the
+query’s reliance on explicit, directly accessible facts.
+2In some most recent advancements, the segment size may be as large as a whole document or even larger
+3The power set (or powerset) of a set S is the set of all subsets of S, including the empty set and S itself.
+5</text></page>

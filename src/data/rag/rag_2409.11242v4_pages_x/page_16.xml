@@ -1,0 +1,100 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table of Contents
+A Nuances of answerability
+17
+B
+Answerability: A Case Study
+17
+C Related Works
+18
+C.1
+Attributable Retrieval Augmented Generation . . . . . . . . . . . . . . . . . . .
+18
+C.2
+Enhance grounded text generation in attributed Large Language Models . . . . .
+18
+D Metrics
+19
+D.1
+Response Truthfulness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+19
+D.2
+Attribution Groundedness . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+20
+E
+The TRUST-ALIGN Dataset
+21
+E.1
+Collecting Quality Questions
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+E.2
+Collecting D’s . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+E.3
+Augmenting (q,D) set . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+E.4
+Obtaining r+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+E.5
+Obtaining r−
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+F
+Additional Analysis
+24
+F.1
+Revised metrics are less biased
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+24
+F.2
+Utilization of Parametric Knowledge . . . . . . . . . . . . . . . . . . . . . . .
+25
+F.3
+The Source of LLM Hallucinations . . . . . . . . . . . . . . . . . . . . . . . .
+25
+F.4
+TRUST-ALIGN enhances trustworthiness more robustly than prompting . . . . .
+26
+F.5
+Comparison with Closed-source Models
+. . . . . . . . . . . . . . . . . . . . .
+27
+F.6
+Adaptability with Different Alignment Techniques . . . . . . . . . . . . . . . .
+28
+F.7
+Evaluation Data Creation Without using TRUE . . . . . . . . . . . . . . . . . .
+29
+F.8
+Effect of data size on DPO performance . . . . . . . . . . . . . . . . . . . . . .
+30
+F.9
+Fine-tuning GPT-4o . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+30
+G GPT-4 based Data Pipeline
+30
+H Experimental Setup
+31
+H.1
+Implementation details
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+H.2
+Dataset details . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+31
+H.3
+Baselines . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+32
+H.4
+Refusal Detection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+32
+I
+Detailed Results
+33
+J
+Prompt Templates
+33
+16</text></page>

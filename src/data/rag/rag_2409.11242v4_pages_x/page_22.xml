@@ -1,0 +1,124 @@
+<page><text>Published as a conference paper at ICLR 2025
+For the ELI5 dataset, we employed BM25 in conjunction with Sphere (Piktus et al., 2021), a filtered
+version of Common Crawl, as it better encompasses the wide range of topics present in ELI5. We
+filter seed questions for which the retriever fails to retrieve relevant documents.
+We utilize TRUE-NLI to derive the entailment pattern for each document. This pattern represents
+the set of gold claims that the document supports. The TRUE model takes as input a concatenation
+of a premise and a hypothesis, producing an entailment score (0 or 1) that indicates whether the
+premise entails the hypothesis. In our approach, the documents serve as the premise, while the
+hypothesis is formed by combining the relevant question with each corresponding gold claim to
+reduce ambiguity. We take the union of the entailment patterns across documents to assess the
+answerability of each question—if the pattern contains at least one supporting claim, the question is
+considered answerable.
+Following Gao et al. (2023b), we identify 5 documents that are equally effective for the model
+as the 100 documents in terms of achieving the Exact Match (EM) recall value; we refer to such
+documents as oracle documents for question q. Notably, to compute EM, gold claims are obtained
+from respective source datasets.
+E.3
+AUGMENTING (q,D) SET
+Now that we have the questions and the most relevant (oracle) documents, our goal is to create sam-
+ples of diverse types (i.e., different proportions of relevant documents for the same question) that
+can trigger multiple hallucinations from LLMs (Section 2.3). As illustrated in Fig. 3, for answerable
+questions, we first utilize the identified entailment patterns to generate all possible combinations of
+documents, then select k combinations that cover diverse patterns. To create samples with unan-
+swerable questions, we select documents that are similar to gold-claim-entailing documents but do
+not entail any gold claims. To minimize the risk of introducing bias in citation indices, we shuffle the
+order of documents in each sample. As a result, we generate approximately 70K question-document
+pairs.
+After obtaining (q, D) pairs for the alignment dataset, we obtain positive and negative responses
+(r+, r−) for each pair—an essential component of the dataset signaling the model’s preferred and
+unpreferred responses. To achieve this, we introduce a response generation pipeline.
+E.4
+OBTAINING r+
+We develop an automated data labeling pipeline that synthesizes natural responses from gold claims
+and maps each statement to the corresponding documents for embedded in-line citations. The gold
+claims are obtained from the source datasets (ASQA, QAMPARI, ELI5) and calibrated to the pro-
+vided documents, i.e., filtering out claims that cannot be derived from D. We first split the questions
+into answerable and unanswerable samples based on whether the provided documents entail the
+gold claims. For an answerable sample, consisting of a question q, a set of documents D, and a list
+of (calibrated) gold claims, we prompt GPT-4 to generate a natural response by stitching together
+the gold claims using a template (Table 23). Please refer to the subsection below for more details
+Document Recombination
+Doc 1
+[1,0,0]
+Doc 4
+[1,0,1]
+Get all entailment
+patterns
+Doc 5
+[0,0,0]
+Doc 6
+[0,0,0]
+Doc 7
+[0,0,0]
+Doc 3
+[0,0,1]
+Doc 1
+[1,0,0]
+Doc 1
+[1,0,0]
+Doc 2
+[1,0,0]
+Doc 3
+[0,0,1]
+Doc 1
+[1,0,0]
+Doc 2
+[1,0,0]
+Doc 4
+[1,0,1]
+Doc 1
+[1,0,0]
+Doc 3
+[0,0,1]
+Doc 1
+[1,0,0]
+Doc 3
+[0,0,1]
+Doc 2
+[1,0,0]
+Doc 5
+Doc 91
+Doc 70
+Doc 75
+Doc 11
+Doc 6
+Doc 97
+Doc 77
+Doc 86
+Doc 32
+Doc 27
+Doc 81
+Doc 66
+Doc 53
+Doc 44
+Doc 2
+[1,0,0]
+[1,0,1]
+[1,0,0]
+[0,0,1]
+...
+Valid Documents
+Invalid Documents
+Select k combinations
+covering all entailment
+patterns
+Pool of 96 invalid
+documents
+Pool of 50 invalid
+documents
+Find docs
+most similar
+to question
+For each group, fill remaining
+places with invalid docs
+most similar to the existing
+valid docs 
+Doc 3
+[0,0,1]
+Doc 2
+[1,0,0]
+Doc 3
+[0,0,1]
+Figure 3: Document recombination process in augmented prompt curation.
+22</text></page>

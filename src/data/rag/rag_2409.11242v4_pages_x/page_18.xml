@@ -1,0 +1,61 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table 8: Case study showcasing the limitations of substring matching and necessity of TRUE judge-
+ment.
+Question
+How many state parks are there in Virginia?
+Gold Answer
+38
+Retrieved document
+Virginia has 30 National Park Service units, such as Great Falls Park and
+the Appalachian Trail, and one national park, the Shenandoah National
+Park. With over 500 miles of trails, including 38 miles of the iconic
+Appalachian Trail, it’s a paradise for hikers, nature lovers, and those
+seeking serene mountain landscapes.
+Substring match
+Substring is matched and as such the question is answerable.
+TRUE Judgement
+Not entailed as such the question is unanswerable given the document.
+C
+RELATED WORKS
+C.1
+ATTRIBUTABLE RETRIEVAL AUGMENTED GENERATION
+Retrieval Augmented Generation (RAG) has been widely studied for reducing the knowledge gap
+and providing more referenced information to enhance answer generation (Karpukhin et al., 2020;
+Lewis et al., 2021; Gao et al., 2023c). However, LLMs are prone to being misled by irrelevant
+information, leading to hallucinations and less factual outputs (Shi et al., 2023; Yoran et al., 2024;
+Xu et al., 2023). This challenge has spurred research into attributable RAG, which aims to verify
+model outputs by identifying supporting sources. Rashkin et al. (2022) first introduced the concept
+of Attributable to Identified Sources (AIS) to evaluate attribution abilities. Subsequently, Gao et al.
+(2023b) adapted this approach to verify generated content with citations, improving the reliability
+of RAG systems. Simultaneously, Press et al. (2024) and Song et al. (2024) explored related as-
+pects: citation attribution for paper identification and the verifiability of long-form generated text,
+respectively. Further fine-grained evaluations have been examined, such as assessing the degree
+of support (Zhang et al., 2024b) and the granularity of claims (Xu et al., 2024). Recent studies
+(Buchmann et al., 2024; Hsu et al., 2024) have also investigated attribution ability by disentangling
+the confounding effects of retrievers and LLMs. Unlike existing works, we design TRUST-SCORE
+to prioritize trustworthiness in LLMs by ensuring that generated responses are strictly grounded in
+the provided documents, thereby minimizing the generation of unverifiable content. This focus on
+verifiable accuracy strengthens the reliability of LLM outputs and enhances user trust.
+C.2
+ENHANCE GROUNDED TEXT GENERATION IN ATTRIBUTED LARGE LANGUAGE MODELS
+To enhance grounded text generation, various attributed LLMs have been proposed, falling into two
+main paradigms: training-free and training-based. For training-free methods: 1) In-context learning
+(Gao et al., 2023b) is used to generate in-line citations with few-shot demonstrations. 2) Post-hoc
+attribution (Gao et al., 2023a; Li et al., 2024b) first generates an initial response and then retrieves ev-
+idence as attribution. 3) Ji et al. (2024) demonstrate that using chain-of-thought reasoning improves
+the quality of text generated with citations. For training-based methods: 1) Asai et al. (2024); Slo-
+bodkin et al. (2024); Xia et al. (2024); Ye et al. (2024) apply supervised fine-tuning (SFT) to LLMs,
+training them to identify useful information from documents and guide cited text generation with
+them. 2) Beyond simple SFT, recent studies model the task as preference learning, employing Re-
+inforcement Learning with Human Feedback (RLHF) (Ouyang et al., 2022) and Direct Preference
+Optimization (DPO) (Rafailov et al., 2024a). Huang et al. (2024a) proposed a method to improve at-
+tribution generation using fine-grained rewards and Proximal Policy Optimization (PPO) (Schulman
+et al., 2017), while Li et al. (2024a); Huang et al. (2024b) introduced the modified DPO framework
+to enhance fine-grained attribution abilities. 3) While many approaches rely on external documents
+provided by the user or retrieved during generation, Khalifa et al. (2024); Zhang et al. (2024a) fo-
+cus on tuning LLMs to cite sources from pre-training data using learned parametric knowledge.
+In contrast to previous approaches, we introduce TRUST-ALIGN, which advances alignment data
+generation through a multi-step process that disentangles answer generation from citation quality.
+This separation enables TRUST-ALIGN to simultaneously improve the quality of answer generation,
+citation accuracy, and refusal precision. Additionally, TRUST-ALIGN addresses a broader range of
+18</text></page>

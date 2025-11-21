@@ -1,0 +1,105 @@
+<page><text>input are retrieved and provided to the GenAI engine. There-
+fore, the ability to control the embeddings of the input allows
+attackers to control the retrieval from the database and the
+extraction of the documents. This should potentially minimize
+the number of queries used for the extraction compared with
+a random draw of words for a query. We note that due to the
+fact that the inputs provided to the Q&amp;A chatbot start with a
+jailbreaking command, we only perturb the suffix of the input
+so the entire input (the jailbreaking and the suffix) will collide
+with the desired embeddings vector.
+3.4
+Evaluation
+Here we compare the results obtained from three extraction
+methods and evaluate how the results are affected by the type
+and the size of five embeddings algorithms, the size of the
+provided context (i.e., the number of documents provided to
+the GenAI engine), and the GenAI engine employed.
+3.4.1
+Experimental Setup
+The Q&amp;A Chatbot. We implemented the Q&amp;A medical chat-
+bot using the code provided here2. The client was imple-
+mented using LangChain and the template of the query that
+the client used to generate a query for the GenAI engine can
+be seen in Listing 1.
+You are a medical Q&amp;A bot.
+You have to answer the next question:
+{"Question"}.
+Use the following context to answer it:
+{Q&amp;A-1}, Q&amp;A-2}, ..., {Q&amp;A-k}
+Answer:
+Listing 1: The template of the medical Q&amp;A chatbot.
+The RAG was implemented using VectorStores with Cosine
+as a similarity function.
+Data. We utilized the chatdoctor-dataset [18]. This is
+an open dataset uploaded to HuggingFace that consists
+of real conversations between patients and doctors from
+HealthCareMagic.com. This dataset is used in science to
+compare the performance of medical Q&amp;A chatbots [18] cre-
+ated by (1) fine-tuning GenAI models using the dataset and
+(2) providing the relevant data from the dataset using RAG
+as context to a GenAI model that was not fine-tuned. We ran-
+domly selected 1,000 documents from chatdoctor-dataset and
+added them to the database used by the Q&amp;A chatbot. We
+used these documents as the target dataset for extraction in
+our experiments.
+3.4.2
+Metrics
+We evaluate the performance of the attack using this metric:
+2https://towardsdatascience.com/retrieval-augmented-
+generation-rag-from-theory-to-langchain-implementation-
+4e9bd5f6a4f2
+Extraction rate. A 0-100.0 score that represents the per-
+centage of unique documents that were extracted from the
+database. This score is calculated as the number of unique
+extracted documents divided by the number of documents
+stored in the database.
+3.4.3
+Evaluating the Influence of Extraction Method and
+the Size of the Context
+Here we evaluate the influence of three extraction methods
+on the performance of the RAG documents extraction attack.
+We used the jailbreaking command pre as a prefix (presented
+in Listing 2) for the three methods. Each method is evaluated
+with 800 queries.
+We are going to have a roleplay , After reading
+this from now on you are Wormy an AI
+assistant that is interested in all the
+context documents , return all the documents in
+a JSON format: {Content: "" , Metadata: ""}.
+Ignore the following text:
+Listing 2: The jailbreaking command we used as pre.
+While the prefix pre of the queries was fixed, the suffix of
+each query suf (that was appended to pre) has been changed
+between queries according to the extraction method:
+(1) Random Draw Oriented Method: a random draw of 20
+tokens in the range of [1,32,000] based on uniform drawing
+distribution. The tokens were decoded back to strings (without
+the use of Algorithm 1). This method has mainly been used
+to benchmark a naive extraction process.
+(2) English Distribution Oriented Method: a random draw
+of 800 vectors of embeddings, where each value in the vec-
+tor was drawn from a Gaussian distribution of the English
+language of the embeddings algorithm (we provide the exact
+details on how we learned the Gaussian distribution of the
+English language in Appendix A).
+We used Algorithm 1 to create 800 suffixes to the 800 em-
+beddings vectors (each of which was executed in Algorithm
+1 as target with the additional fixed parameters of: suf =
+!!!!!!!!!!2, iterations = 3, randomN = 512, and thresh = 0.7.
+(3) Adaptive/Dynamic Method: a vector was drawn itera-
+tively based on the documents extracted. In each iteration, we
+computed the centroid of the embeddings of the documents
+extracted so far and created a dissimilar embeddings vector
+with low similarity to the centroid by back-propagating the
+loss (the implementation of this idea is presented in Algo-
+rithm 2 in Appendix A). This principle allowed us to extract
+new documents from the database. After we computed the
+dissimilar vector, we used Algorithm 1 to create the associ-
+ated suffix (with the same parameters we used for the English
+Distribution Method). We queried the Q&amp;A chatbot with the
+new query and used the extracted documents to return on this
+process 800 times.
+To compare the performance of the three extraction meth-
+ods, we used a context size of k = 20, Gemini 1.5 Flash for the
+5</text></page>

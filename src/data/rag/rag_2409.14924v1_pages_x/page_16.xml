@@ -1,0 +1,35 @@
+<page><text>arXiv Template
+A PREPRINT
+Figure 5: Summary of Main Techniques for Different Query Levels in Data augmented LLM applications
+emerges as a promising approach. It not only utilizes the extensive foundational knowledge that LLMs acquire during
+pretraining but also enables them to rapidly grasp new domain rationales. This method provides a viable path for
+enhancing the adaptability and effectiveness of LLMs in tackling advanced and specialized tasks.
+Instruction tuning is a common method for infusing new capabilities into LLMs, typically involving supervised fine-
+tuning using paired (instruction, output) data. There are three primary methods for constructing an instruction dataset:
+a) deriving from existing datasets [161, 162], b) manually creating through handcrafted instructions [163, 164, 165],
+and c) generating synthetic data using powerful LLMs [166, 154]. Additionally, numerous studies [167, 168, 169] have
+explored how to optimize the data distribution within instruction datasets to enhance fine-tuning effectiveness. However,
+when building data-augmented LLM applications, fine-tuning remains a relatively costly method in terms of time and
+computational resources. Recently, several efforts have been made to reduce the costs associated with fine-tuning
+large models. Adapter tuning, for instance, involves integrating small adapter models with LLMs while freezing the
+parameters of the LLM during fine-tuning and only optimizing the weights of the adapter [170, 171, 172, 173]. Prefix
+Tuning and Prompt Tuning involve adding a set of trainable vectors before the input, which are optimized during training
+to enhance the performance of the LLM [174, 175, 176, 177, 178]. Low-Rank Adaptation [179, 180, 181, 182, 183]
+reduces the number of trainable parameters needed for adapting to downstream tasks by imposing low-rank constraints
+on each dense layer to approximate the update matrices.
+In recent years, there has been a substantial amount of work using supervised fine-tuning to enhance the capabilities
+of LLMs in specialized domains such as mathematical reasoning, finance, law, and healthcare [184, 185, 186]. For
+instance, ChatTimeLlama [187] introduced an interpretable time reasoning instruction tuning dataset and fine-tuned on
+LLaMA [188] to significantly improve the model’s complex temporal reasoning, future event prediction capabilities,
+and interpretability. LISA [189] leveraged a small set of segment data samples that involve reasoning to fine-tune
+the multimodal LLM LLaVA, which resulted in substantial improvements in reasoning segmentation capabilities.
+MAmmoTH [190] ingeniously constructed a mathematical example dataset that uniquely combines Chain of Thought
+and Program of Thought reasoning, ensuring broad coverage across different mathematical domains and enhancing
+the LLM’s ability to solve general mathematical problems. ReFT [191] proposes a method for learning from multiple
+annotated reasoning paths corresponding to the same problem. It automatically samples numerous reasoning trajectories
+for a given mathematical problem, leveraging the correct answer to generate reward signals. ChatDoctor [192]
+utilized a large dataset of 100,000 patient-doctor dialogues from a widely-used online medical consultation platform
+to fine-tune LLaMA, significantly enhancing the model’s ability to understand patient needs and provide effective
+recommendations. FinGPT [193] developed an open-source LLM fine-tuned on financial data using automated data
+curation and lightweight, low-rank adaptation techniques. DISC-LawLLM [194] created a supervised fine-tuning
+16</text></page>

@@ -1,0 +1,54 @@
+<page><text>arXiv Template
+A PREPRINT
+[99] Priyanka Sen, Sandeep Mavadia, and Amir Saffari. Knowledge graph-augmented language models for complex
+question answering. In Bhavana Dalvi Mishra, Greg Durrett, Peter Jansen, Danilo Neves Ribeiro, and Jason
+Wei, editors, Proceedings of the 1st Workshop on Natural Language Reasoning and Structured Explanations
+(NLRSE), pages 1–8, Toronto, Canada, June 2023. Association for Computational Linguistics.
+[100] Jiashuo Sun, Chengjin Xu, Lumingyuan Tang, Saizhuo Wang, Chen Lin, Yeyun Gong, Lionel M. Ni, Heung-
+Yeung Shum, and Jian Guo. Think-on-graph: Deep and responsible reasoning of large language model on
+knowledge graph, 2023.
+[101] Tiezheng Guo, Qingwen Yang, Chen Wang, Yanyi Liu, Pan Li, Jiawei Tang, Dapeng Li, and Yingyou Wen.
+Knowledgenavigator: Leveraging large language models for enhanced reasoning over knowledge graph. arXiv
+preprint arXiv:2312.15880, 2023.
+[102] Armin Toroghi, Willis Guo, Mohammad Mahdi Abdollah Pour, and Scott Sanner. Right for right reasons: Large
+language models for verifiable commonsense knowledge graph question answering, 2024.
+[103] Yu Wang, Nedim Lipka, Ryan A. Rossi, Alexa F. Siu, Ruiyi Zhang, and Tyler Derr. Knowledge graph prompting
+for multi-document question answering. AAAI Conference on Artificial Intelligence.
+[104] Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, and Jonathan
+Larson. From local to global: A graph rag approach to query-focused summarization. arXiv.org.
+[105] Peng Shi, Rui Zhang, He Bai, and Jimmy Lin. Xricl: Cross-lingual retrieval-augmented in-context learning for
+cross-lingual text-to-sql semantic parsing. arXiv preprint arXiv:2210.13693, 2022.
+[106] Haoyang Li, Jing Zhang, Cuiping Li, and Hong Chen. Resdsql: Decoupling schema linking and skeleton parsing
+for text-to-sql. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 13067–13075,
+2023.
+[107] Gabriel Poesia, Oleksandr Polozov, Vu Le, Ashish Tiwari, Gustavo Soares, Christopher Meek, and Sumit Gulwani.
+Synchromesh: Reliable code generation from pre-trained language models. arXiv preprint arXiv:2201.11227,
+2022.
+[108] Xi Victoria Lin, Richard Socher, and Caiming Xiong. Bridging textual and tabular data for cross-domain
+text-to-sql semantic parsing. arXiv preprint arXiv:2012.12627, 2020.
+[109] Asim Biswal, Liana Patel, Siddarth Jha, Amog Kamsetty, Shu Liu, Joseph E Gonzalez, Carlos Guestrin, and
+Matei Zaharia. Text2sql is not enough: Unifying ai and databases with tag. arXiv preprint arXiv:2408.14717,
+2024.
+[110] Zorik Gekhman, Gal Yona, Roee Aharoni, Matan Eyal, Amir Feder, Roi Reichart, and Jonathan Herzig. Does
+fine-tuning llms on new knowledge encourage hallucinations?, 2024.
+[111] Lukas Berglund, Meg Tong, Max Kaufmann, Mikita Balesni, Asa Cooper Stickland, Tomasz Korbak, and Owain
+Evans. The reversal curse: Llms trained on" a is b" fail to learn" b is a". arXiv preprint arXiv:2309.12288, 2023.
+[112] Wei Zhu, Wenfeng Li, Xing Tian, Pengfei Wang, Xiaoling Wang, Jin Chen, Yuanbin Wu, Yuan Ni, and Guotong
+Xie. Text2mdt: extracting medical decision trees from medical texts. arXiv preprint arXiv:2401.02034, 2024.
+[113] Binbin Li, Tianxin Meng, Xiaoming Shi, Jie Zhai, and Tong Ruan. Meddm: Llm-executable clinical guidance
+tree for clinical decision-making. arXiv preprint arXiv:2312.02441, 2023.
+[114] Junjie Zhang, Ruobing Xie, Yupeng Hou, Wayne Xin Zhao, Leyu Lin, and Ji-Rong Wen. Recommendation
+as instruction following: A large language model empowered recommendation approach. arXiv preprint
+arXiv:2305.07001, 2023.
+[115] Tianjun Zhang, Xuezhi Wang, Denny Zhou, Dale Schuurmans, and Joseph E Gonzalez. Tempera: Test-time
+prompting via reinforcement learning. arXiv preprint arXiv:2211.11890, 2022.
+[116] Mingkai Deng, Jianyu Wang, Cheng-Ping Hsieh, Yihan Wang, Han Guo, Tianmin Shu, Meng Song, Eric P
+Xing, and Zhiting Hu. Rlprompt: Optimizing discrete text prompts with reinforcement learning. arXiv preprint
+arXiv:2205.12548, 2022.
+[117] Archiki Prasad, Peter Hase, Xiang Zhou, and Mohit Bansal. Grips: Gradient-free, edit-based instruction search
+for prompting large language models. arXiv preprint arXiv:2203.07281, 2022.
+[118] Yongchao Zhou, Andrei Ioan Muresanu, Ziwen Han, Keiran Paster, Silviu Pitis, Harris Chan, and Jimmy Ba.
+Large language models are human-level prompt engineers. arXiv preprint arXiv:2211.01910, 2022.
+[119] Reid Pryzant, Dan Iter, Jerry Li, Yin Tat Lee, Chenguang Zhu, and Michael Zeng. Automatic prompt optimization
+with" gradient descent" and beam search. arXiv preprint arXiv:2305.03495, 2023.
+23</text></page>

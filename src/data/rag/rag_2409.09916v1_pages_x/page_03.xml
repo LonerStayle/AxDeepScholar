@@ -1,0 +1,42 @@
+<page><text>Figure 2:
+Example of the chat format used by SFR-RAG, with additional Thought and
+Observation turns (roles). The former indicates the model’s “inner” thought or reasoning,
+actions and tool use syntax that are not typically meant to be shown to users. The latter indicates all
+external information retrieved and returned by performing a search or function call. The Assistant
+turn, therefore, is relieved to only be responsible to generate user-friendly responses. During training,
+Thought and Assistant turns are trained while the others are masked out.
+There is limited well established evaluation standards for measuring progress in contextual
+comprehension qualities of LLMs. It is worth noting that Command-R(+) [36] and RAG-2.0 [37]
+evaluated their proposed models on non-overlapping metrics [49, 23] with inconsistent or undisclosed
+setups, which causes difficulties in aligning results and comparisons across different studies. To
+reliably evaluate our SFR-RAG model as well as other well-known baselines, in this work, we
+also introduce ContextualBench2, which is a compilation of many popular RAG and contextual
+benchmarks, such as HotpotQA and TriviaQA [49, 15, 25, 23, 13, 42, 18], that standardizes the
+evaluation setup leading to consistent and reproducible evaluation results. In experiments, we show
+that our SFR-RAG-9B model is both a well-rounded and high performing model, achieving state-
+of-the-art performance in three of the seven benchmarks in ContextualBench; see Figure 1 for a
+preview of our results. SFR-RAG-9B outperforms or is competitive with GPT-4o [30] on all tasks
+in ContextualBench. It also outperforms powerful contextual models, such as Command-R+ [36],
+on a variety of tasks despite having 10 times fewer parameters. Compared to comparable baselines,
+our model is also shown to be resilient to factual alterations and unanswerability tests in the context.
+Lastly, despite being trained with a focus on RAG and contextual applications, our model is still
+competitive as a regular instruction-tuned LLM, with strong and comparable performances in standard
+benchmarks like MMLU or GSM8K [12, 7, 6], as well as function-calling ability [48].
+2
+SFR-RAG
+In this section, we provide more insights into SFR-RAG. First, we introduce a novel chat template
+comprising two new chat roles with specific functions (§2.1). Then, we briefly discuss the training
+process of SFR-RAG (§2.2).
+2.1
+SFR-RAG Chat Template
+Most instruction-tuned language models often feature a chat template that allows for three
+conversational roles: (i) System role, typically specified once at the beginning, is used to define the
+general characteristics of the AI assistant with general instructions on how to respond to user inputs,
+(ii) User role specifies where user messages reside, and (iii) Assistant turn is where the model
+responds to the user’s query in accordance to the guidelines given by the System turn.
+However, as more complex applications with (potentially multi-step) retrieval or function calling are
+being employed, such roles may have to handle increasingly complex and confusing data formats.
+For example, in retrieval tasks, external context information may be injected into the System or
+User turn, or may even form a part of the Assistant turn if the context is retrieved following a
+2https://huggingface.co/datasets/Salesforce/ContextualBench
+3</text></page>

@@ -1,0 +1,43 @@
+<page><text>arXiv Template
+A PREPRINT
+[180] Mojtaba Valipour, Mehdi Rezagholizadeh, Ivan Kobyzev, and Ali Ghodsi. Dylora: Parameter efficient tuning of
+pre-trained models using dynamic search-free low-rank adaptation. arXiv preprint arXiv:2210.07558, 2022.
+[181] Qingru Zhang, Minshuo Chen, Alexander Bukharin, Nikos Karampatziakis, Pengcheng He, Yu Cheng, Weizhu
+Chen, and Tuo Zhao. Adalora: Adaptive budget allocation for parameter-efficient fine-tuning. arXiv preprint
+arXiv:2303.10512, 2023.
+[182] Ning Ding, Xingtai Lv, Qiaosen Wang, Yulin Chen, Bowen Zhou, Zhiyuan Liu, and Maosong Sun. Sparse
+low-rank adaptation of pre-trained language models. arXiv preprint arXiv:2311.11696, 2023.
+[183] Shih-Yang Liu, Chien-Yi Wang, Hongxu Yin, Pavlo Molchanov, Yu-Chiang Frank Wang, Kwang-Ting Cheng,
+and Min-Hung Chen. Dora: Weight-decomposed low-rank adaptation. arXiv preprint arXiv:2402.09353, 2024.
+[184] Ping Yu, Tianlu Wang, Olga Golovneva, Badr AlKhamissi, Siddharth Verma, Zhijing Jin, Gargi Ghosh,
+Mona Diab, and Asli Celikyilmaz. Alert: Adapting language models to reasoning tasks. arXiv preprint
+arXiv:2212.08286, 2022.
+[185] Mingyu Zong and Bhaskar Krishnamachari. Solving math word problems concerning systems of equations with
+gpt-3. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 37, pages 15972–15979, 2023.
+[186] Kaiyu Yang, Aidan Swope, Alex Gu, Rahul Chalamala, Peiyang Song, Shixing Yu, Saad Godil, Ryan J Prenger,
+and Animashree Anandkumar. Leandojo: Theorem proving with retrieval-augmented language models. Advances
+in Neural Information Processing Systems, 36, 2024.
+[187] Chenhan Yuan, Qianqian Xie, Jimin Huang, and Sophia Ananiadou. Back to the future: Towards explainable
+temporal reasoning with large language models. In Proceedings of the ACM on Web Conference 2024, pages
+1963–1974, 2024.
+[188] Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée Lacroix,
+Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient foundation
+language models. arXiv preprint arXiv:2302.13971, 2023.
+[189] Xin Lai, Zhuotao Tian, Yukang Chen, Yanwei Li, Yuhui Yuan, Shu Liu, and Jiaya Jia. Lisa: Reasoning
+segmentation via large language model. In Proceedings of the IEEE/CVF Conference on Computer Vision and
+Pattern Recognition, pages 9579–9589, 2024.
+[190] Xiang Yue, Xingwei Qu, Ge Zhang, Yao Fu, Wenhao Huang, Huan Sun, Yu Su, and Wenhu Chen. Mammoth:
+Building math generalist models through hybrid instruction tuning. arXiv preprint arXiv:2309.05653, 2023.
+[191] Luong Trung, Xinbo Zhang, Zhanming Jie, Peng Sun, Xiaoran Jin, and Hang Li. Reft: Reasoning with reinforced
+fine-tuning. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics
+(Volume 1: Long Papers), pages 7601–7614, 2024.
+[192] Yunxiang Li, Zihan Li, Kai Zhang, Ruilong Dan, Steve Jiang, and You Zhang. Chatdoctor: A medical chat model
+fine-tuned on a large language model meta-ai (llama) using medical domain knowledge. Cureus, 15(6), 2023.
+[193] Hongyang Yang, Xiao-Yang Liu, and Christina Dan Wang. Fingpt: Open-source financial large language models.
+arXiv preprint arXiv:2306.06031, 2023.
+[194] Shengbin Yue, Wei Chen, Siyuan Wang, Bingxuan Li, Chenchen Shen, Shujun Liu, Yuxuan Zhou, Yao Xiao,
+Song Yun, Wei Lin, et al. Disc-lawllm: Fine-tuning large language models for intelligent legal services. arXiv
+preprint arXiv:2309.11325, 2023.
+[195] Kaiser Sun and Mark Dredze. Amuro &amp; char: Analyzing the relationship between pre-training and fine-tuning of
+large language models. arXiv preprint arXiv:2408.06663, 2024.
+27</text></page>

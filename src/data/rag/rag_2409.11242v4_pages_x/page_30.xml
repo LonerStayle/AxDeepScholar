@@ -1,0 +1,127 @@
+<page><text>Published as a conference paper at ICLR 2025
+F.8
+EFFECT OF DATA SIZE ON DPO PERFORMANCE
+10.0
+25.0
+50.0
+Proportion of Augmented Samples(%)
+40
+45
+50
+55
+60
+65
+70
+75
+TRUST SCORE
+68.77
+68.96
+69.23
+54.39
+57.73
+54.95
+45.65
+47.55
+44.87
+ASQA
+QAMPARI
+ELI5
+Figure 7: Influence of the proportion of augmented training samples on TRUST-SCORE in LLaMA-
+3-8b.
+During the bulk of our experiments, we chose to utilize the top 50% of augmented samples to form
+the training dataset for DPO alignment due to cost-effectiveness. Here, we investigate whether vary-
+ing the quantity and difficulty of the samples would influence the final model performance. Fig. 7
+shows how the amount of training samples affect the final performance of TRUST-ALIGN model.
+Notably, selecting the top 25% of augmented samples achieved the highest performance on QAM-
+PARI (57.73) and ELI5 (47.55). The absence of a clear trend suggesting that ”more data is better”
+can be attributed to the nature of the data itself. Although document recombination can gener-
+ate a large number of samples, those with lower hallucination severity scores tend to have limited
+complexity and high information redundancy. As a result, these additional samples do not provide
+substantial new or challenging information for the model to learn from, limiting their effectiveness
+in improving model performance. When training with the top 50% of augmented samples, the model
+may be experiencing overfitting, which could explain the observed decline in performance. There-
+fore, it is likely that even better performance could be attained by carefully tuning the amount of
+augmented data used. This finding underscores a limitation of our pipeline, revealing that the diver-
+sity of document content plays a crucial role in determining the quality of the augmented samples.
+F.9
+FINE-TUNING GPT-4O
+We fine-tuned GPT-4o using our SFT dataset. The results reported in Table 16 indicate the consistent
+improvement in trustworthiness scores of GPT-4o as a result of supervised fine-tuning.
+Table 16: Performance of supervised fine-tuned GPT-4o.
+Model
+Type
+ASQA (610 answerable, 338 unanswerable)
+QAMPARI (295 answerable, 705 unanswerable)
+ELI5 (207 answerable, 793 unanswerable)
+Resp.
+Trustworthiness
+Resp.
+Trustworthiness
+Resp.
+Trustworthiness
+AR (%)
+Truthfullness
+Att-Grd.
+TRUST
+AR (%)
+Truthfullness
+Att-Grd.
+TRUST
+AR (%)
+Truthfullness
+Att-Grd.
+TRUST
+F1AC
+F1GR
+F1GC
+F1AC
+F1GR
+F1GC
+F1AC
+F1GR
+F1GC
+GPT-4o
+ICL
+84.49
+62.92
+61.40
+73.66
+65.88
+60.40
+14.29
+75.20
+20.43
+33.69
+66.1
+35.25
+68.33
+37.71
+41.58
+TRUST-ALIGN (SFT)
+74.26
+59.22
+68.62
+87.54
+72.09
+34.6
+41.56
+77.15
+53.64
+56.99
+25.5
+24.1
+68.34
+56.09
+48.99
+G
+GPT-4 BASED DATA PIPELINE
+For the GPT-4 data pipeline, we employ GPT-4 to simulate a critic that performs two key tasks in
+succession. First, it identifies and revises mistakes or supplements missing information in the given
+response based on correct answers. Second, it validates the attribution of statement-level citations
+and corrects them accordingly. The detailed instruction is provided in Table 26.
+Coverage critiques.
+To ensure that the correct answers are accurately reflected in the given re-
+sponse, we prompt GPT-4 with the corresponding question, correct answers, and reference facts
+(documents that support the provided correct answers) as context. GPT-4 is then asked to locate
+specific mistakes or identify any missing correct answers in the given response. After identifying
+30</text></page>

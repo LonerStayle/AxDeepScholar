@@ -1,0 +1,56 @@
+<page><text>arXiv Template
+A PREPRINT
+[38] Junnan Li, Dongxu Li, Caiming Xiong, and Steven Hoi. Blip: Bootstrapping language-image pre-training for
+unified vision-language understanding and generation. In International conference on machine learning, pages
+12888–12900. PMLR, 2022.
+[39] Xinwei Long, Jiali Zeng, Fandong Meng, Zhiyuan Ma, Kaiyan Zhang, Bowen Zhou, and Jie Zhou. Generative
+multi-modal knowledge retrieval with large language models. In Proceedings of the AAAI Conference on
+Artificial Intelligence, volume 38, pages 18733–18741, 2024.
+[40] Nelson F Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang.
+Lost in the middle: How language models use long contexts. Transactions of the Association for Computational
+Linguistics, 12:157–173, 2024.
+[41] LangChain. Text splitter. https://python.langchain.com/v0.1/docs/modules/data_connection/
+document_transformers/, 2023.
+[42] LlamaIndex.
+Semantic splitter.
+https://docs.llamaindex.ai/en/stable/api_reference/node_
+parsers/semantic_splitter/, 2023.
+[43] Parth Sarthi, Salman Abdullah, Aditi Tuli, Shubh Khanna, Anna Goldie, and Christopher D Manning. Raptor:
+Recursive abstractive processing for tree-organized retrieval. arXiv preprint arXiv:2401.18059, 2024.
+[44] Zijie Zhong, Hanwen Liu, Xiaoya Cui, Xiaofan Zhang, and Zengchang Qin. Mix-of-granularity: Optimize the
+chunking granularity for retrieval-augmented generation. arXiv preprint arXiv:2406.00456, 2024.
+[45] Tong Chen, Hongwei Wang, Sihao Chen, Wenhao Yu, Kaixin Ma, Xinran Zhao, Dong Yu, and Hongming Zhang.
+Dense x retrieval: What retrieval granularity should we use? arXiv preprint arXiv:2312.06648, 2023.
+[46] Antonio Jimeno Yepes, Yao You, Jan Milczek, Sebastian Laverde, and Leah Li. Financial report chunking for
+effective retrieval augmented generation. arXiv preprint arXiv:2402.05131, 2024.
+[47] Karen Sparck Jones. A statistical interpretation of term specificity and its application in retrieval. Journal of
+documentation, 28(1):11–21, 1972.
+[48] Stephen E Robertson, Steve Walker, Susan Jones, Micheline M Hancock-Beaulieu, Mike Gatford, et al. Okapi at
+trec-3. Nist Special Publication Sp, 109:109, 1995.
+[49] Ori Ram, Yoav Levine, Itay Dalmedigos, Dor Muhlgay, Amnon Shashua, Kevin Leyton-Brown, and Yoav
+Shoham. In-context retrieval-augmented language models. Transactions of the Association for Computational
+Linguistics, 11:1316–1331, 2023.
+[50] Zhengbao Jiang, Frank F Xu, Luyu Gao, Zhiqing Sun, Qian Liu, Jane Dwivedi-Yu, Yiming Yang, Jamie Callan,
+and Graham Neubig. Active retrieval augmented generation. arXiv preprint arXiv:2305.06983, 2023.
+[51] Fangyuan Xu, Weijia Shi, and Eunsol Choi. Recomp: Improving retrieval-augmented lms with context com-
+pression and selective augmentation. In The Twelfth International Conference on Learning Representations,
+2024.
+[52] Leonid Boytsov, David Novak, Yury Malkov, and Eric Nyberg. Off the beaten path: Let’s replace term-based
+retrieval with k-nn search. In Proceedings of the 25th ACM international on conference on information and
+knowledge management, pages 1099–1108, 2016.
+[53] Shengyao Zhuang and Guido Zuccon. Tilde: Term independent likelihood model for passage re-ranking. In
+Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information
+Retrieval, pages 1483–1492, 2021.
+[54] Shengyao Zhuang and Guido Zuccon. Fast passage re-ranking with contextualized exact term matching and
+efficient passage expansion. arXiv preprint arXiv:2108.08513, 2021.
+[55] Jacob Devlin. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint
+arXiv:1810.04805, 2018.
+[56] Vladimir Karpukhin, Barlas O˘guz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, and
+Wen-tau Yih. Dense passage retrieval for open-domain question answering. arXiv preprint arXiv:2004.04906,
+2020.
+[57] Lee Xiong, Chenyan Xiong, Ye Li, Kwok-Fung Tang, Jialin Liu, Paul Bennett, Junaid Ahmed, and Arnold
+Overwijk. Approximate nearest neighbor negative contrastive learning for dense text retrieval. arXiv preprint
+arXiv:2007.00808, 2020.
+[58] Tianyu Gao, Xingcheng Yao, and Danqi Chen. Simcse: Simple contrastive learning of sentence embeddings.
+arXiv preprint arXiv:2104.08821, 2021.
+20</text></page>

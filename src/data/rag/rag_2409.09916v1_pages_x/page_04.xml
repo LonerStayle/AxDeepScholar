@@ -1,0 +1,56 @@
+<page><text>model’s function call [36, 50]. This may cause confusion and distraction from the actual instruction
+or question queried by the user in the User turn. In other words, there have been no generally
+agreed-upon position to store the contextual information in such tasks. In another example of agentic
+function calling tasks, the Assistant turn has to produce responses that use specific tool syntax
+and expects to receive the function call’s results following that [50]. This makes the fine-tuning
+process tricky as the function’s results, which are part of Assistant turn and typically contain
+answer clues, need to be masked out from the loss to prevent memorization [40]. Furthermore, for
+certain applications, practitioners may prefer to hide the model’s reasoning, or intermediate actions
+invoked by the model from the user and only show user-friendly responses. Having all data processing
+steps enclosed within the Assistant turn may hinder such use cases. Reliability is also an issue
+as the model may fail to produce specific key words consistently in inference strategies like ReAct
+[50].3 Furthermore, the ambiguities in roles, functions and privileges may lead to the model failing to
+comply with the System prompt and surrendering to jailbreaks injected via the User turn or tool
+outputs [44].
+To overcome such complexities, we introduce two more optional roles (turns) in the conversational
+template for SFR-RAG: Thought and Observation. As shown in Figure 2, the Observation
+role is designated to house any contextual information acquired from external sources, which can be
+either retrieved documents for retrieval use case or function call’s results in agentic tool use scenario.
+Meanwhile, the Thought role is designed for the model to speak out any internal reasoning, or tool
+use syntax to invoke certain function calls. The benefits of this change are manifold. First, it allows
+easy masking during training. Specifically, System, User and Observation turns may not be
+trainable as they are input information for the model to generate responses. Like Assistant, on the
+other hand, Thought turns are to be included in the fine-tuning loss to train the model to produce
+such “thoughts”. Second, the separation and clarification of roles facilitate instruction hierarchy
+enforcement [44], making LLMs safer by ensuring them to respect the System prompt and refuse to
+follow malicious instructions injected in User and Observation turns. Third, the additional roles
+streamline the process of building reliable and secure RAG and agentic applications, by allowing
+developers to display or hide internal data processing steps, and avoid having to parse customized
+key words from the Assistant output.
+2.2
+SFR-RAG Fine-tuning Process
+One of the most important goals of SFR-RAG is to make full use and complete comprehension
+of any provided contextual information in the real-world RAG scenarios. This trait includes many
+capabilities, among which are (i) extracting relevant information from arbitrary long contexts,
+(ii) recognizing the lack of relevant information and abstaining from hallucinated generation,
+(iii) recognizing potential conflicting information in contextual passages, and (iv) being resilient to
+distracting, counter-intuitive information or contents that are out-of-distribution from the pre-training
+process. We fine-tuned SFR-RAG via standard supervised fine-tuning and preference learning
+[40, 9, 31], using extensive instruction-following data that mimic real-world retrieval question
+answering applications.
+3
+Evaluation
+3.1
+Contextual Evaluation Suite - ContextualBench
+There are already several evaluation protocols available to measure performance of LLMs and RAG
+systems on contextual understanding across different domains and complexities [15, 23, 25, 49, 13,
+42, 6, 18]. However, prior studies [36, 37, 1, 50] have reported results on non-overlapping measures,
+datasets and inconsistent setups, especially on which contextual content to present to the LLMs and
+model hyper-parameters. This causes challenges in directly comparing results from different studies.
+To offer a better common ground, we propose ContextualBench, which is primarily an aggregation
+of 7 popular contextual question answering tasks, namely HotpotQA, TriviaQA, TruthfulQA, PopQA,
+2WikiHopQA, Musique and Natural Questions (NQ) [15, 23, 25, 49, 13, 42, 18]. There are a few key
+3ReAct uses arbitrarily literal phrases like “Thought:”, “Result:” and “Final Answer:” within the
+Assistant turn to parse reasoning, tool outputs and answers respectively, which the LLM may not always
+comply with.
+4</text></page>

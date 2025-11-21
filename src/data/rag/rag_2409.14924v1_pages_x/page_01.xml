@@ -1,0 +1,44 @@
+<page><text>Retrieval Augmented Generation (RAG) and Beyond: A Comprehensive
+Survey on How to Make your LLMs use External Data More Wisely
+A PREPRINT
+Siyun Zhao , Yuqing Yang , Zilong Wang, Zhiyuan He, Luna K. Qiu, Lili Qiu
+Microsoft Research Asia
+{siyunzhao,yuqing.yang,wangzilong,zhiyuan.he,lunaqiu,liliqiu}@microsoft.com
+ABSTRACT
+Large language models (LLMs) augmented with external data have demonstrated remarkable capa-
+bilities in completing real-world tasks. External data not only bolsters the models’ domain-specific
+expertise and temporal relevance but also diminishes incidences of hallucination, thereby enhancing
+both the controllability and interpretability of outputs. Techniques for integrating external data into
+LLMs, such as Retrieval-Augmented Generation (RAG) and fine-tuning, are gaining increasing atten-
+tion and widespread application. Nonetheless, the effective deployment of data-augmented LLMs
+across various specialized fields presents substantial challenges. These challenges encompass a wide
+range of issues, from retrieving relevant data and accurately interpreting user intent to fully harnessing
+the reasoning capabilities of LLMs for complex tasks. We believe that there is no one-size-fits-all
+solution for data-augmented LLM applications. In practice, underperformance often arises from a
+failure to correctly identify the core focus of a task or because the task inherently requires a blend of
+multiple capabilities that must be disentangled for better resolution. In this survey, we propose a RAG
+task categorization method, classifying user queries into four levels based on the type of external data
+required and the task’s primary focus: explicit fact queries, implicit fact queries, interpretable ratio-
+nale queries, and hidden rationale queries. We define these levels of queries, provide relevant datasets,
+and summarize the key challenges and most effective techniques for addressing these challenges.
+Finally, we discuss three main forms of integrating external data into LLMs: context, small model,
+and fine-tuning, highlighting their respective strengths, limitations, and the types of problems they
+are suited to solve. This work aims to help readers thoroughly understand and decompose the data
+requirements and key bottlenecks in building LLM applications, offering solutions to the different
+challenges and serving as a guide to systematically developing such applications.
+1
+Introduction
+Large Language Models (LLMs) have demonstrated remarkable capabilities, including extensive world knowledge and
+sophisticated reasoning skills. Despite these advancements, there are significant challenges in effectively deploying
+them across various specialized fields. These challenges include issues like model hallucinations, misalignment with
+domain-specific knowledge, among others. Incorporating domain-specific data, particularly private or on-premise data
+that could not be included in their initial training corpus, is crucial for tailoring LLM applications to meet specific
+industry needs. Through techniques like RAG and fine tuning, data augmented LLM applications have demonstrated
+advantages over applications built solely on generic LLMs, in several aspects:
+• Enhanced Professionalism and Timeliness: The data used to train LLMs often lags in timeliness and
+may not cover all domains comprehensively, especially proprietary data owned by users. Data augmented
+LLM applications address this issue by providing more detailed and accurate answers for complex questions,
+allowing for data updates and customization.
+• Alignment with Domain Experts: Through the use of and learning from domain-specific data, data augmented
+LLM applications can exhibit capabilities more like domain experts, such as doctors and lawyers.
+arXiv:2409.14924v1  [cs.CL]  23 Sep 2024</text></page>

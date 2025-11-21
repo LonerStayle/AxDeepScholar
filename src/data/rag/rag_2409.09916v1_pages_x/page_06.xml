@@ -1,0 +1,153 @@
+<page><text>Table 1: Performances of SFR-RAG-9B and various open- and closed-source baselines across 7
+contextual question answering tasks in ContextualBench. Bold numbers mean best of all, while
+underlined numbers mean best among open-source models. PopQA is measured in easy-match
+accuracy (EasyEM), while the rest are measured in exact-match accuracy (EM). The Appendix
+presents the full results in metrics.
+Model
+TriviaQA
+TruthfulQA
+2WikiHopQA
+MuSiQue
+NQ
+PopQA
+HotpotQA
+Average
+GPT-4o
+81.73
+76.47
+62.40
+44.40
+51.85
+42.24
+57.20
+59.47
+GPT 4 Turbo
+78.34
+76.13
+59.90
+37.10
+48.23
+53.82
+54.20
+58.25
+GPT-4o-mini
+72.55
+61.02
+46.60
+32.10
+30.75
+54.75
+49.80
+49.65
+GPT 3.5 Turbo
+77.43
+47.00
+41.20
+22.60
+40.40
+53.39
+48.10
+47.16
+Command R (35B)
+71.75
+51.65
+41.50
+14.60
+35.76
+52.60
+48.20
+45.15
+Command R+ (104B)
+76.34
+56.30
+47.50
+29.00
+47.44
+59.18
+52.50
+52.61
+gemma-2-9b-it
+77.66
+59.43
+49.70
+30.50
+37.37
+53.75
+52.60
+51.57
+Llama3 8B Instruct
+72.28
+51.52
+27.90
+9.90
+31.01
+52.82
+45.90
+41.62
+Llama3.1 8B Instruct
+71.33
+59.43
+17.70
+9.40
+44.41
+59.68
+46.70
+44.09
+SFR-RAG-9B
+79.24
+77.45
+79.50
+42.90
+48.01
+53.97
+65.70
+63.44
+Command-R+
+GPT-4o
+gemma-2-9b-it
+SFR-RAG-9B
+40
+60
+80
+100
+73.6
+47.2
+55.7
+85.8
+40
+59.9
+48.7
+70.6
+56.6
+93.2
+50.7
+99.2
+EasyM Accuracy
+Counterfactual
+Unknown
+Conflict
+Figure 3: FaithEval [27]: average easy match accuracy scores of different models when contextual
+facts are fabricated (Counterfactual), removed (Unknown) or when the facts are contradicting
+(Conflict). Small variations between those settings and overall high absolute scores indicate that
+SFR-RAG-9B is resilient to changes in contextual information.
+intrinsic parametric knowledge of the model acquired during pre-training, of which large and state-of-
+the-art models like GPT-4o often have significant advantages.
+Ming et al. [27] recently proposed FaithEval, an evaluation suite that measures how LLMs remain
+faithful to the context if the facts of the contexts are changed. The benchmark evaluate LLMs on three
+scenarios: (i) “Unknown” where the relevant facts are removed and the original question becomes
+unanswerable; (ii) “Conflict” where multiple context documents are provided that contains conflicting
+or contradicting information and the model is expected to recognize that; and (iii) “Counterfactual”
+where certain commonsense facts are altered by introducing a falsely fabricated context document.
+For instance, “The Moon is Made of Marshmallows.” is considered a counterfactual context and the
+LLM under evaluation is expected to remain faithful to that “fact”, if prompted to do so. Following
+Ming et al. [27], the “Unknown” and “Conflict” tasks are averaged over 10 benchmarks [43, 8, 49,
+18, 41, 19, 32, 10, 17, 15], while the “Counterfactual” task is evaluated using the ARC-C dataset [6].
+Figure 3 shows the average non-strict matching accuracy scores of different LLMs over 3 tasks under
+FaithEval suite. As shown, other baselines such as GPT-4o exhibit high variations when the facts
+change in Counterfactual and Unknown settings. Particularly, GPT-4o scores low in Counterfactual
+setting perhaps because large models may have higher knowledge inertia and stronger resistance to
+factual changes. Meanwhile, our SFR-RAG-9B scores consistently highly, even when the context
+information is altered. This demonstrates that our model is usefully resilient and faithful to unseen
+contextual information. It also means that the model is more adaptable to the ever-changing world.
+Plus, our model is more capable of identifying contradiction in the contexts, as well as resisting
+6</text></page>

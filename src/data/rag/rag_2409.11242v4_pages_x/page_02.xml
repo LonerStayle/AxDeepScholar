@@ -1,0 +1,58 @@
+<page><text>Published as a conference paper at ICLR 2025
+answered or refused based on the provided documents (Grounded Refusals); 2) The correctness
+of LLM response for the answerable questions; 3) The extent to which generated statements are
+supported by the corresponding citations; and 4) The relevance of the citations to the statements.
+Unlike existing metrics that primarily assess the overall performance of RAG systems (Gao et al.,
+2023b)—where a weak retriever can significantly decrease the scores—TRUST-SCORE is designed
+to specifically measure the LLM’s performance within a RAG setup, isolating it from the influence
+of retrieval quality.
+Our investigation in Section 6.1 shows that many state-of-the-art systems, including GPT-4 and
+Claude-3.5-Sonnet, heavily rely on their parametric knowledge to answer questions (OpenAI, 2023;
+Anthropic, 2024). This reliance limits their suitability for RAG tasks, where models should base re-
+sponses solely on the provided documents, resulting in a low TRUST-SCORE. Additionally, prompt-
+ing approaches intended to enhance model groundability have proven ineffective, as models become
+overly sensitive to the prompt, leading to exaggerated refusals or excessive responsiveness shown
+in Appendix F.4. To enhance the groundedness of LLMs, i.e., achieve a higher TRUST-SCORE, we
+propose an alignment method, TRUST-ALIGN. This approach first constructs an alignment dataset
+consisting of 19K questions, documents, positive (preferred) responses, and negative (unpreferred)
+responses. The dataset covers a range of LLM errors—Inaccurate Answers, Over-Responsiveness,
+Excessive Refusal, Over-Citation, and Improper Citation. We regard these errors as LLM hallucina-
+tions within an RAG framework.
+Evaluations on the benchmark datasets ASQA, QAMPARI, and ELI5 show that models trained with
+TRUST-ALIGN outperform the competitive baselines on TRUST-SCORE in 26 out of 27 model fam-
+ily and dataset configurations. Notably, in LLaMA-3-8b, TRUST-ALIGN achieves substantial im-
+provements over Huang et al. (2024b) FRONT, a leading baseline, with respective gains of 12.56%
+(ASQA), 36.04% (QAMPARI), and 17.69% (ELI5). Additionally, TRUST-ALIGN substantially en-
+hances the ability of models to correctly refuse or provide grounded answers in all 27 model family
+and dataset configurations, with LLaMA-3-8b showing increases of 23.87%, 47.95%, and 45.77%
+correct refusals compared to FRONT. Citation groundedness scores also improved in 24 out of 27
+model family and dataset configurations, with notable increases of 22.12%, 38.35%, and 5.55% in
+LLaMA-3-8b compared to FRONT. Due to the gamification of the metric, where parametric knowl-
+edge can artificially inflate the scores, we notice mixed results on answer correctness scores. Specif-
+ically, we observe a notable increase in answer correctness scores for all models in QAMPARI, 5/9
+models in ELI5, and 2/9 models for ASQA.
+Our key contributions to this work are as follows:
+• We study LLM groundedness problem, where model model responses should be derived from
+retrieved documents (external memory) rather than the parametric knowledge (knowledge stored
+in model parameters).
+• To measure LLM’s groundedness under RAG, we introduce TRUST-SCORE, a holistic metric for
+quantifying LLM’s grounding errors.
+• We propose TRUST-ALIGN, an alignment approach designed to improve the trustworthiness of
+LLMs in RAG (Figure 2). It first creates an alignment dataset of 19K samples with paired posi-
+tive and negative responses, followed by aligning the model using direct preference optimization
+(DPO) (Rafailov et al., 2024b).
+Comparison with existing approaches.
+Current evaluations of RAG focus on the overall system
+performance (Gao et al., 2023b; Xu et al., 2024), conflating the effects of retriever quality and LLM
+performance in the metric scores (Fan et al., 2024). This highlights the need for new ways to mea-
+sure LLM effectiveness in RAG systems without the influence of the retriever. The work by Thakur
+et al. (2024) is closest to ours, as it analyzes the refusal capabilities of LLMs in a RAG context but
+lacks holistic evaluation, as it does not account for both response and citation groundedness. On the
+other hand, Ye et al. (2024); Hsu et al. (2024); Huang et al. (2024b) propose frameworks to improve
+LLM response groundedness but overlook refusal behaviors in their metrics. Ignoring refusal be-
+haviors, retriever influence, citation and answer groundedness weakens the ability of current metrics
+to effectively measure LLM performance in RAG. TRUST-SCORE comprehensively evaluates LLM
+performance, including refusal, citation, and answer groundedness, while TRUST-ALIGN creates a
+corresponding alignment dataset, making the metric and approach more unique and holistic for LLM
+evaluations and alignment in RAG. A more detailed comparison can be found in Appendix C.
+2</text></page>

@@ -1,0 +1,90 @@
+<page><text>A
+Appendix A
+A.1
+Learning the English Distribution
+To learn the English distribution of a given embeddings al-
+gorithm we: (1) randomly sampled 2,000 emails from the
+Enron dataset. (2) we used the embeddings algorithm to cre-
+ate 2,000 embedding vectors. (3) We then calculated the mean
+and variance for each cell of embeddings vector. For exam-
+ple, for GTE-base-768 we calculated 768 values of means
+and variances, one per each cell. Using these statistics, we
+generated 800 new vectors by sampling each cell from its
+unique Gaussian distribution defined by the calculated mean
+and variance. These 800 vectors served as our target vectors
+in the English Distribution Oriented Method.
+A.2
+Adaptive/Dynamic Method
+The Dynamic Greedy Embedding Attack (DGEA) algo-
+rithm is an extension of the Greedy Embedding Attack
+(GEA) (presented in Algorithm 1) intended to dynamically
+adapt the target embeddeings to extract new documents that
+have not been extracted so far by the attacker. It initializes
+docSpace and extractedDocs to store embeddings and doc-
+uments (line 1) and runs for a specific number of iterations
+determined by the number of vectors we want to create and
+query the LLM (line 2). In each iteration, except the first, a
+new target embedding is determined using Algorithm 3 by
+computing the centroid of the embeddings of the extracted
+documents (lines 2-3 in Algorithm 3) and then iteratively
+adjusting a random vector to maximize its dissimilarity from
+this centroid using a gradient-based optimization approach
+(lines 7-11 in Algorithm 3). This ensures that each new target
+embedding is sufficiently different from the current set. Next,
+the GEA algorithm (presented in Algorithm 2) is then invoked
+with the prefix, suffix and the dynamically chosen target em-
+bedding, generating a perturbed sentence (line 5 in Algorithm
+1). This sentence is then give to the GenAI model, triggering
+the extraction of new documents from the database used by
+the RAG (line 6 in Algorithm 1). Then each document in
+the reply is extracted and if its’ embedding is not already in
+docSpace, it is added to both docSpace and extractedDocs
+(lines 7-10). This process continues until the LLM has been
+queried the number of times specified by vecNum,which repre-
+sents the desired count of diverse embeddings to be generated.
+Once this number of queries is reached, the algorithm returns
+the complete set of extractedDocs.
+Algorithm 2 Dynamic Greedy Embedding Attack (DGEA)
+Require: pre, suf,vecNum iter, randT, targetEmb
+1: Initialize docSpace, extractedDocs
+2: for (i=0; i&lt;vecNum; i++) do
+3:
+if (i!=0) then
+4:
+targetEmb ←FindDissimilarVec(docSpace)
+5:
+perturbS ←GEA(pre, suf, targetEmb, iter, randT)
+6:
+reply ←InvokeLLM([perturbS)
+7:
+for (doc in reply) do
+8:
+if (doc not in docSpace) then
+9:
+docSpace.add(embed(doc))
+10:
+extractedDocs.add(doc)
+11: return extractedDocs
+Algorithm 3 Find Dissimilar Vector
+Require: docSpace, iterations,lr
+1: dissimilarVec ←Rand(docSpace[0].length)
+2: for (doc in docSpace) do
+3:
+centroid ←centroid + doc
+4: centroid ←
+centroid
+docSpace.length
+5: optimizer ←Adam(dissimilarVec, lr)
+6: lossFunc ←CosineEmbeddingLoss()
+7: for (i=0; i&lt;iterations; i++) do
+8:
+loss ←lossFunc(dissimilarVec,centroid)
+9:
+loss.Backward()
+10:
+grads ←dissimilarVec.grad
+11:
+dissimilarVec ←dissimilarVec + grads * Opti-
+mizer.lr
+12: return dissimilarVec
+16</text></page>

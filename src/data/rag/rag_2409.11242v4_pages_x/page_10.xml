@@ -1,0 +1,368 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table 7: Generalization test results on ExpertQA using refusal prompting.
+Model
+Type
+AR (%)
+F1AC
+F1GR
+F1GC
+TRUST
+LLaMA-2
+-7b
+ICL
+0.51
+0.00
+41.01
+9.52
+16.84
+PostCite
+5.62
+4.85
+44.27
+5.23
+18.12
+PostAttr
+5.62
+4.85
+44.27
+2.26
+17.13
+FRONT
+100
+9.33
+23.92
+74.75
+36.00
+TRUST-ALIGN (DPO)
+20.01
+25.03
+67.91
+62.46
+51.8
+LLaMA-3.2
+-1b
+ICL
+90
+21.55
+32.83
+9.04
+21.14
+PostCite
+30.84
+5.48
+49.1
+2.67
+19.08
+PostAttr
+48.41
+8.24
+47.72
+1.5
+19.15
+FRONT
+95.62
+20.83
+29.26
+37.45
+29.18
+TRUST-ALIGN (DPO)
+15.44
+20.32
+64.87
+62.1
+49.1
+LLaMA-3.2
+-3b
+ICL
+58.74
+33.5
+51.21
+38.37
+41.03
+PostCite
+82.85
+25.68
+38.11
+5.29
+23.03
+PostAttr
+82.85
+25.45
+38.58
+3.4
+22.48
+FRONT
+83.36
+27.24
+43.34
+50.91
+40.5
+TRUST-ALIGN (DPO)
+7.24
+11.72
+56.93
+78.35
+49.0
+LLaMA-3
+-8b
+ICL
+0.65
+2.82
+42.5
+69.46
+38.26
+PostCite
+15.68
+14.06
+50.08
+7.09
+23.74
+PostAttr
+15.68
+14.06
+50.08
+6.29
+23.47
+FRONT
+99.26
+30.34
+24.92
+56.7
+37.32
+TRUST-ALIGN (DPO)
+16.41
+27.36
+67.07
+70.11
+54.85
+GPT-3.5
+ICL
+59.47
+36.65
+56.39
+63.93
+52.32
+GPT-4
+ICL
+72.20
+41.32
+52.91
+69.83
+54.69
+GPT-4o
+ICL
+66.07
+42.62
+64.4
+54.61
+51.24
+TRUST-ALIGN (SFT)
+36.84
+28.85
+71.68
+61.98
+53.82
+Claude-3.5
+ICL
+73.95
+11.68
+51.91
+10.7
+24.76
+Model
+Type
+AR (%)
+F1AC
+F1GR
+F1GC
+TRUST
+Qwen-2.5
+-0.5b
+ICL
+78.24
+21.42
+38.71
+0.44
+20.19
+PostCite
+51.41
+13.32
+48.08
+5.6
+22.33
+PostAttr
+51.41
+13.32
+48.08
+1.49
+20.96
+FRONT
+99.86
+18.27
+24.05
+34.62
+25.65
+TRUST-ALIGN (DPO)
+32.96
+18.16
+63.31
+35.07
+38.85
+Qwen-2.5
+-1.5b
+ICL
+98.34
+30.67
+26.09
+6.89
+21.22
+PostCite
+62.19
+22.22
+48.66
+16.92
+29.27
+PostAttr
+62.19
+22.22
+48.66
+13.15
+28.01
+FRONT
+99.59
+29.15
+24.6
+50.22
+34.66
+TRUST-ALIGN (DPO)
+30.2
+25.06
+68.38
+51.44
+48.29
+Qwen-2.5
+-3b
+ICL
+68.88
+35.14
+49.65
+42.67
+42.49
+PostCite
+0.05
+0
+40.66
+0
+13.55
+PostAttr
+0.05
+0
+40.66
+0
+13.55
+FRONT
+95.48
+25.67
+29.86
+44.48
+33.34
+TRUST-ALIGN (DPO)
+17.15
+20.97
+65.79
+60.25
+49.0
+Qwen-2.5
+-7b
+ICL
+84.56
+36.33
+42.28
+56.09
+44.9
+PostCite
+42.14
+25.58
+54.9
+13.77
+31.42
+PostAttr
+42.14
+25.58
+54.9
+12.46
+30.98
+FRONT
+65.51
+32.41
+55.56
+67.35
+51.77
+TRUST-ALIGN (DPO)
+24.99
+25.57
+69.16
+62.7
+52.48
+Phi3.5
+-mini
+ICL
+85.15
+37.49
+40.22
+36.14
+37.95
+PostCite
+52.01
+27.96
+53.64
+7.39
+29.66
+PostAttr
+52.01
+27.96
+53.64
+5.7
+29.1
+FRONT
+97.37
+28.19
+27.5
+65.82
+40.5
+TRUST-ALIGN (DPO)
+26.05
+27.69
+69.56
+61.6
+52.95
+In LLaMA-3-8B, TRUST-ALIGN outperforms ICL on F1GR by 16.59% and substantially outper-
+forms GPT-3.5 and Claude 3.5 in both F1GC and F1GR. Although GPT-3.5 and GPT-4 achieve
+higher F1AC scores, indicating better answer coverage, they rely heavily on parametric knowledge
+(Section 6.1 and Appendix F.3). This leads to less grounded and less trustworthy responses, as re-
+flected in lower TRUST-SCORE scores compared to TRUST-ALIGN. Similar trends are observed in
+other model families.
+Studying parametric knowledge access.
+For an LLM-in-RAG task, it is important to study the
+tendency of LLM towards grounding its knowledge on the provided documents. To partially quantify
+this, we compute the answer correctness score for questions that are unanswerable by the provided
+documents (defined as Sparam); thus a fraction of cases where AG∩AD = ∅but AG ̸= ∅(more details
+on the metric in Appendix F.2). In Table 10, our analysis reveals that responsive models (high AR%)
+tend to rely on parametric knowledge more frequently (high Sparam). Notably, closed-source models
+like GPT-4 exhibit higher parametric knowledge usage compared to open-source and TRUST-ALIGN
+models. However, Sparam only partially captures the models’ utilization of parametric knowledge.
+For instance, it does not account for cases where the document contains the answer, and the model
+still relies on parametric knowledge to generate the correct answer (also present in the document).
+This phenomenon is evident in Table 12, where on ASQA, GPT-4 achieves a significantly higher
+F1AC than our models, yet its attribution groundedness score F1GC is five points lower.
+7
+CONCLUSION
+In this study, we introduced a new holistic metric to evaluate the suitability of LLMs for RAG appli-
+cations, where they are expected to ground their responses in the provided documents. We proposed
+TRUST-SCORE, which comprehensively measures the quality of answers, citations, and refusal per-
+formance of an LLM. Additionally, we presented TRUST-ALIGN, a method that uses a constructed
+dataset to align models for improved TRUST-SCORE performance. By applying Direct Preference
+Optimization (DPO) techniques, we trained LLaMA-2-7b and LLaMA-3-8b on this dataset, signifi-
+cantly reducing hallucinations in an RAG environment. Our approach, TRUST-ALIGN, demonstrates
+performance comparable to major closed-source models like GPT-4.
+10</text></page>

@@ -1,0 +1,98 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table 13: A case study of the failure of decomposition.
+Insufficient case
+Question:
+Why do burns blister and why do burn wounds remain warm
+long after the injury occurred?
+Label:
+Burn blisters occur when the second layer of the skin is
+damaged, they occur to protect the underlying skin layers from more
+damage and infection.
+You could see it as the bodys/skins natural
+bandage, so never pop them.
+The skin remain warm because of the
+increased blood in the area to repair and replace the damaged skin.
+Decomposed claims:
+1.
+Burn blisters occur when the second layer of skin is damaged.
+2.
+Burn wounds remain warm due to increased blood flow to the area
+to repair and replace damaged skin.
+Missing points:
+1.
+Protection and Infection:
+The first claim does not mention that
+the blisters protect the underlying skin from more damage and
+infection, which is a significant part of the explanation in the
+answer.
+2.
+Never Pop Them:
+The answer advises against popping blisters,
+which is a preventive measure not mentioned in the claims.
+Redundant case
+Question:
+How do fitness trackers know that you actually sleeping
+but not just laying there resting, being awake?
+Label:
+Your heart beats slows down when you sleep, they will use a
+mixture of heart rate and how long you haven’t moved to determine how
+you’ve slept
+Decomposed claims:
+1.
+The combined factors of heart rate and
+inactivity determine sleep assessment.
+2.
+Fitness trackers consider the duration of inactivity to assess
+sleep.
+3.
+A slowed heart rate is an indicator of sleep that fitness
+trackers monitor.
+Redundant point:
+The first claim has already summarised the core
+statement, and the last two claims just expand it and give more
+details
+F.6
+ADAPTABILITY WITH DIFFERENT ALIGNMENT TECHNIQUES
+To demonstrate the robustness of our synthesized alignment data across different training methods,
+Table 14 also includes the performance of SFT and SIMPO (Meng et al., 2024) methods. Compared
+to the SFT baseline, which only utilizes the positive data points in the alignment pairs to fine-tune
+the base model, preference optimization methods, such as DPO and SIMPO, consistently show per-
+formance improvements, highlighting the versatility of our data pipeline. Unlike the SFT approach,
+DPO and SIMPO demonstrate improved TRUST scores, albeit with a reduction in responsiveness.
+This decrease in responsiveness is actually a favorable outcome, as it indicates that the models are
+less likely to attempt to answer questions for which they lack sufficient information.
+Table 14: Results using different alignment methods on the ASQA dataset.
+Alignment
+TRUST-ALIGN Model
+Responsiveness (AR%)
+F1AC
+F1GR
+F1GC
+TRUST
+DPO
+LLaMA-2-7b
+65.30
+52.48
+66.12
+83.94
+67.51
+LLaMA-3-8b
+56.43
+53.94
+65.49
+88.26
+69.23
+SIMPO
+LLaMA-2-7b
+72.47
+53.19
+66.44
+82.21
+67.28
+LLaMA-3-8b
+57.38
+49.84
+64.13
+86.86
+66.94
+28</text></page>

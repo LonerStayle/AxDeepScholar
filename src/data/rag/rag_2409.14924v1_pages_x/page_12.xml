@@ -1,0 +1,40 @@
+<page><text>arXiv Template
+A PREPRINT
+Figure 4: Demonstration of Rationale Queries
+Here are some examples of queries at this level:
+• How should a patient with chest pain and specific symptom descriptions be diagnosed and treated (given a
+chest pain management guideline)
+• How to respond to a user’s question in a real-life scenario? (given a customer service workflow)
+5.2
+Challenges and Solutions
+In the realm of interpretable rationale queries, an additional challenge is integrating domain-specific rationales into
+LLMs in an comprehensible manner. The primary challenges are as follows:
+• Prompt Optimization Costs: The process of optimizing prompts is marked by high time and computational
+demands. Distinct queries demand tailored background knowledge and decision-making criteria, necessitating
+diverse examples. While manually designed prompts can be highly effective, they are labor-intensive and time-
+consuming. Furthermore, training models to generate tailored prompts for various queries incurs significant
+computational overhead.
+• Limited interpretability: The impact of prompts on LLMs is opaque. In many cases, access to the internal
+parameters of LLMs is typically restricted, complicating efforts to determine the impact of various prompts
+on these models. This lack of transparency hinders our ability to consistently understand and verify the
+interpretability of LLM responses to different prompts.
+5.3
+Prompt Tuning
+For interpretable rationale queries, the key issue is how to effectively integrate rationales provided by external data into
+LLMs and ensure that these models can accurately follow and react based on these rationales. Text2MDT [112] offers
+a viable demonstration, introducing two methods for automatically extracting medical decision trees from medical
+guidelines and textbooks. This process clarifies the logical chains within lengthy medical texts, making them more
+comprehensible. Similarly, MedDM [113] has developed a format for clinical guidance trees that can be executed by
+LLMs, proposing a methodology for reasoning on these executable CGTs and a framework for multi-turn dialogues
+between patients and LLMs. InstructRec [114] aims to leverage the capabilities of LLMs in recommendation systems,
+designing a universal format to describe a user’s preferences, intentions, task forms, and context using natural language,
+thereby creating a high-performing, language-based recommendation system.
+Integrating rationales directly as natural language instructions into LLMs does not necessarily yield optimal performance,
+and manually designing prompts can be time-consuming. To address this, the employment of prompt tuning techniques
+becomes essential to enhance the LLMs’ capability to adhere to specific rationales. One effective methodology is
+the application of reinforcement learning, as evidenced by the TEMPERA framework [115], which designs prompts
+incorporating limited instructions, examples, and verbalizers within the action space of reinforcement learning. Here,
+the LLM’s probability of generating correct responses serves as the reward, guiding the model to discover the optimal
+prompt configuration across datasets. Similarly, Rlprompt [116] adopts a reinforcement learning approach, training an
+adaptor to assist smaller language models in producing optimal prompts based on feedback concerning the relative
+12</text></page>

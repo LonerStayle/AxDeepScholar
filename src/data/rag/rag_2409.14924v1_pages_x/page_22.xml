@@ -1,0 +1,57 @@
+<page><text>arXiv Template
+A PREPRINT
+[79] Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, and Lili Qiu. Longllm-
+lingua: Accelerating and enhancing llms in long context scenarios via prompt compression. arXiv preprint
+arXiv:2310.06839, 2023.
+[80] Haoyan Yang, Zhitao Li, Yong Zhang, Jianzong Wang, Ning Cheng, Ming Li, and Jing Xiao. Prca: Fitting
+black-box large language models for retrieval question answering via pluggable reward-driven contextual adapter.
+arXiv preprint arXiv:2310.18347, 2023.
+[81] Shi-Qi Yan, Jia-Chen Gu, Yun Zhu, and Zhen-Hua Ling. Corrective retrieval augmented generation. arXiv
+preprint arXiv:2401.15884, 2024.
+[82] Gangwoo Kim, Sungdong Kim, Byeongguk Jeon, Joonsuk Park, and Jaewoo Kang. Tree of clarifications: An-
+swering ambiguous questions with retrieval-augmented large language models. arXiv preprint arXiv:2310.14696,
+2023.
+[83] Zihua Si, Zhongxiang Sun, Jiale Chen, Guozhang Chen, Xiaoxue Zang, Kai Zheng, Yang Song, Xiao Zhang,
+and Jun Xu. Generative retrieval with semantic tree-structured item identifiers via contrastive learning. arXiv
+preprint arXiv:2309.13375, 2023.
+[84] Kevin Wu, Eric Wu, and James Zou. How faithful are rag models? quantifying the tug-of-war between rag and
+llms’ internal prior, 2024.
+[85] Hanxing Ding, Liang Pang, Zihao Wei, Huawei Shen, and Xueqi Cheng. Retrieve only when it needs: Adaptive
+retrieval augmentation for hallucination mitigation in large language models. arXiv preprint arXiv:2402.10612,
+2024.
+[86] Hexiang Tan, Fei Sun, Wanli Yang, Yuanzhuo Wang, Qi Cao, and Xueqi Cheng.
+Blinded by generated
+contexts: How language models merge generated and retrieved contexts for open-domain qa? arXiv preprint
+arXiv:2401.11911, 2024.
+[87] Boxin Wang, Wei Ping, Lawrence McAfee, Peng Xu, Bo Li, Mohammad Shoeybi, and Bryan Catanzaro.
+Instructretro: Instruction tuning post retrieval-augmented pretraining. arXiv preprint arXiv:2310.07713, 2023.
+[88] Ori Yoran, Tomer Wolfson, Ori Ram, and Jonathan Berant. Making retrieval-augmented language models robust
+to irrelevant context. arXiv preprint arXiv:2310.01558, 2023.
+[89] Feiteng Fang, Yuelin Bai, Shiwen Ni, Min Yang, Xiaojun Chen, and Ruifeng Xu. Enhancing noise robustness of
+retrieval-augmented language models with adaptive adversarial training. arXiv preprint arXiv:2405.20978, 2024.
+[90] Xi Victoria Lin, Xilun Chen, Mingda Chen, Weijia Shi, Maria Lomeli, Rich James, Pedro Rodriguez, Jacob
+Kahn, Gergely Szilvasy, Mike Lewis, et al. Ra-dit: Retrieval-augmented dual instruction tuning. arXiv preprint
+arXiv:2310.01352, 2023.
+[91] Sebastian Hofstätter, Jiecao Chen, Karthik Raman, and Hamed Zamani. Fid-light: Efficient and effective
+retrieval-augmented text generation. In Proceedings of the 46th International ACM SIGIR Conference on
+Research and Development in Information Retrieval, pages 1437–1447, 2023.
+[92] Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi. Self-rag: Learning to retrieve,
+generate, and critique through self-reflection. arXiv preprint arXiv:2310.11511, 2023.
+[93] Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. React:
+Synergizing reasoning and acting in language models. arXiv preprint arXiv:2210.03629, 2022.
+[94] Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal. Interleaving retrieval with chain-
+of-thought reasoning for knowledge-intensive multi-step questions. In Anna Rogers, Jordan Boyd-Graber, and
+Naoaki Okazaki, editors, Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics
+(Volume 1: Long Papers), pages 10014–10037, Toronto, Canada, July 2023. Association for Computational
+Linguistics.
+[95] Zihao Wang, Anji Liu, Haowei Lin, Jiaqi Li, Xiaojian Ma, and Yitao Liang. Rat: Retrieval augmented thoughts
+elicit context-aware reasoning in long-horizon generation. arXiv preprint arXiv:2403.05313, 2024.
+[96] Zhengliang Shi, Shuo Zhang, Weiwei Sun, Shen Gao, Pengjie Ren, Zhumin Chen, and Zhaochun Ren.
+Generate-then-ground in retrieval-augmented generation for multi-hop question answering. arXiv preprint
+arXiv:2406.14891, 2024.
+[97] Zhangyin Feng, Xiaocheng Feng, Dezhi Zhao, Maojin Yang, and Bing Qin. Retrieval-generation synergy
+augmented large language models. In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech
+and Signal Processing (ICASSP), pages 11661–11665. IEEE, 2024.
+[98] Shirui Pan, Linhao Luo, Yufei Wang, Chen Chen, Jiapu Wang, and Xindong Wu. Unifying large language models
+and knowledge graphs: A roadmap. ArXiv, abs/2306.08302, 2023.
+22</text></page>

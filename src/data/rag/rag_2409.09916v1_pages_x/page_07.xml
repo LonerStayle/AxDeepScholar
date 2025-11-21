@@ -1,0 +1,118 @@
+<page><text>Table 2:
+Standard LM-eval-harness benchmarks [11]:
+SFR-RAG-9B maintains relative
+competitiveness in standard world knowledge and reasoning abilities against comparable baselines.
+Model
+MMLU
+GSM8K
+Winogrande
+TruthfulQA
+Hellaswag
+ARC-C
+Command-R (35B)
+68.20
+56.63
+81.53
+52.32
+87.00
+65.53
+Llama-3-8b-instruct
+67.07
+68.69
+74.51
+51.65
+78.55
+60.75
+Llama-3.1-8B-Instruct
+68.22
+71.04
+78.06
+54.58
+80.47
+60.92
+gemma-2-9b-it
+70.80
+76.88
+77.50
+60.11
+81.78
+71.20
+SFR-RAG-9B
+70.15
+82.56
+78.46
+56.49
+81.58
+69.12
+Table 3: Scores on Berkeley function calling benchmark [48]: SFR-RAG-9B exhibits competitive
+function calling abilities.
+Model
+Executable
+AST
+Relevance
+GPT 4 Turbo
+86.04
+90.73
+62.50
+GPT 3.5 Turbo
+81.38
+75.23
+87.80
+Command R + (104B)
+77.33
+84.50
+63.75
+xLam 7B
+87.12
+89.46
+85.00
+Mistral Medium
+73.47
+84.48
+88.33
+gemma-2-9b-it
+70.50
+69.69
+90.00
+Meta-Llama-3-8B-Instruct
+65.13
+61.63
+26.60
+Meta-Llama-3.1-8B-Instruct
+75.17
+77.56
+40.00
+SFR-RAG-9B
+70.88
+71.69
+72.50
+against its own parametric knowledge when contextual information presented is counter-intuitive.
+In other words, the model remains more faithful to the context even if the context contradicts its
+pre-trained knowledge.
+3.4
+Standard Benchmarks
+We also evaluate our SFR-RAG model in the traditional few-shot prompting benchmarks [12, 7] to
+measure its parametric knowledge as well as general instruction following and reasoning abilities.
+Using the similar setups in the Open LLM leaderboard [3], we employ the standard evaluation harness
+[11] to evaluate our model in MMLU (5 shots), GSM8K (5 shots with strict matching), Winogrande
+(5 shots), TruthfulQA (0 shot MC2), Hellaswag (10 shots with normalized accuracy) and ARC-C (25
+shots with normalized accuracy) [12, 7, 33, 23, 52, 6].
+As shown in Table 2, our SFR-RAG model performs competitively in terms of world knowledge,
+common sense and reasoning abilities, despite the fact that it is optimized for contextual and retrieval
+use cases. Particularly, our 9B model outperforms Command-R [36] with 35B parameters in MMLU,
+GSM8K, TruthfulQA as well as ARC-C. Meanwhile it remains competitive to Llama-3.1-Instruct [9]
+and gemma-2-9b-it [38].
+Our model is also trained with function calling with a focus to support dynamic and multi-hop
+interactions with external tools to retrieve high-quality contextual information. As such, we compare
+our model with certain popular baselines in the Berkeley function calling task [48]. As reported in
+Table 3, our SFR-RAG performs competitively against comparable baselines such as Llama-3-8B-
+Instruct [9]
+4
+Conclusion
+We present SFR-RAG, a LLM fine-tuned with an emphasis on faithful contextual comprehension and
+understanding for retrieval augmented generation applications. The SFR-RAG model is trained to
+minimize hallucination, effectively handle unanswerable, counterfactual or low-quality and irrelevant
+contexts. It is also capable of performing complex multi-hop reasoning and producing citations
+reliably and accurately. We also introduce ContextualBench, which is a compilation of various
+popular RAG benchmarks evaluated under consistent and appropriate settings. The experiments show
+7</text></page>

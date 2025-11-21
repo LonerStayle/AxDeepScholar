@@ -1,0 +1,53 @@
+<page><text>Published as a conference paper at ICLR 2025
+MEASURING AND ENHANCING TRUSTWORTHINESS OF
+LLMS IN RAG THROUGH GROUNDED ATTRIBUTIONS
+AND LEARNING TO REFUSE
+Maojia Song*, Shang Hong Sim*, Rishabh Bhardwaj
+Singapore University of Technology and Design
+{maojia song, shanghong sim, rishabh bhardwaj}@mymail.sutd.edu.sg
+Hai Leong Chieu
+DSO National Laboratories
+chaileon@dso.org.sg
+Navonil Majumder, Soujanya Poria
+Singapore University of Technology and Design
+{navonil majumder, sporia}@sutd.edu.sg
+ABSTRACT
+LLMs are an integral component of retrieval-augmented generation (RAG) sys-
+tems. While many studies focus on evaluating the overall quality of end-to-end
+RAG systems, there is a gap in understanding the appropriateness of LLMs for
+the RAG task. To address this, we introduce TRUST-SCORE, a holistic metric that
+evaluates the trustworthiness of LLMs within the RAG framework. Our results
+show that various prompting methods, such as in-context learning, fail to effec-
+tively adapt LLMs to the RAG task as measured by TRUST-SCORE. Consequently,
+we propose TRUST-ALIGN, a method to align LLMs for improved TRUST-SCORE
+performance. 26 out of 27 models aligned using TRUST-ALIGN substantially out-
+perform competitive baselines on ASQA, QAMPARI, and ELI5. Specifically, in
+LLaMA-3-8b, TRUST-ALIGN outperforms FRONT on ASQA (↑12.56), QAM-
+PARI (↑36.04), and ELI5 (↑17.69). TRUST-ALIGN also significantly enhances
+models’ ability to correctly refuse and provide quality citations. We also demon-
+strate the effectiveness of TRUST-ALIGN across different open-weight models,
+including the LLaMA series (1b to 8b), Qwen-2.5 series (0.5b to 7b), and Phi3.5
+(3.8b).
+We release our code at https://github.com/declare-lab/
+trust-align.
+1
+INTRODUCTION
+LLMs are widely used for information retrieval but often produce hallucinations—factually incor-
+rect yet convincing responses (Ji et al., 2023), undermining their reliability. A common mitigation
+is Retrieval-Augmented Generation (RAG), which integrates external knowledge to improve correct
+token generation, reducing perplexity (Khandelwal et al., 2019) and enhancing downstream tasks
+like machine translation (Zheng et al., 2021) and classification (Bhardwaj et al., 2023). Connect-
+ing LLMs to external documents via retrieval also improves response quality (Shuster et al., 2021;
+B´echard &amp; Ayala, 2024), further enhanced by attribution mechanisms (Gao et al., 2023b; Hsu et al.,
+2024).
+In this paper, we investigate LLMs’ ability to ground responses in provided documents instead of
+relying on their parametric knowledge from training. A response is considered grounded if it cor-
+rectly answers using only the attached documents, with in-text citations supporting its claims. Key
+aspects include LLMs’ refusal capability—whether they abstain from answering when documents
+lack sufficient information. Additionally, we analyze their overall tendency to answer, the fraction
+of claims grounded in documents, and whether cited sources substantiate generated statements.
+To comprehensively understand LLMs’ groundedness, we propose a new metric TRUST-SCORE.
+It assesses an LLM across multiple dimensions: 1) The ability to discern which questions can be
+∗Equal contribution.
+1
+arXiv:2409.11242v4  [cs.CL]  24 Apr 2025</text></page>

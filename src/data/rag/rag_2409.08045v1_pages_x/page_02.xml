@@ -1,0 +1,107 @@
+<page><text>traction, violating the confidentiality of the GenAI-powered
+application (similarly to [2–4]) and violating the intellec-
+tual property of the GenAI-powered application using the ex-
+tracted data (as opposed to [2–4]). Moreover, this can be done
+with no prior knowledge of the data that exists in the database
+(as opposed to RAG membership inference attacks [2,3] that
+need to provide the candidate entity/document to the query
+sent to the GenAI-powered application).
+We discuss the black-box threat model and characterize
+GenAI-powered applications at risk. We present a black-box
+collision attack against desired embeddings (i.e., a technique
+to create the textual input that yields desired embeddings)
+that extends a recent work [17]. Based on this technique, we
+conduct an end-to-end evaluation to extract as many docu-
+ments from the database of a RAG-based GenAI-powered
+medical Q&amp;A chatbot (based on ChatDoctor-100k [18]). We
+compare the results obtained from three extraction methods
+and evaluate how the results are affected by the type and the
+size of five embeddings algorithms, the size of the provided
+context (i.e., the number of documents provided to the GenAI
+engine), and three types of employed GenAI engine.
+In the second part of the paper, we explore the risks posed
+by a jailbroken GerAI model to GenAI ecosystems that consist
+of RAG-based GenAI-powered applications that interface
+with each other (e.g., GenAI-powered email applications and
+GenAI-powered personal assistants). We show that when the
+communication between applications in the ecosystem relies
+on RAG-based inference, a jailbroken GenAI model could
+be exploited by attackers to send a message that triggers a
+chain reaction of a computer worm within the ecosystem
+and forces each affected application to perform a malicious
+activity (e.g., distribute disinformation, misinformation, and
+propaganda, or to embarrass users) and propagate to a new
+application in the ecosystem (compromising the activity of the
+new application as well). This is done by crafting adversarial
+self-replicating prompts that survive a chain of inferences
+while still conducting malicious activity in each inference. By
+doing so, attackers could escalate RAG poisoning attacks from
+a client level to an ecosystem level, amplifying the outcome
+of the attack in scale (as opposed to methods presented attacks
+against single GenAI-powered applications [10–16]).
+We discuss the black-box threat model, characterize GenAI-
+powered applications at risk, explain how adversarial self-
+replicating prompts are used to conduct malicious activity and
+propagate to new clients, and review the steps of the attack.
+We conduct an end-to-end evaluation of the worm against
+RAG-based GenAI-powered email assistants and assess how
+the propagation and success rate are affected by the prefix of
+the email used as the worm, the type and size of five embed-
+dings algorithms, the size of the provided context, the type of
+the GenAI engine, and the number of hops of the propagation.
+In the third part of the paper, we review and analyze the
+effectiveness of various guardrails (access control, rate limit,
+thresholding, human-in-the-loop, content size limit, data san-
+itization) against attacks that target RAG-based GenAI in-
+ference [2–9]. Based on the analysis we recommend how to
+secure RAG-based inference and discuss the tradeoffs. Fi-
+nally, we discuss the limitations of the attacks, review related
+works, and conclude our findings.
+Contributions. (1) We extend the knowledge of security
+and privacy of RAG-based GenAI-powered applications and
+explore the risks posed by a jailbroken GenAI model. We
+show that with the ability to jailbreak a GenAI model, attack-
+ers can escalate the outcome of attacks against RAG-based
+GenAI-powered application in severity (from entity level to
+document level extraction) and in scale (from compromising
+a single application to compromising the entire ecosystem).
+(2) To convince the reader regarding the arguments mentioned
+above, we demonstrate and evaluate two attacks (documents
+extraction attacks and a worm) performed against two GenAI-
+powered applications (a Q&amp;A chatbot and an email assistant)
+in two attack vectors (direct and indirect prompt injection)
+and two types of targets (a single GenAI-powered application
+and a GenAI ecosystem). (3) In the absence of bullet-proof
+mitigation against jailbreaking and adaptive jailbreaking at-
+tacks, we discuss guardrails and policies to minimize the risk
+posed to RAG-based inference by the attacks demonstrated
+in this paper and the attacks presented in related works [2–9].
+Structure. In Section 2, we review related work. We ex-
+plore how a jailbroken GenAI model could be exploited to
+perform RAG documents extraction attack (in Section 3) and
+to unleash a worm that target GenAI ecosystem (in Section
+4). In Section 5 we review and analyze the effectiveness of
+various guardrails. In Section 6 we discuss the limitations of
+the attack and in Section 7 we discuss our findings.
+Ethical Considerations, Responsible Disclosure &amp; Open
+Science. The entire experiments we conducted were done in
+a lab environment. We did not demonstrate the application
+of the attacks against existing applications to avoid violating
+the confidentiality and the intellectual property of a GenAI-
+powered application by extracting the database used by its
+RAG and violating the confidentiality of users by unleashing
+a worm that exfiltrates sensitive user information into the wild.
+Instead, we demonstrated the attacks against applications that
+we developed running on real data used by academics: the
+Enron dataset [19] and ChatDoctor dataset [18]. We disclosed
+our findings with OpenAI and Google via their bug bounty
+programs (attaching the paper for reference). We will pro-
+vide more details when we will receive their response. We
+uploaded our code and dataset to GitHub1 to allow repro-
+ducibility and replicability of our findings.
+2
+Background &amp; Related Work
+Background. Retrieval-augmented generation (RAG) is a
+technique in natural language processing that enhances the
+1 https://github.com/StavC/UnleashingWorms-ExtractingData
+2</text></page>

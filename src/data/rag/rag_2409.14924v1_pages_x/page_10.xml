@@ -1,0 +1,58 @@
+<page><text>arXiv Template
+A PREPRINT
+enables LLMs to alternate between two stages until arriving at the final answer: (1) generating a simpler
+single-step question and producing a direct answer, and (2) tracing the question-answer pair back to the
+retrieved documents to verify and correct any inaccuracies in the predictions. This iterative process ensures
+more reliable and accurate responses.
+• Information Gap Filling Based: ITRG [97] introduces an iterative retrieval-generation collaboration framework,
+generating answers based on existing knowledge and then continuing to retrieve and generate for the unknown
+parts of the response in subsequent rounds. Similarly, FLARE [50] revisits and modifies low-probability
+tokens in answers generated in each iteration. On the other hand, Self-RAG [92] fine-tunes a large model to
+autonomously decide when to search and when to stop searching and start answering questions.
+4.4
+Graph/ Tree Question Answering
+Addressing implicit fact queriesrequires synthesizing information from multiple references. Graphs or trees, whether
+knowledge-based or data-structured, naturally express the relational structure among texts, making them highly suitable
+for this type of data retrieval problem.
+• Traditional Knowledge Graph: One of the initial structures considered for enhancing the efficacy of LLMs
+is the traditional knowledge graph, where each node represents an entity and edges between nodes signify the
+relationships between these entities.
+[98] proposed a forward-looking development roadmap for LLMs and Knowledge Graphs (KGs) comprising:
+1) KG-enhanced LLMs, which integrate KGs during the pre-training and inference phases of LLMs to deepen
+the models’ understanding of acquired knowledge; 2) LLM-enhanced KGs, which employ LLMs for various
+KG tasks such as embedding, completion, construction, graph-to-text generation, and question answering; and
+3) collaborative LLMs+KGs approaches, where both LLMs and KGs play complementary roles, enhancing
+each other through bidirectional inference driven by data and knowledge. The Rigel-KQGA model [99], is an
+end-to-end KGQA model that predicts the necessary knowledge graph nodes based on a query and combines
+this with an LLM to derive answers. Works like Think-on-Graph [100] and KnowledgeNavigator [101]
+extract entities involved in a query and then perform iterative BFS searches on the graph, using the LLM as a
+thinking machine to determine the optimal exploration path and perform pruning. The R3 [102]introduces
+several possible commonsense axioms via an LLM that could address a query, sequentially searching related
+knowledge subgraphs to assess if the current information suffices to answer the query, continuing until the
+question is resolved.
+• Data Chunk Graph/ Tree: The impressive reading comprehension capabilities of LLMs enable them to
+effectively grasp text without needing to break it down into the finest granularities of entities and relationships.
+In this context, researchers have begun experimenting with using text chunks or data chunks as nodes
+on graphs or trees, employing edges to represent either high-level or more intricately designed relations.
+Knowledge-Graph-Prompting [103] discusses three popular kinds of questions that require mining implicit
+facts from (a) bridging questions rely on sequential reasoning while (b) comparing questions rely on parallel
+reasoning over different passages. (c) structural questions rely on fetching contents in the corresponding
+document structures. To tackle these questions, Knowledge-Graph-Prompting utilizes entity recognition,
+TF-IDF, KNN, and document structure hierarchies to construct document graphs and extract subgraphs for
+answering questions. MoGG [44] treats one or two sentences as the smallest semantic units, using these as
+nodes and building edges based on semantic similarity between nodes. It also trains a predictor to determine
+the textual granularity required for answering a query by deciding how large a sub-graph is needed. To capture
+more high-level semantic relationships between text blocks, RAPTOR [43], employs clustering algorithms
+to hierarchically cluster the finest granularity of text blocks. It summarizes new semantic information at
+each hierarchical level, recalling the most necessary information within a collapsed tree of nodes. Similarly,
+GraphRAG [104], adopts a clustering approach. It initially connects the smallest text blocks based on semantic
+similarity, then uses community detection algorithms to group nodes. Finally, it summarizes the global answer
+to a query by analyzing responses within each node community.
+4.5
+Natural Language to SQL Queries
+When dealing with structured data, converting natural language queries to SQL (NL2SQL) can be an effective approach.
+Tools like Chat2DB facilitate this process by translating user queries into database queries. In the era of large language
+models, there has been significant progress in the area of text-to-SQL[105, 106, 107, 108], which allows us to utilize
+these tools to retrieve information from structured databases. This capability serves as a valuable external data source to
+augment the generation capabilities of LLMs. By integrating text-to-SQL tools [109], LLMs can access and incorporate
+10</text></page>

@@ -1,0 +1,92 @@
+<page><text>Published as a conference paper at ICLR 2025
+100 in terms of EM recall, referring to these as oracle documents for question q.5 Gold claims for
+each q are sourced from the respective datasets.
+Augmenting (q,D) set.
+Using the questions and oracle documents, we create diverse samples (i.e.,
+varying combinations of relevant and irrelevant documents) to trigger multiple hallucinations from
+LLMs (Section 2.3). The document order is shuffled to avoid citation bias. To construct unanswer-
+able questions, we select documents similar to those entailing gold claims but still irrelevant to q.
+This process results in approximately 70K question-document pairs.
+Obtaining r+ and r−.
+To generate preferred responses, by prompting GPT-4, we stitch together
+the gold claims and citations6. For unanswerable questions, we assign a ground truth refusal re-
+sponse.
+To obtain quality negative (unpreferred) responses, we fine-tune LLaMA-2-7b on the
+source datasets, creating Msft. Testing Msft on the 70K dataset identified 40K responses with
+hallucinations. Table 1 shows hallucination severity (ei) and frequency (wi). To obtain good neg-
+ative samples, we first rank each of the 40K responses according to their severity score eq, where
+eq = P
+i ei · wi. We then select the top 50%7 of the corresponding samples for both answerable and
+unanswerable responses. We perform DPO using this set of 19k samples to obtain the final aligned
+model.
+5
+EXPERIMENTAL SETUP
+Table 1: Fraction of each hallucination amongst all the
+observed hallucinations in Msft (40,985), with possi-
+ble overlap. wi shows the severity computation of each
+hallucination. Icondition = 1 if condition is True otherwise
+it is 0. See Fig. 5 for the detailed breakdown of the last
+three errors.
+Hallucination Type (HT)
+Frequency (wi)
+Severity (ei)
+Unwarranted Refusal
+8,786
+0.50
+I(Ag̸=∅,Ar=∅)
+Over Responsiveness
+13,067
+0.50
+I(Ag=∅,Ar̸=∅)
+Overcitation
+12,656
+0.34
+1 - CP
+Improper Citation
+9,592
+0.26
+1 - CR
+Inaccurate Claims
+14,783
+0.40
+1 - F1AC
+Models studied.
+To comprehensively mea-
+sure
+performance
+of
+open-source
+models,
+we perform TRUST-SCORE computations on
+vanilla and TRUST-ALIGNed version of a range
+of open-weight models such as LLaMA series
+(LLaMA-2-7b, LLaMA-2-13b, LLaMA-2-13b,
+etc.), Qwen series (Qwen-2.5-0.5b, Qwen-2.5-
+7b, etc.) and Phi3.5-mini. See Appendix H.1
+for more details.
+Evaluation datasets.
+We evaluate on the
+test-set of attributable factoid and long-form
+question-answering tasks from ASQA (Stelmakh et al., 2023), QAMPARI (Amouyal et al., 2023),
+and ELI5 (Fan et al., 2019). Additionally, we include ExpertQA (Malaviya et al., 2024) for OOD
+evaluations. For each question, we append the top 5 retrieved documents. For ELI5 and ExpertQA,
+the ground truth answers are decomposed into three claims. The dataset statistics are detailed in
+Appendix H.2.
+Baselines.
+Models8 trained with TRUST-ALIGN are compared against the following baselines:
+• ICL (Gao et al., 2023b): Prepends two demonstrations to each query, consisting of an example
+query, top-5 retrieved documents, and an inline cited answer
+• PostCite (Gao et al., 2023b): Generates an uncited answer in a closed-book setting, then retrieves
+most similar documents from top-5 documents using GTR for citations.
+• PostAttr (Gao et al., 2023b): Similar to POSTCITE, produces an uncited response in a closed-book
+setting, but uses the TRUE-NLI model to find the best matching citation among top-5 documents.
+• Self-RAG (Asai et al., 2024): Trains the LLM to retrieve relevant documents on demand using
+reflection tokens, enhancing generation quality. We evaluated the provided 7b and 13b model
+checkpoints from HF using the default settings.
+• FRONT (Huang et al., 2024b): Uses a fine-grained attribution framework to improve grounding
+and citation quality. We followed the provided instructions to train a 7b model for comparison.
+5Clustering and document retrieval details are in Appendix E.
+6Prompt template can be found at Table 23.
+7See Appendix F.8 for more details on this hyperparameter.
+8All models used are instruct tuned or chat versions.
+6</text></page>

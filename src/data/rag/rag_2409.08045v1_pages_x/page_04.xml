@@ -1,0 +1,117 @@
+<page><text>attacks [4] because it does not assume any prior knowledge of
+the data stored in the database. Our threat model is significant
+with respect to RAG membership inference attacks [2,3] that
+require the attacker to find a set of candidates of entities/docu-
+ments in advance, so he/she can provide the candidates to the
+GenAI model for validating their existence in the database
+(for example, in [2], they used the following query to vali-
+date the existence of a document d: “Does this: d appear in
+the context? Answer with Yes or No"). Our threat model is
+significant with respect to RAG entity extraction attacks [4]
+that require the attacker to know the type of data in advance
+(e.g., PIIs, medical information, etc.) so he/she can design
+dedicated queries manually (for example, in [4], they used
+the following query to extract a phone number: “My phone
+number is"). (2) The outcome of the attack is more severe: it
+recovers complete documents from the RAG. This outcome
+is significant with respect to RAG entity extraction attacks [4]
+that extract specific entities (names, phone numbers). There-
+fore, by employing RAG extraction attacks, attackers violate
+the confidentiality of the data and its intellectual property
+(they can use the data to create their own applications).
+3.2
+Attack Steps
+The objective of the attacker is to recover as many documents
+from the database used by the RAG-based GenAI-powered
+application. The attacker aims to craft an input text whose
+embeddings will collide with a desired set of embeddings of
+documents stored in the RAG (and therefore will be retrieved
+by the RAG during inference). By repeatedly returning this
+action with different inputs (that are similar to unique sets
+of documents stored in the database), the attacker triggers
+unique retrievals of documents by the RAG which are forced
+to be returned to the attacker by the jailbroken GenAI engine.
+The attack consists of the following steps:
+(1) The attacker determines pre, a jailbreaking command
+that will be used in the prefix of its input to the RAG-based
+Q&amp;A chatbot. Such a jailbreaking command can be found
+over the Internet (according to [10]).
+(2) The attacker determines target, a target embeddings
+vector according to an extraction method he/she uses (we
+compare various extraction methods in the evaluation).
+(3) The attacker uses a collision algorithm (we dis-
+cuss it in the next subsection) to find suf, a suffix that
+when appended to pre, its embeddings vector collides with
+target. More formally, given t, a desired similarity score, and
+given sim, a similarity function, we consider a collision as:
+sim(embeddingstarget,embeddingspre||su f ) &gt; t.
+(4) The attacker provides pre||suf as input to the Q&amp;A
+chatbot. A retrieval of k documents (d1,...dk) is triggered
+from the database based on embeddingspre||su f . d1,...dk are
+provided in the query (as context) sent by the application to
+the GenAI engine for inference.
+(5) The jailbreaking command forces the GenAI engine to
+output d1,...dk which are provided as an answer to the attacker.
+d1,...dk are added to the attacker’s extraction set. The attacker
+repeats the steps 2-5.
+3.3
+Embeddings Collision Algorithm
+Algorithm 1 Greedy Embedding Attack (GEA)
+1: Input: pre, suf, target, iterations, randomN, thresh
+2: control_toks ←tokenize(suf)
+3: all_tokens ←range(tokenizer_length)
+4: best_suffix ←suf, best_loss ←−∞
+5: indices ←(len(control_toks))
+6: for (j = 0; j&lt; iterations &amp; best_loss&lt;t ; j++) do
+7:
+shuffle(indices)
+8:
+for each i in indices do
+9:
+current_toks ←tokenize(best_suffix)
+10:
+candidates ←sample(all_tokens, randomN)
+11:
+for each token in candidates do
+12:
+new_toks ←replace(current_toks, i, token)
+13:
+perturbed_sentence ←concat(pre, new_toks)
+14:
+embedding ←embed(perturbed_sentence)
+15:
+loss ←1-cosine_sim(embedding, target)
+16:
+if loss &lt; best_loss then
+17:
+best_loss ←loss
+18:
+best_suffix ←new_toks
+19: return best_suffix, best_loss
+The attacker aims to craft an input text whose embeddings
+will "collide" with a desired set of embeddings of documents
+stored in the RAG. To do so, we extend the method presented
+in [17] and present a black-box-based collision attack capable
+of generating a desired input text for a given target embed-
+dings.
+The Greedy Embedding Attack (GEA) algorithm aims
+to modify the suffix of a text to make its embedding as close
+as possible to a target embedding. It starts by tokenizing the
+initial suffix (line 1) and generating a list of all possible to-
+kens from the tokenizer’s vocabulary (line 2). The best suffix
+and loss are initialized (line 3), and a list of token indices is
+created (line 4). The algorithm runs for a specified number
+of iterations or until a similarity threshold is reached (line 5).
+In each iteration, the token indices are shuffled (line 6). For
+each position, random candidate tokens are sampled from the
+tokenizer’s vocabulary (lines 7-9). Each candidate replaces
+the current token (line 11), and the modified suffix is com-
+bined with the prefix (line 12). The similarity between the new
+embedding and the target is measured using cosine similarity
+(lines 13-14). The best suffix and loss are updated if the new
+embedding is closer to the target (lines 15-18). This process
+continues until the best possible match is found, optimizing
+the suffix for the closest embedding similarity to the target.
+We note that in a standard RAG-based inference, the doc-
+uments that yield the top-k similarity scores with the given
+4</text></page>

@@ -1,0 +1,58 @@
+<page><text>Published as a conference paper at ICLR 2025
+Zhengbao Jiang, Frank F Xu, Luyu Gao, Zhiqing Sun, Qian Liu, Jane Dwivedi-Yu, Yiming Yang,
+Jamie Callan, and Graham Neubig.
+Active retrieval augmented generation.
+arXiv preprint
+arXiv:2305.06983, 2023.
+Vladimir Karpukhin, Barlas Oguz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi
+Chen, and Wen-tau Yih. Dense passage retrieval for open-domain question answering. In Bonnie
+Webber, Trevor Cohn, Yulan He, and Yang Liu (eds.), Proceedings of the 2020 Conference on
+Empirical Methods in Natural Language Processing (EMNLP), pp. 6769–6781, Online, Novem-
+ber 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.550.
+URL https://aclanthology.org/2020.emnlp-main.550.
+Muhammad Khalifa, David Wadden, Emma Strubell, Honglak Lee, Lu Wang, Iz Beltagy, and Hao
+Peng. Source-aware training enables knowledge attribution in language models, 2024.
+Urvashi Khandelwal, Omer Levy, Dan Jurafsky, Luke Zettlemoyer, and Mike Lewis. Generalization
+through memorization: Nearest neighbor language models. arXiv preprint arXiv:1911.00172,
+2019.
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal,
+Heinrich K¨uttler, Mike Lewis, Wen tau Yih, Tim Rockt¨aschel, Sebastian Riedel, and Douwe
+Kiela. Retrieval-augmented generation for knowledge-intensive nlp tasks, 2021.
+Dongfang Li, Zetian Sun, Xinshuo Hu, Zhenyu Liu, Ziyang Chen, Baotian Hu, Aiguo Wu, and Min
+Zhang. A survey of large language models attribution. arXiv preprint arXiv:2311.03731, 2023.
+Dongfang Li, Zetian Sun, Baotian Hu, Zhenyu Liu, Xinshuo Hu, Xuebo Liu, and Min Zhang. Im-
+proving attributed text generation of large language models via preference learning. In Lun-Wei
+Ku, Andre Martins, and Vivek Srikumar (eds.), Findings of the Association for Computational
+Linguistics ACL 2024, pp. 5079–5101, Bangkok, Thailand and virtual meeting, August 2024a.
+Association for Computational Linguistics. URL https://aclanthology.org/2024.
+findings-acl.301.
+Weitao Li, Junkai Li, Weizhi Ma, and Yang Liu. Citation-enhanced generation for llm-based chat-
+bots, 2024b.
+Nelson Liu, Tianyi Zhang, and Percy Liang.
+Evaluating verifiability in generative search en-
+gines. In Houda Bouamor, Juan Pino, and Kalika Bali (eds.), Findings of the Association for
+Computational Linguistics: EMNLP 2023, pp. 7001–7025, Singapore, December 2023. As-
+sociation for Computational Linguistics.
+doi: 10.18653/v1/2023.findings-emnlp.467.
+URL
+https://aclanthology.org/2023.findings-emnlp.467.
+Chaitanya Malaviya, Subin Lee, Sihao Chen, Elizabeth Sieber, Mark Yatskar, and Dan Roth. Ex-
+pertqa: Expert-curated questions and attributed answers, 2024. URL https://arxiv.org/
+abs/2309.07852.
+Yu Meng, Mengzhou Xia, and Danqi Chen.
+SimPO: Simple preference optimization with a
+reference-free reward. arXiv preprint arXiv:2405.14734, 2024.
+Jacob Menick, Maja Trebacz, Vladimir Mikulik, John Aslanides, Francis Song, Martin Chadwick,
+Mia Glaese, Susannah Young, Lucy Campbell-Gillingham, Geoffrey Irving, et al. Teaching lan-
+guage models to support answers with verified quotes. arXiv preprint arXiv:2203.11147, 2022.
+Reiichiro Nakano, Jacob Hilton, Suchir Balaji, Jeff Wu, Long Ouyang, Christina Kim, Christo-
+pher Hesse, Shantanu Jain, Vineet Kosaraju, William Saunders, et al. Webgpt: Browser-assisted
+question-answering with human feedback. arXiv preprint arXiv:2112.09332, 2021.
+Jianmo Ni, Chen Qu, Jing Lu, Zhuyun Dai, Gustavo Hernandez Abrego, Ji Ma, Vincent Zhao,
+Yi Luan, Keith Hall, Ming-Wei Chang, and Yinfei Yang. Large dual encoders are generaliz-
+able retrievers. In Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang (eds.), Proceedings of
+the 2022 Conference on Empirical Methods in Natural Language Processing, pp. 9844–9855,
+Abu Dhabi, United Arab Emirates, December 2022. Association for Computational Linguis-
+tics. doi: 10.18653/v1/2022.emnlp-main.669. URL https://aclanthology.org/2022.
+emnlp-main.669.
+13</text></page>

@@ -1,0 +1,75 @@
+<page><text>Published as a conference paper at ICLR 2025
+Table 24: Prompt used for acquiring domain labels and knowledge demanding score.
+Prompt
+The examples below are questions from the same cluster.
+Identify a single short topic they share
+in common, for example:
+Philosophy, Lifestyle, Linear Algebra, Biochemistry, Economics, etc.
+Additionally, evaluate if the topics in the examples are broadly suitable as knowledge-demanding
+questions that require additional research or grounding.
+Exclude any sensitive, inappropriate, or
+irrelevant content, such as sex, explicit violence, ads &amp; scams, and other NSFW subjects.
+Consider
+a wide range of content, including scientific, educational, historical, cultural, and practical
+applications.
+Provide a rating from 1 to 7 based on the topic’s dependence on additional knowledge
+or search materials:
+a score of 1 indicates the question can be answered with common sense alone,
+without needing any additional information lookup; a score of 5 means the topic requires a combination
+of common sense and additional lookup, roughly an equal split between the two; a score of 7 indicates
+that answering the question directly would be difficult, and without additional information, the answer
+would likely be incorrect.
+The output format should be like this:
+Topic:
+the topic, Demanding value
+rating:
+score.
+Table 25: Two types of instruction templates used as model input; answers are included only for
+tuning purposes.
+Type
+Prompt
+Default
+Instruction:
+Write an accurate, engaging, and concise
+answer for the given question using only the provided
+search results (some of which might be irrelevant) and
+cite them properly.
+Use an unbiased and journalistic
+tone.
+Always cite for any factual claim.
+When citing
+several search results, use [1][2][3].
+Cite at least one
+document and at most three documents in each statement.
+If multiple documents support the statement, only cite a
+minimum sufficient subset of the documents.
+Document [1]:
+{passage1}
+Document [2]:
+{passage2}
+...
+Question:
+{question}
+Answer:
+{answer}
+Refusal
+{Default
+Instruction}
++
+If none of the provided documents
+contains the answer, only respond with ‘‘I apologize, but
+I couldn’t find an answer to your question in the search
+results.’’
+Do not add further explanation as to why an
+answer cannot be provided; just state the response above
+as-is.
+Document [1]:
+{passage1}
+Document [2]:
+{passage2}
+...
+Question:
+{question}
+Answer:
+{answer}
+39</text></page>

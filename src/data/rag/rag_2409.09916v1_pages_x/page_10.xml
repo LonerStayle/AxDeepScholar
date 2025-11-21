@@ -1,0 +1,52 @@
+<page><text>[27] Yifei Ming, Senthil Purushwalkam, Shrey Pandit, Zixuan Ke, Xuan-Phi Nguyen, Caiming
+Xiong, and Shafiq Rayhan Joty. Faitheval: Can your language model stay faithful to context,
+even if "the moon is made of marshmallows"? 2024.
+[28] Niklas Muennighoff, Nouamane Tazi, Loïc Magne, and Nils Reimers. Mteb: Massive text
+embedding benchmark. arXiv preprint arXiv:2210.07316, 2022. doi: 10.48550/ARXIV.2210.
+07316. URL https://arxiv.org/abs/2210.07316.
+[29] OpenAI. Chatgpt (june 2023 version, 2023.
+[30] OpenAI. Gpt-4 technical report. arXiv preprint, 2023.
+[31] Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D Manning, and
+Chelsea Finn. Direct preference optimization: Your language model is secretly a reward model.
+arXiv preprint arXiv:2305.18290, 2023.
+[32] Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. Squad: 100,000+ questions
+for machine comprehension of text. arXiv preprint arXiv:1606.05250, 2016.
+[33] Keisuke Sakaguchi, Ronan Le Bras, Chandra Bhagavatula, and Yejin Choi. Winogrande: An
+adversarial winograd schema challenge at scale. Communications of the ACM, 64(9):99–106,
+2021.
+[34] Weijia Shi, Sewon Min, Michihiro Yasunaga, Minjoon Seo, Rich James, Mike Lewis, Luke
+Zettlemoyer, and Wen-tau Yih. Replug: Retrieval-augmented black-box language models. arXiv
+preprint arXiv:2301.12652, 2023.
+[35] Cohere Team.
+Introducing embed v3, 2024.
+URL https://cohere.com/blog/
+introducing-embed-v3/.
+[36] Cohere Team. Command r: Retrieval-augmented generation at production scale, 2024. URL
+https://cohere.com/blog/command-r/.
+[37] Contextual AI Team.
+Introducing rag 2.0, 2024.
+URL https://contextual.ai/
+introducing-rag2/.
+[38] Gemma Team, Thomas Mesnard, Cassidy Hardin, Robert Dadashi, Surya Bhupatiraju, Shreya
+Pathak, Laurent Sifre, Morgane Rivière, Mihir Sanjay Kale, Juliette Love, et al. Gemma: Open
+models based on gemini research and technology. arXiv preprint arXiv:2403.08295, 2024.
+[39] Romal Thoppilan, Daniel De Freitas, Jamie Hall, Noam Shazeer, Apoorv Kulshreshtha, Heng-
+Tze Cheng, Alicia Jin, Taylor Bos, Leslie Baker, Yu Du, et al. Lamda: Language models for
+dialog applications. arXiv preprint arXiv:2201.08239, 2022.
+[40] Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei,
+Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open
+foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023.
+[41] Adam Trischler, Tong Wang, Xingdi Yuan, Justin Harris, Alessandro Sordoni, Philip
+Bachman, and Kaheer Suleman. Newsqa: A machine comprehension dataset. arXiv preprint
+arXiv:1611.09830, 2016.
+[42] Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal. Musique:
+Multihop questions via single-hop question composition. Transactions of the Association for
+Computational Linguistics, 10:539–554, 2022.
+[43] George Tsatsaronis, Michael Schroeder, Georgios Paliouras, Yannis Almirantis, Ion
+Androutsopoulos, Eric Gaussier, Patrick Gallinari, Thierry Artieres, Michael R Alvers, Matthias
+Zschunke, et al. Bioasq: A challenge on large-scale biomedical semantic indexing and question
+answering. In 2012 AAAI Fall Symposium Series, 2012.
+[44] Eric Wallace, Kai Xiao, Reimar Leike, Lilian Weng, Johannes Heidecke, and Alex Beutel.
+The instruction hierarchy: Training llms to prioritize privileged instructions. arXiv preprint
+arXiv:2404.13208, 2024.
+10</text></page>

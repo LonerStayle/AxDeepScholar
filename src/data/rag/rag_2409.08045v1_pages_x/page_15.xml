@@ -1,0 +1,99 @@
+<page><text>[26] R. Shokri, M. Stronati, C. Song, and V. Shmatikov,
+“Membership inference attacks against machine learn-
+ing models,” in 2017 IEEE symposium on security and
+privacy (SP), pp. 3–18, IEEE, 2017.
+[27] M. Fredrikson, S. Jha, and T. Ristenpart, “Model inver-
+sion attacks that exploit confidence information and ba-
+sic countermeasures,” in Proceedings of the 22nd ACM
+SIGSAC conference on computer and communications
+security, pp. 1322–1333, 2015.
+[28] D. M. Kienzle and M. C. Elder, “Recent worms: a survey
+and trends,” in Proceedings of the 2003 ACM workshop
+on Rapid Malcode, pp. 1–10, 2003.
+[29] N. Weaver, V. Paxson, S. Staniford, and R. Cunningham,
+“A taxonomy of computer worms,” in Proceedings of
+the 2003 ACM workshop on Rapid Malcode, pp. 11–18,
+2003.
+[30] C. Smith, A. Matrawy, S. Chow, and B. Abdelaziz,
+“Computer worms: Architectures, evasion strategies, and
+detection mechanisms,” Journal of Information Assur-
+ance and Security, vol. 4, pp. 69–83, 2009.
+[31] J. F. Shoch and J. A. Hupp, “The “worm” pro-
+grams—early experience with a distributed computa-
+tion,” Communications of the ACM, vol. 25, no. 3,
+pp. 172–180, 1982.
+[32] C. Kelty, “The morris worm,” Limn, vol. 1, no. 1, 2011.
+[33] H. Orman, “The morris worm: A fifteen-year perspec-
+tive,” IEEE Security &amp; Privacy, vol. 1, no. 5, pp. 35–43,
+2003.
+[34] A. Brassard, “The morris worm. 1988,” 2023.
+[35] M. Bishop, “Analysis of the iloveyou worm,” Inter-
+net: http://nob. cs. ucdavis. edu/classes/ecs155-2005-
+04/handouts/iloveyou. pdf, 2000.
+[36] A. F. C. F. M. GA, “Iloveyou virus lessons learned
+report,” 2003.
+[37] N. Falliere, L. O. Murchu, and E. Chien, “W32. stuxnet
+dossier,” White paper, symantec corp., security response,
+vol. 5, no. 6, p. 29, 2011.
+[38] D. Kushner, “The real story of stuxnet,” ieee Spectrum,
+vol. 50, no. 3, pp. 48–53, 2013.
+[39] A. Matrosov, E. Rodionov, D. Harley, and J. Malcho,
+“Stuxnet under the microscope,” ESET LLC (September
+2010), vol. 6, 2010.
+[40] M. Antonakakis, T. April, M. Bailey, M. Bernhard,
+E. Bursztein, J. Cochran, Z. Durumeric, J. A. Halder-
+man, L. Invernizzi, M. Kallitsis, et al., “Understanding
+the mirai botnet,” in 26th USENIX security symposium
+(USENIX Security 17), pp. 1093–1110, 2017.
+[41] M. Akbanov, V. G. Vassilakis, and M. D. Logothetis,
+“Wannacry ransomware: Analysis of infection, persis-
+tence, recovery prevention and propagation mecha-
+nisms,” Journal of Telecommunications and Information
+Technology, no. 1, pp. 113–124, 2019.
+[42] Q. Chen and R. A. Bridges, “Automated behavioral anal-
+ysis of malware: A case study of wannacry ransomware,”
+in 2017 16th IEEE International Conference on machine
+learning and applications (ICMLA), pp. 454–460, IEEE,
+2017.
+[43] D.-Y. Kao and S.-C. Hsiao, “The dynamic analysis
+of wannacry ransomware,” in 2018 20th International
+conference on advanced communication technology
+(ICACT), pp. 159–166, IEEE, 2018.
+[44] S.-C. Hsiao and D.-Y. Kao, “The static analysis of wan-
+nacry ransomware,” in 2018 20th international confer-
+ence on advanced communication technology (ICACT),
+pp. 153–158, IEEE, 2018.
+[45] Z. Li, X. Zhang, Y. Zhang, D. Long, P. Xie, and
+M. Zhang, “Towards general text embeddings with
+multi-stage
+contrastive
+learning,”
+arXiv preprint
+arXiv:2308.03281, 2023.
+[46] Z. Nussbaum, J. X. Morris, B. Duderstadt, and A. Mul-
+yar, “Nomic embed: Training a reproducible long con-
+text text embedder,” 2024.
+[47] techcrunch, “Apple brings chatgpt to its apps, in-
+cluding
+siri.”
+https://techcrunch.com/2024/
+06/10/apple-brings-chatgpt-to-its-apps-
+including-siri/.
+[48] Wired, “Aamazon
+upgrades
+alexa
+for the
+chat-
+gpt era.”
+https://www.wired.com/story/amazon-
+upgrades-alexa-for-the-chatgpt-era/.
+[49] Zenity, “Summary zenity research published black-
+hat.” https://labs.zenity.io/p/summary-zenity-
+research-published-blackhat-2024.
+[50] J. Lee, Z. Dai, X. Ren, B. Chen, D. Cer, J. R. Cole,
+K. Hui, M. Boratko, R. Kapadia, W. Ding, Y. Luan,
+S. M. K. Duddu, G. H. Abrego, W. Shi, N. Gupta,
+A. Kusupati, P. Jain, S. R. Jonnalagadda, M.-W. Chang,
+and I. Naim, “Gecko: Versatile text embeddings distilled
+from large language models,” 2024.
+15</text></page>

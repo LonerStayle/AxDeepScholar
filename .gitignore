@@ -9,3 +9,8 @@ wheels/
 # Virtual environments
 .venv
 .env
+src/data/agent/**/*_pages/
+src/data/agent/**/*_pages_x/
+src/data/rag/**/*_pages/
+README.md
+.chroma_db

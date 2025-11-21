@@ -1,0 +1,107 @@
+<page><text>based GenAI-powered applications that interface with each
+other (e.g., a GenAI-powered email assistant like Copilot). We
+show that when the communication between applications in
+the ecosystem relies on RAG-based inference, attackers could
+escalate RAG poisoning attacks from a single affected client
+to the entire ecosystem. This is done by triggering a chain
+reaction of a computer worm within the ecosystem that forces
+each affected application to perform a malicious activity and
+propagate to a new application in the ecosystem.
+4.1
+Threat Model
+In this threat model, the attacker launches a worm within
+an ecosystem of GenAI-powered applications by triggering
+a chain of indirect prompt injection attacks (we discuss the
+steps of the attack in the next subsection).
+Targets. A RAG-based GenAI-powered application at risk
+of being targeted by a worm is an application with the follow-
+ing characteristics: (1) receives user inputs: the application is
+capable of receiving user inputs (2) active database updating
+policy: data is actively inserted into the database (e.g., to keep
+its relevancy), (3) part of an ecosystem: the GenAI applica-
+tion is capable of interfacing with other clients of the same
+application installed on other machines, (4) RAG-based com-
+munication: the messages delivered between the applications
+in the ecosystem relies on RAG-based inference. We note
+that GenAI-powered email assistants (like those supported
+in Microsoft Copilot and in Gemini for Google Workspace)
+satisfy the above-mentioned characteristics, while some of the
+personal assistants (e.g., Siri) already satisfy these characteris-
+tics as well [47,48]. Moreover, as was recently demonstrated
+by [49], Copilot is vulnerable to indirect prompt injection
+attacks because it actively indexes incoming messages and
+documents into the database used by the RAG, which is used
+for writing new emails.
+Attacker Objective. We consider the attacker to be a ma-
+licious entity with the desire to trigger an attack against an
+ecosystem of GenAI-powered applications. The objective of
+the attacker can be to: spread propaganda (e.g., as part of a po-
+litical campaign), distribute disinformation (e.g., as part of a
+counter-campaign), embarrass users (e.g., by exfiltrating con-
+fidential user data to acquaintances) or any kind of malicious
+objective that could be fulfilled by unleashing a worm that
+targets GenAI-powered email assistants and GenAI-powered
+personal assistants.
+Attacker Capabilities. We assume a lightweight threat
+model in which the attacker is only capable of sending a mes-
+sage to another that is part of a GenAI ecosystem (e.g., like
+Copilot). We assume the attacker has no prior knowledge of
+the GenAI model used for inference by the client, the imple-
+mentation of the RAG, the embeddings algorithm used by
+the database, and the distribution of the data stored in the
+databases of the victims. The attacker aims to craft a message
+consisting of a prompt that will: (1) be stored in the RAG’s
+database of the recipient (the new host), (2) be retrieved by
+the RAG when responding to new messages, (3) undergo
+replication during an inference executed by the GenAI model.
+Additionally, the prompt must (4) initiate a malicious activity
+predefined by the attacker (payload) for every infected victim.
+It is worth mentioning that the first requirement is met by
+the active RAG, where new content is automatically stored in
+the database (it was recently shown that Copilot also actively
+indexes received data [49]). However, the fulfillment of the
+remaining three properties (2-4) is satisfied by the use of ad-
+versarial self-replicating prompts (we discuss this in the next
+subsection).
+Significance. (1) We introduce the concept of "survivable
+prompts" that we name adversarial self-replicating prompts
+(we discuss them in the next subsection). adversarial self-
+replicating prompts jailbreak the GenAI model and force it
+to output the instructions (from the input) and payload that
+yields the desired malicious activity. This behavior survives
+a chain of inferences performed on the outputs of the in-
+ferences of the prompts. The unique ability to "survive an
+inference" and replicate the input into the output allows the
+prompts to compromise new GenAI-powered applications by
+propagating to their database and is significant with respect
+to RAG-data poisoning attacks [5–9] that do not output in-
+structions in response to an inference. (2) By embedding the
+adversarial self-replicating prompts into inputs, attackers can
+target the entire connected GenAI-powered applications in the
+GenAI ecosystem. Therefore we consider our threat model
+more severe in terms of the scale of the outcome with re-
+spect to RAG-data poisoning attacks [5–9] that target a single
+GenAI-powered application.
+4.2
+Adversarial Self-Replicating Prompts
+To unleash the worm, the attacker must craft a message capa-
+ble of fulfilling properties (2)-(4). This is done by incorporat-
+ing an adversarial self-replicating prompt into the message.
+An adversarial self-replicating prompt is a piece of text con-
+sisting of (1) j - jailbreaking command, (2) r - an instruction
+to replicate the input into the output, and (3) m - additional
+instructions to conduct malicious activity and append them
+into the output. More formally, given a GenAI model G, an
+adversarial self-replicating prompt is a prompt that satisfies:
+G(pre1 ∥j ∥r ∥m∥suf1) →pre2 ∥j ∥r ∥m∥p2 ∥suf2
+(1)
+where prei and sufi are any kinds of benign text and pi is
+the payload, i.e., the result of the malicious activity performed
+by the GenAI model. By feeding the GenAI engine with the
+n−1’th inference performed on the original input we get:
+Gn−1(pre1 ∥j ∥r∥m∥p1 ∥suf1) →pren ∥j ∥r∥m∥pn ∥sufn
+(2)
+An example of an adversarial self-replicating prompt which
+is based on role-play text for jailbreaking and confidential user
+data exfiltration as malicious activity can be seen in Listing 3.
+7</text></page>

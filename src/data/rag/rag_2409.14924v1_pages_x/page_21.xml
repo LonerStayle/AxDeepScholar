@@ -1,0 +1,58 @@
+<page><text>arXiv Template
+A PREPRINT
+[59] Sebastian Hofstätter, Sheng-Chieh Lin, Jheng-Hong Yang, Jimmy Lin, and Allan Hanbury. Efficiently teaching
+an effective dense retriever with balanced topic aware sampling. In Proceedings of the 44th International ACM
+SIGIR Conference on Research and Development in Information Retrieval, pages 113–122, 2021.
+[60] Gautier Izacard, Mathilde Caron, Lucas Hosseini, Sebastian Riedel, Piotr Bojanowski, Armand Joulin,
+and Edouard Grave.
+Unsupervised dense information retrieval with contrastive learning.
+arXiv preprint
+arXiv:2112.09118, 2021.
+[61] Peitian Zhang, Shitao Xiao, Zheng Liu, Zhicheng Dou, and Jian-Yun Nie. Retrieve anything to augment large
+language models. arXiv preprint arXiv:2310.07554, 2023.
+[62] Xueguang Ma, Liang Wang, Nan Yang, Furu Wei, and Jimmy Lin. Fine-tuning llama for multi-stage text retrieval.
+arXiv preprint arXiv:2310.08319, 2023.
+[63] Sebastian Borgeaud, Arthur Mensch, Jordan Hoffmann, Trevor Cai, Eliza Rutherford, Katie Millican, George Bm
+Van Den Driessche, Jean-Baptiste Lespiau, Bogdan Damoc, Aidan Clark, et al. Improving language models by
+retrieving from trillions of tokens. In International conference on machine learning, pages 2206–2240. PMLR,
+2022.
+[64] Jianmo Ni, Chen Qu, Jing Lu, Zhuyun Dai, Gustavo Hernández Ábrego, Ji Ma, Vincent Y Zhao, Yi Luan, Keith B
+Hall, Ming-Wei Chang, et al. Large dual encoders are generalizable retrievers. arXiv preprint arXiv:2112.07899,
+2021.
+[65] Parishad BehnamGhader, Vaibhav Adlakha, Marius Mosbach, Dzmitry Bahdanau, Nicolas Chapados, and Siva
+Reddy. Llm2vec: Large language models are secretly powerful text encoders. arXiv preprint arXiv:2404.05961,
+2024.
+[66] Chaofan Li, Zheng Liu, Shitao Xiao, Yingxia Shao, and Defu Lian. Llama2vec: Unsupervised adaptation of
+large language models for dense retrieval. In Proceedings of the 62nd Annual Meeting of the Association for
+Computational Linguistics (Volume 1: Long Papers), pages 3490–3500, 2024.
+[67] Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov,
+Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models.
+arXiv preprint arXiv:2307.09288, 2023.
+[68] Shangbin Feng, Weijia Shi, Yuyang Bai, Vidhisha Balachandran, Tianxing He, and Yulia Tsvetkov. Knowledge
+card: Filling llms’ knowledge gaps with plug-in specialized language models. arXiv preprint arXiv:2305.09955,
+2023.
+[69] Kunal Sawarkar, Abhilasha Mangal, and Shivam Raj Solanki. Blended rag: Improving rag (retriever-augmented
+generation) accuracy with semantic search and hybrid query-based retrievers. arXiv preprint arXiv:2404.07220,
+2024.
+[70] Jianlv Chen, Shitao Xiao, Peitian Zhang, Kun Luo, Defu Lian, and Zheng Liu. Bge m3-embedding: Multi-
+lingual, multi-functionality, multi-granularity text embeddings through self-knowledge distillation. arXiv preprint
+arXiv:2402.03216, 2024.
+[71] Yi Luan, Jacob Eisenstein, Kristina Toutanova, and Michael Collins. Sparse, dense, and attentional representations
+for text retrieval. Transactions of the Association for Computational Linguistics, 9:329–345, 2021.
+[72] Qiaoyu Tang, Jiawei Chen, Bowen Yu, Yaojie Lu, Cheng Fu, Haiyang Yu, Hongyu Lin, Fei Huang, Ben He,
+Xianpei Han, et al. Self-retrieval: Building an information retrieval system with one large language model. arXiv
+preprint arXiv:2403.00801, 2024.
+[73] Xin Cheng, Di Luo, Xiuying Chen, Lemao Liu, Dongyan Zhao, and Rui Yan. Lift yourself up: Retrieval-
+augmented text generation with self-memory. Advances in Neural Information Processing Systems, 36, 2024.
+[74] Xinbei Ma, Yeyun Gong, Pengcheng He, Hai Zhao, and Nan Duan. Query rewriting for retrieval-augmented
+large language models. arXiv preprint arXiv:2305.14283, 2023.
+[75] Luyu Gao, Xueguang Ma, Jimmy Lin, and Jamie Callan. Precise zero-shot dense retrieval without relevance
+labels. arXiv preprint arXiv:2212.10496, 2022.
+[76] Vatsal Raina and Mark Gales. Question-based retrieval using atomic units for enterprise rag. arXiv preprint
+arXiv:2405.12363, 2024.
+[77] Jiejun Tan, Zhicheng Dou, Yutao Zhu, Peidong Guo, Kun Fang, and Ji-Rong Wen. Small models, big insights:
+Leveraging slim proxy models to decide when and what to retrieve for llms. arXiv preprint arXiv:2402.12052,
+2024.
+[78] Huiqiang Jiang, Qianhui Wu, Chin-Yew Lin, Yuqing Yang, and Lili Qiu. Llmlingua: Compressing prompts for
+accelerated inference of large language models. arXiv preprint arXiv:2310.05736, 2023.
+21</text></page>

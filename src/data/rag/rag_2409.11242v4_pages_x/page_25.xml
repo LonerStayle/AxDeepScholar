@@ -1,0 +1,105 @@
+<page><text>Published as a conference paper at ICLR 2025
+mini, Qwen-2.5-1.5b, Qwen2.5-3b). The ability to grade the model more fairly underscores the need
+for our calibrated metrics.
+F.2
+UTILIZATION OF PARAMETRIC KNOWLEDGE
+For an LLM used for an RAG task, it is important to study the tendency of LLM towards grounding
+its knowledge on the provided documents. To partially quantify this, we compute an uncalibrated
+answer correctness (AC) score for questions that are unanswerable by the provided documents; thus
+AG ∩AD = ∅but AG ̸= ∅,
+Sparam =
+1
+|Nr|
+X
+qi∈Nr
+|(AR −(AR ∩AD)) ∩AG|
+|AR|
+(17)
+Where, AG, AD, and AR are claims in the ground truth answer, claims present in the documents,
+and the claims generated in the response, respectively. Nr is the number of answered questions.
+In Table 10, our analysis reveals that responsive models tend to rely on parametric knowledge more
+frequently. Notably, closed-source models like GPT-4 exhibit higher parametric knowledge usage
+compared to our models. However, this metric only partially captures the models’ utilization of
+parametric knowledge. For instance, cases where models correctly generate gold claims without
+proper grounding may also indicate reliance on parametric knowledge. This phenomenon is evident
+in Table 12, where on ASQA, GPT-4 achieves a significantly higher F1AC than our models, yet its
+attribution groundedness score F1GC is five points lower.
+Table 10: Detection of parametric knowledge usage under refusal prompting.
+Model
+ASQA
+QAMPRARI
+ELI5
+AR (%)
+Sparam
+AR (%)
+Sparam
+AR (%)
+Sparam
+ICL-LLaMA-2 7B
+0.00
+0.00
+0.00
+0.00
+0.50
+0.00
+ICL-LLaMA-3 8B
+1.48
+1.79
+3.90
+16.92
+0.00
+0.00
+ICL-GPT-3.5
+71.20
+9.74
+65.30
+11.45
+49.00
+7.89
+ICL-GPT-4
+86.81
+12.71
+73.40
+13.05
+61.50
+9.05
+ICL-Claude-3.5
+84.60
+12.99
+69.80
+12.55
+59.00
+1.76
+TRUST-ALIGN (DPO-LLaMA-2-7B)
+65.30
+8.15
+31.10
+8.45
+21.60
+5.56
+TRUST-ALIGN (DPO-LLaMA-3-8B)
+56.42
+8.65
+23.10
+8.97
+15.50
+7.26
+F.3
+THE SOURCE OF LLM HALLUCINATIONS
+Model errors can be categorized into two primary sources:
+1. Parametric knowledge-based hallucination: Errors arising from the model’s internal
+knowledge representation.
+2. Information extraction failures: Inability to accurately extract relevant information from
+provided documents.
+To quantify these error types, we employ the following methodology:
+• For the non-refused questions with errors, calculate the proportion of the incorrect answers
+that are:
+◦Present in the provided documents
+◦Absent from the provided documents
+For answers absent from the documents, we can attribute the error to parametric knowledge-based
+hallucination. For answers present in the documents, the specific source of the error remains inde-
+terminate as it can be attributed to both.
+The substring matching (Gao et al., 2023b) is used here for searching for the existence of incorrect
+answers in the documents. As the model’s response only on QAMPARI can be decomposed into
+atomic facts, we chose to perform this analysis on it. Specifically, for every answered question,
+25</text></page>

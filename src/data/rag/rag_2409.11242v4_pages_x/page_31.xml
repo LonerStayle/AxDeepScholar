@@ -1,0 +1,69 @@
+<page><text>Published as a conference paper at ICLR 2025
+coverage-related issues, GPT-4 is instructed to minimally revise the original response to correct
+these issues based on the detected problems. This minimal revision approach is intended to generate
+more precise data for alignment learning.
+Citation critiques.
+Based on the revised content, we further tokenize it into individual statements
+to enable a more fine-grained citation check in later stages. We format all documents in the in-
+struction as holistic facts and instruct GPT-4 to determine the attribution of each statement relative
+to these facts. We define three levels of attribution: SUPPORT, OPPOSE, and IRRELEVANT. We
+then compare GPT-4’s attribution results to the original attributions in the response, modifying the
+original attributions wherever they do not align with GPT-4’s critiques. Finally, we concatenate all
+citation-revised statements to form the final revised response.
+H
+EXPERIMENTAL SETUP
+H.1
+IMPLEMENTATION DETAILS
+For all experiments involving our tuned models and baselines, we provided the top 5 retrieved doc-
+uments as context and used decoding temperatures of 0.1 and 0.5, respectively, with other settings
+consistent with those in Gao et al. (2023b). We evaluated three representative open-source model
+families: the LLaMA series 13(Touvron et al., 2023; Dubey et al., 2024), the Qwen series 14 (Yang
+et al., 2024), and Phi-3.5-mini (Abdin et al., 2024), and three proprietary model families: GPT-4
+(OpenAI et al., 2024), GPT-3.5 (Brown et al., 2020) 15, and Claude-3.5-Sonnet 16. We perform the
+full parameter fine-tuning for better performance. For supervised fine-tuning (SFT), we trained the
+models for 2 epochs with a learning rate of 2e-5. For direct preference optimization (DPO) align-
+ment, we trained the models for 2 epochs with a beta value of 0.5. All experiments were conducted
+on NVIDIA A40 40G GPUs.
+H.2
+DATASET DETAILS
+Following Liu et al. (2023); Gao et al. (2023b), to form D, we divide large text documents into
+100-word passages and limit the number of citations Ci for each claim to a maximum of three. If the
+response is empty, it is excluded from evaluation. We provide statistics of our evaluation in Table 17.
+Table 17: Statistics of the evaluation dataset.
+ASQA
+QAMPARI
+ELI5
+ExpertQA
+Total # of Samples
+948
+1000
+1000
+2169
+# Answerable Samples
+610
+295
+207
+682
+# Unanswerable Samples
+338
+705
+793
+1487
+ASQA (Stelmakh et al., 2023).
+This long-form factoid dataset features ambiguous queries from
+AmbigQA (Li et al., 2023), requiring multiple short answers to address different aspects. It includes
+comprehensive long-form answers that combine these short responses.
+QAMPARI (Amouyal et al., 2023).
+This factoid QA dataset is derived from Wikipedia, with
+answers consisting of lists of entities gathered from various passages.
+ELI5 (Fan et al., 2019).
+This dataset is a long-form QA collection based on the Reddit forum
+“Explain Like I’m Five” (ELI5). Most ELI5 questions require the model to utilize knowledge from
+multiple passages to formulate a complete answer. The ELI5 dataset is frequently used in related
+research due to its challenging nature (Nakano et al., 2021; Menick et al., 2022; Jiang et al., 2023).
+13LLaMA-2-7b, LLaMA-2-13b, LLaMA-2-70b, LLaMA-3.2-1b, LLaMA-3.2-3b, LLaMA-3-8b
+14Qwen-2.5-0.5b, Qwen-2.5-1.5b, Qwen-2.5-3b, Qwen-2.5-7b
+15We utilize the latest version on the AzureOpenAI Service: https://learn.microsoft.com/
+en-us/azure/ai-services/openai/concepts/models
+16https://www.anthropic.com/news/claude-3-5-sonnet
+31</text></page>
