@@ -5,9 +5,7 @@ from langchain_core.messages import BaseMessage
 from langchain_core.tools import tool 
 from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
-from utils.helper import attach_auto_keys
 
-attach_auto_keys
 class SupervisorState(TypedDict):
     supervisor_messages:Annotated[Sequence[BaseMessage],add_messages]
     research_brief:str 

@@ -1,4 +1,4 @@
-from typing_extensions import Literal
+from typing_extensions import TypedDict, Annotated, Sequence, List,Literal
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import filter_messages
 from agent.research.research_state import ResearcherState, ResearcherOutputState
@@ -25,16 +25,16 @@ def llm_call(state: ResearcherState) -> ResearcherState:
         PromptType.SYSTEM_RESEARCH, date=get_today_str()
     )
     return {
-        "messages": [
+        "researcher_messages": [
             model_with_tools.invoke(
-                [SystemMessage(content=system_prompt)] + state["messages"]
+                [SystemMessage(content=system_prompt)] + state["researcher_messages"]
             )
         ]
     }
 
 
 def tool_node(state: ResearcherState) -> ResearcherState:
-    tool_calls = state["messages"][-1].tool_calls
+    tool_calls = state["researcher_messages"][-1].tool_calls
 
     observations = []
     for tool_call in tool_calls:
@@ -48,7 +48,7 @@ def tool_node(state: ResearcherState) -> ResearcherState:
         for observation, tool_call in zip(observations, tool_calls)
     ]
 
-    return {"messages": tool_outputs}
+    return {"researcher_messages": tool_outputs}
 
 
 def compress_research(state: ResearcherState) -> ResearcherOutputState:
@@ -61,12 +61,12 @@ def compress_research(state: ResearcherState) -> ResearcherOutputState:
     )
     messages = (
         [SystemMessage(content=system_prompt)]
-        + state.get("messages", [])
+        + state.get("researcher_messages", [])
         + [HumanMessage(content=human_prompt)]
     )
     response = compress_model.invoke(messages)
 
-    filter_mgs = filter_messages(state["messages"], include_type=["tool", "ai"])
+    filter_mgs = filter_messages(state["researcher_messages"], include_type=["tool", "ai"])
     raw_notes = [str(m.content) for m in filter_mgs]
 
     return {

@@ -222,3 +222,7 @@ casebank.add(vector, metadata={"score": score, "success": score > 0.75})
 * ✅ Reflect + Reward 기반 Self-Improvement Loop
 * ✅ 시간이 지날수록 연구 전략이 진화하는 LLM 에이전트
 
+
+
+
+<!-- export PYTHONPATH=$PYTHONPATH:$(pwd)/src -->

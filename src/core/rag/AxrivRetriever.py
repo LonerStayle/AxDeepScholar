@@ -5,7 +5,8 @@ from typing import List, Tuple
 
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
+
 
 from utils.helper import get_project_root
 from langchain_community.retrievers import BM25Retriever
@@ -42,6 +43,13 @@ class AxrivRetriever:
                     embedding_function=self.embedding,
                     persist_directory=self.persist_dir,
                 )
+                
+                raw = self.db.get(include=["metadatas", "documents"])
+                docs = []
+                for content, meta in zip(raw["documents"], raw["metadatas"]):
+                    docs.append(Document(page_content=content, metadata=meta))
+
+                self.docs_cache = docs
                 if self.bm25 is None:
                     self._init_bm25()
 
@@ -108,7 +116,6 @@ class AxrivRetriever:
             collection_name=self.collection_name,
             persist_directory=self.persist_dir,
         )
-        self.db.persist()
         print("DB 생성 및 저장:", self.persist_dir)
 
     def _init_bm25(self):
